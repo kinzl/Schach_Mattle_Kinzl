@@ -16,8 +16,7 @@ public class Client {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));)
          {
 
-
-
+             
 
         } catch (IOException e) {
             e.printStackTrace();
