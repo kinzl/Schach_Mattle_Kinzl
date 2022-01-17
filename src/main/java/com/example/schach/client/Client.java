@@ -2,6 +2,7 @@ package com.example.schach.client;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 public class Client {
     private String IPADDRESS;
@@ -23,5 +24,20 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean canConnect(){
+        Socket socket;
+        try{
+            socket = new Socket(IPADDRESS, 22);
+            return true;
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+
+        }
+        return false;
     }
 }
