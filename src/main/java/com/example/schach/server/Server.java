@@ -10,8 +10,11 @@ public class Server {
     private static int PORT = 22;
     private static boolean isRunning = false;
 
+    public static void main(String[] args) {
+        startServer();
+    }
 
-    public void startServer() {
+    public static void startServer() {
         boolean running = true;
         try {
             System.out.println(Inet4Address.getLocalHost().getHostAddress());
@@ -22,32 +25,29 @@ public class Server {
              Socket socket = serverSocket.accept();
              BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));) {
-            isRunning = true;
+             isRunning = true;
 
 
-                System.out.println(isRunning);
+            System.out.println(isRunning);
 
-                bw.write("This was written by the server");
+            bw.write("This was written by the server");
 
         } catch (IOException e) {
             e.printStackTrace();
 
-        } finally {
-
         }
     }
 
-    public static boolean isIsRunning() {
-        return isRunning;
+    public boolean isRunning() {
+        return isRunning();
     }
 
     public static String getIpAddress() {
         try {
-
             return Inet4Address.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-        return "";
+        return "no Ip Address found";
     }
 }

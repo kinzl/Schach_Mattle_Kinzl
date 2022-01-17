@@ -22,9 +22,7 @@ public class JoinAGame implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         playButton.setDisable(true);
-
     }
 
     public void connectToServer(ActionEvent actionEvent) {
