@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.LoginController">
+   <Button layoutX="57.0" layoutY="199.0" mnemonicParsing="false" onAction="#createAGame" prefHeight="37.0" prefWidth="159.0" text="Create a game" />
+   <Button layoutX="227.0" layoutY="199.0" mnemonicParsing="false" onAction="#joinAGame" prefHeight="37.0" prefWidth="159.0" text="Join a game" />
+   <TextField fx:id="username" layoutX="116.0" layoutY="88.0" promptText="Username" />
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
