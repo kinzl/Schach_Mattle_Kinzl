@@ -1,16 +1,23 @@
 package com.example.schach.server;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.Scanner;
 
 public class Server {
-    private static int PORT;
+    private static int PORT = 22;
 
-    public static void main(String[] args) {
+    public static void startServer() {
         scanPort();
-        try(ServerSocket socket = new ServerSocket(PORT);
-        ) {
+        try(ServerSocket serverSocket = new ServerSocket(PORT);
+            Socket socket = serverSocket.accept();
+            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));)
+        {
+
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
