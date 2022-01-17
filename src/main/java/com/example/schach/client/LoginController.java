@@ -23,7 +23,7 @@ public class LoginController implements Initializable {
     }
 
     public void createAGame(ActionEvent actionEvent) {
-        Server server = new Server();
 
+        Server.startServer();
     }
 }
