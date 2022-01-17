@@ -5,11 +5,10 @@ import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 public class Server {
     private static int PORT = 22;
-    private static boolean connected = false;
+    private static boolean isRunning = false;
 
 
     public void startServer() {
@@ -23,22 +22,23 @@ public class Server {
              Socket socket = serverSocket.accept();
              BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));) {
-            connected = true;
+            isRunning = true;
 
 
-                System.out.println(connected);
+                System.out.println(isRunning);
 
                 bw.write("This was written by the server");
 
         } catch (IOException e) {
             e.printStackTrace();
+
         } finally {
 
         }
     }
 
-    public static boolean isConnected() {
-        return connected;
+    public static boolean isIsRunning() {
+        return isRunning;
     }
 
     public static String getIpAddress() {

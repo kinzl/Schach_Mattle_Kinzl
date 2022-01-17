@@ -3,13 +3,9 @@ package com.example.schach.client;
 import com.example.schach.server.Server;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-import java.net.Inet4Address;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 
 public class CreateAGame implements Initializable {
@@ -29,7 +25,7 @@ public class CreateAGame implements Initializable {
 
     private void isConnected(){
 
-        if(Server.isConnected()){
+        if(Server.isIsRunning()){
             status.setStyle("-fx-text-fill: green");
             status.setText("Connected");
         } else {
