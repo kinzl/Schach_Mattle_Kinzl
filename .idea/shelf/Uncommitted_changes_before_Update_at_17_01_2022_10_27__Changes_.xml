@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]" date="1642411648443" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 17.01.2022 10:27 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/schach/server/Server.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/schach/server/Server.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/Server.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/schach/client/Client.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/schach/client/Client.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/Client.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/schach/client/LoginController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/schach/client/LoginController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/LoginController.class" />
+  </binary>
+</changelist>

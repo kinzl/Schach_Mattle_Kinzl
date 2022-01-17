@@ -1,0 +1,84 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision fbdb5589b3c1227e047609e514473fee4a466e51)
++++ b/.idea/misc.xml	(date 1642411542176)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/example/schach/client/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.schach.client;\r\n\r\nimport com.example.schach.server.Server;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.control.TextField;\r\n\r\nimport java.net.URL;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class LoginController implements Initializable {\r\n\r\n    public TextField username;\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n    }\r\n\r\n    public void joinAGame(ActionEvent actionEvent) {\r\n\r\n    }\r\n\r\n    public void createAGame(ActionEvent actionEvent) {\r\n\r\n        Server.startServer();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/schach/client/LoginController.java b/src/main/java/com/example/schach/client/LoginController.java
+--- a/src/main/java/com/example/schach/client/LoginController.java	(revision fbdb5589b3c1227e047609e514473fee4a466e51)
++++ b/src/main/java/com/example/schach/client/LoginController.java	(date 1642411542194)
+@@ -3,9 +3,13 @@
+ import com.example.schach.server.Server;
+ import javafx.event.ActionEvent;
+ import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
+ import javafx.fxml.Initializable;
++import javafx.scene.Scene;
+ import javafx.scene.control.TextField;
++import javafx.stage.Stage;
+ 
++import java.io.IOException;
+ import java.net.URL;
+ import java.util.ResourceBundle;
+ 
+@@ -22,8 +26,12 @@
+ 
+     }
+ 
+-    public void createAGame(ActionEvent actionEvent) {
+-
+-        Server.startServer();
++    public void createAGame(ActionEvent actionEvent) throws IOException {
++        Stage stage = new Stage();
++        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Login.fxml"));
++        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
++        stage.setTitle("Login");
++        stage.setScene(scene);
++        stage.show();
+     }
+ }
+Index: src/main/java/com/example/schach/client/testFile.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/schach/client/testFile.java b/src/main/java/com/example/schach/client/testFile.java
+new file mode 100644
+--- /dev/null	(date 1642411542236)
++++ b/src/main/java/com/example/schach/client/testFile.java	(date 1642411542236)
+@@ -0,0 +1,14 @@
++package com.example.schach.client;
++
++import java.net.Inet4Address;
++import java.net.UnknownHostException;
++
++public class testFile {
++    public static void main(String[] args) {
++        try {
++            System.out.println(Inet4Address.getLocalHost().getHostAddress());
++        } catch (UnknownHostException e) {
++            e.printStackTrace();
++        }
++    }
++}
