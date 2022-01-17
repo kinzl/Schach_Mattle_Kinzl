@@ -1,9 +1,7 @@
 package com.example.schach.server;
-import com.example.schach.client.HelloController;
 
 import java.io.IOException;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Scanner;
 
 public class Server {
