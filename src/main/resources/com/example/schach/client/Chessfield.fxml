@@ -89,7 +89,7 @@
               <Pane fx:id="pane74" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
               <Pane fx:id="pane75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
               <Pane fx:id="pane76" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-              <Pane fx:id="pane77" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: black;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+              <Pane fx:id="pane77" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
           </children>
       </GridPane>
    </children>
