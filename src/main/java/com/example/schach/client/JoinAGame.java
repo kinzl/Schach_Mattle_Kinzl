@@ -27,33 +27,20 @@ public class JoinAGame implements Initializable {
 
     public void connectToServer(ActionEvent actionEvent) {
         if(isValidIpAddress(ipAddress.getText())){
-            Client client = new Client(ipAddress.getText());
-            if(client.canConnect()){
-                client.connectToServer();
-            } else {
-                status.setText("Can't find Ip Address");
-            }
-
+            status.setText("Connected");
+            playButton.setDisable(false);
         }
     }
 
 
-    public void playChess(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 350);
-        stage.setTitle("Chessfield");
-        stage.setScene(scene);
-        stage.show();
-    }
-
     private boolean isValidIpAddress(String ipAddress){
+        //Checks if the entered ip address is valid
         if(ipAddress.isEmpty()){
             status.setText("Please enter Ip Address");
             return false;
         }
         String[] temp = ipAddress.split("\\.");
-        if(temp.length == 4 && !ipAddress.equals("localhost")) {
+        if(temp.length == 4 || ipAddress.equals("localhost")) {
             status.setText("Connecting...");
             return true;
         }else {
@@ -61,5 +48,18 @@ public class JoinAGame implements Initializable {
         }
         return false;
 
+    }
+
+
+    public void play(ActionEvent actionEvent) throws IOException {
+        //Opens new Window(Chessfield.fxml
+        Client client = new Client(ipAddress.getText());
+        client.connectToServer();
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 350);
+        stage.setTitle("Chessfield");
+        stage.setScene(scene);
+        stage.show();
     }
 }

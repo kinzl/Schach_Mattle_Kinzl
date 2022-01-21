@@ -7,14 +7,15 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Server {
-    private static int PORT = 22;
-    private static boolean isRunning = false;
+    private static int PORT = 23;
+    private static boolean hasClient = false;
 
     public static void main(String[] args) {
-        startServer();
+        Server s = new Server();
+        s.startServer();
     }
-
-    public static void startServer() {
+    
+    public void startServer() {
         boolean running = true;
         try {
             System.out.println(Inet4Address.getLocalHost().getHostAddress());
@@ -25,10 +26,10 @@ public class Server {
              Socket socket = serverSocket.accept();
              BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));) {
-             isRunning = true;
+             hasClient = true;
 
 
-            System.out.println(isRunning);
+            System.out.println(hasClient);
 
             bw.write("This was written by the server");
 
@@ -38,8 +39,8 @@ public class Server {
         }
     }
 
-    public boolean isRunning() {
-        return isRunning();
+    public static boolean hasClient() {
+        return hasClient;
     }
 
     public static String getIpAddress() {
