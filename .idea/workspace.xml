@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="Server/Client startup&#10;chessfield">
-      <change beforePath="$PROJECT_DIR$/Schach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Schach.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/CreateAGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/CreateAGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/figure/Figuren.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-    </list>
+    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="Server/Client startup&#10;chessfield" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
