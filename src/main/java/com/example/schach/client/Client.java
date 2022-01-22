@@ -8,6 +8,7 @@ public class Client {
     private String IPADDRESS;
     private int PORT = 23;
     private boolean running = true;
+    public static boolean isConnectedWithTheServer = false;
 
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
@@ -17,6 +18,7 @@ public class Client {
         try
          {
              Socket socket = new Socket(IPADDRESS,PORT);
+             isConnectedWithTheServer = true;
              BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 

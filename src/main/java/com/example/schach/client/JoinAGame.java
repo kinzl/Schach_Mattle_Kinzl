@@ -27,8 +27,13 @@ public class JoinAGame implements Initializable {
 
     public void connectToServer(ActionEvent actionEvent) {
         if(isValidIpAddress(ipAddress.getText())){
-            status.setText("Connected");
-            playButton.setDisable(false);
+            if(Client.isConnectedWithTheServer){
+                status.setText("Connected");
+                playButton.setDisable(false);
+            } else {
+                status.setText("No Server found");
+            }
+
         }
     }
 

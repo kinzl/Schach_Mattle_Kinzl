@@ -5,38 +5,35 @@ import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server {
-    private static int PORT = 23;
     private static boolean hasClient = false;
+    private int port = 23;
+    private ServerSocket s = null;
 
-    public static void main(String[] args) {
-        Server s = new Server();
-        s.startServer();
-    }
-    
-    public void startServer() {
-        boolean running = true;
+    private static ArrayList<ServerThread> clients = new ArrayList<>();
+    private static ExecutorService pool = Executors.newFixedThreadPool(3);
+
+    public void startServer() throws IOException {
         try {
-            System.out.println(Inet4Address.getLocalHost().getHostAddress());
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
-        try (ServerSocket serverSocket = new ServerSocket(PORT);
-             Socket socket = serverSocket.accept();
-             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));) {
-             hasClient = true;
+            s = new ServerSocket(port);
+            while (true) {
+                Socket s1 = s.accept();
+                System.out.println("Server connect");
+                ServerThread st1 = new ServerThread(s1);
+                clients.add(st1);
 
-
-            System.out.println(hasClient);
-
-            bw.write("This was written by the server");
-
+                pool.execute(st1);
+            }
         } catch (IOException e) {
-            e.printStackTrace();
-
+            System.out.println(e.getMessage());
+        }finally{
+            s.close();
         }
+
     }
 
     public static boolean hasClient() {
