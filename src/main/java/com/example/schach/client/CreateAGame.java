@@ -24,7 +24,7 @@ public class CreateAGame implements Initializable{
 
 
     public void startServer(ActionEvent actionEvent) throws IOException {
-        status.setText("Not Connected");
+        status.setText("Waiting for Connection...");
         ServerSocket serverSocket = new ServerSocket(23);
         Socket socket = serverSocket.accept();
         status.setText("Connected");
