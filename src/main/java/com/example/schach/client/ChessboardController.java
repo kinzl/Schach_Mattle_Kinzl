@@ -2,6 +2,7 @@ package com.example.schach.client;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 
 public class ChessboardController {
     public ImageView black_bauer4_1;
@@ -12,6 +13,7 @@ public class ChessboardController {
     public ImageView black_bauer5_1;
     public ImageView black_bauer6_1;
     public ImageView black_bauer7_1;
+    public GridPane chessBoardView;
 
 
     public void fieldslected00(MouseEvent mouseEvent) {

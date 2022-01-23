@@ -27,14 +27,70 @@
               <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
           </rowConstraints>
           <children>
-              <Pane fx:id="pane00" onMouseClicked="#fieldslected00" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" />
-              <Pane fx:id="pane01" onMouseClicked="#fieldslected01" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
-              <Pane fx:id="pane02" onMouseClicked="#fieldslected02" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" />
-              <Pane fx:id="pane03" onMouseClicked="#fieldslected03" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" />
-              <Pane fx:id="pane04" onMouseClicked="#fieldslected04" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" />
-              <Pane fx:id="pane05" onMouseClicked="#fieldslected05" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" />
-              <Pane fx:id="pane06" onMouseClicked="#fieldslected06" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" />
-              <Pane fx:id="pane07" onMouseClicked="#fieldslected07" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" />
+              <Pane fx:id="pane00" onMouseClicked="#fieldslected00" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="black_left_tower" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_rook.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane01" onMouseClicked="#fieldslected01" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1">
+               <children>
+                  <ImageView fx:id="black_left_horse" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_knight.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane02" onMouseClicked="#fieldslected02" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2">
+               <children>
+                  <ImageView fx:id="black_left_runner" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_bishop.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane03" onMouseClicked="#fieldslected03" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3">
+               <children>
+                  <ImageView fx:id="black_queen" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_queen.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane04" onMouseClicked="#fieldslected04" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4">
+               <children>
+                  <ImageView fx:id="black_king" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_king.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane05" onMouseClicked="#fieldslected05" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5">
+               <children>
+                  <ImageView fx:id="black_right_runner" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_bishop.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane06" onMouseClicked="#fieldslected06" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6">
+               <children>
+                  <ImageView fx:id="black_right_horse" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_knight.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+              <Pane fx:id="pane07" onMouseClicked="#fieldslected07" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7">
+               <children>
+                  <ImageView fx:id="black_right_tower" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../images/black_rook.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
               <Pane fx:id="pane10" onMouseClicked="#fieldslected10" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1">
                <children>
                   <ImageView fx:id="black_bauer0_1" fitHeight="65.0" fitWidth="65.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
