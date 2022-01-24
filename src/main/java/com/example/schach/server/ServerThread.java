@@ -9,6 +9,7 @@ public class ServerThread implements Runnable{
     public ServerThread(Socket socket)  throws IOException {
         this.socket = socket;
     }
+
     @Override
     public void run() {
         System.out.println("Connected");
