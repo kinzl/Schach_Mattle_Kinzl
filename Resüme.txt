@@ -6,3 +6,11 @@ weil wir überlegen müssen, wie der Server mit dem Client kommunizieren soll.
 Ziele für nächste Woche:
 Connection für 2 Clients auf 1 Server.
 Bedienbare User Interface bis zum Schachfeld.
+
+Resüme von der 2. Woche (17.01 - 24.01):
+
+In dieser Woche haben wir das Schachfeld + Figuren fertig gemacht und auch schon fast eine fertige Server-Client verbindung.
+Client funktionier einwandfrei, Server hat noch leichte Bugs.
+Ziele für nächste Woche:
+Funktionierende verbindung des Clients mit dem server und laden des Spielfelds für beide seiten.
+Funktionen der einzelnen Figuren.
