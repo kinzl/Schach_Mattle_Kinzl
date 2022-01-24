@@ -11,6 +11,6 @@
       <Text fx:id="IpAddress" layoutX="269.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="status" layoutX="258.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Button layoutX="254.0" layoutY="253.0" mnemonicParsing="false" onAction="#startServer" text="Start Server" />
-      <Label fx:id="label" layoutX="266.0" layoutY="200.0" text="Label" />
+      <Label fx:id="label" layoutX="266.0" layoutY="200.0" />
    </children>
 </AnchorPane>
