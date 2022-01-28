@@ -6,68 +6,98 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Server {
+    private final ExecutorService pool;
+    private final List<MyServerThread> clients;
+    private final int portNumber;
+    private  boolean stop;
     private boolean hasClient = false;
-    private int port = 23;
-    private ServerSocket serverSocket = null;
-    private static Socket socket;
-
-    private static ArrayList<ServerThread> clients = new ArrayList<>();
-    private static ExecutorService pool = Executors.newCachedThreadPool();
-
-    public void startServer() throws IOException {
-        System.out.println("Server started");
-        try {
-            serverSocket = new ServerSocket(port);
-            ServerThread st1 = null;
-                waitForConnection();
-
-                if(socket != null){
-                    st1 = new ServerThread(socket);
-                }
-
-                clients.add(st1);
-
-                if(st1 != null){
-                    pool.execute(st1);
-                }
 
 
+    public Server() {
+        this.portNumber = 23;
+        pool = Executors.newFixedThreadPool(3);
+        clients = new ArrayList<>();
+    }
+
+    private void runServer(){
+
+        System.out.println("SERVER: Waiting for client");
+        try{
+            ServerSocket serverSocket = new ServerSocket(portNumber);
+            stop = false;
+
+            while(! stop){//do in loop to support multiple clients
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("SERVER: client connected");
+                hasClient = true;
+                MyServerThread st1 = new MyServerThread(clientSocket);
+                pool.execute(st1);
+            }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }finally{
-            serverSocket.close();
+            e.printStackTrace();
         }
-
     }
 
-    private void waitForConnection(){
-        new Runnable(){
-            @Override
-            public void run() {
-                System.out.println(" Waiting for someone to connect... \n");
-                try {
-                    socket = serverSocket.accept();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                System.out.println(" Now connected to " + socket.getInetAddress().getHostName());
-            }};
+    public void stop(){
+        for( MyServerThread st : clients) {
+            st.stopServerTread();
+        }
+        stop = true;
+        pool.shutdown();
     }
 
-    public boolean hasClient() {
-        return hasClient;
-    }
-
-    public static String getIpAddress() {
+    public static String getIpAddress(){
         try {
             return Inet4Address.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-        return "no Ip Address found";
+        return "No IP Address found";
+    }
+    public boolean hasClient() {
+        return hasClient;
+    }
+
+    public void activate(){
+        new Thread(()->runServer()).start();
     }
 }
+
+class MyServerThread extends Thread {
+
+    private Socket socket = null;
+    private  boolean stop;
+
+    public MyServerThread(Socket socket) {
+        this.socket = socket;
+    }
+
+    @Override
+    public void run() {
+
+        try{
+            stop = false;
+            DataInputStream in = new DataInputStream( socket.getInputStream() );
+            String fromClient;
+            while(!stop){
+                System.out.println("We have a connection");
+                if((fromClient = in.readUTF()) != null) {
+                    System.out.println("SERVER: recieved message - " + fromClient);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();;
+        }
+    }
+
+    void stopServerTread(){
+        stop = true;
+    }
+}
+

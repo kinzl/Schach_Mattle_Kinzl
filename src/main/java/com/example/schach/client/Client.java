@@ -17,22 +17,22 @@ public class Client {
         this.IPADDRESS = IPADDRESS;
     }
 
-    public static void main(String[] args) {
-        Client client = new Client("localhost");
-        client.connectToServer();
-    }
+//    public static void main(String[] args) {
+//        Client client = new Client("localhost");
+//        client.start();
+//    }
 
-    public void connectToServer() {
-        String hostname = "localhost";
-        int port = 23;
+    public void start() {
 
         try {
-            Socket socket = new Socket(hostname, port);
-            InputStream input = socket.getInputStream();
-            InputStreamReader reader = new InputStreamReader(input);
-
-
+            socket = new Socket(IPADDRESS, PORT);
+            isConnectedWithTheServer = true;
+            br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             System.out.println("HURRA");
+
+
+
 
 
         } catch (UnknownHostException ex) {
