@@ -1,8 +1,12 @@
 package com.example.schach.client;
 
+import javafx.event.EventType;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 public class ChessboardController {
     public ImageView black_bauer4_1;
@@ -14,53 +18,50 @@ public class ChessboardController {
     public ImageView black_bauer6_1;
     public ImageView black_bauer7_1;
     public GridPane chessBoardView;
+    public ImageView black_left_horse;
+    public ImageView black_left_runner;
+    public ImageView black_queen;
+    public ImageView black_king;
+    public ImageView black_right_runner;
+    public ImageView black_right_horse;
+    public ImageView black_right_tower;
+    public ImageView white_bauer0_6;
+    public ImageView white_bauer1_6;
+    public ImageView white_bauer2_6;
+    public ImageView black_left_tower;
+    public ImageView white_bauer3_6;
+    public ImageView white_bauer4_6;
+    public ImageView white_bauer5_6;
+    public ImageView white_bauer6_6;
+    public ImageView white_bauer7_6;
+    public ImageView white_left_tower;
+    public ImageView white_left_horse;
+    public ImageView white_left_runner;
+    public ImageView white_queen;
+    public ImageView white_king;
+    public ImageView white_right_runner;
+    public ImageView white_right_horse;
+    public ImageView white_right_tower;
+
+        public Node node;
+        public Node slectedPic;
 
 
     public void fieldslected00(MouseEvent mouseEvent) {
+        slectedPic = (ImageView) mouseEvent.getSource();
+
+
     }
 
-    public void fieldslected01(MouseEvent mouseEvent) {
+    public void mouseDragExited(MouseEvent mouseEvent) {
+
+        int x = GridPane.getRowIndex((Node) mouseEvent.getSource());
+        int y = GridPane.getColumnIndex((Node) mouseEvent.getSource());
+
+        GridPane.setRowIndex(slectedPic,x);
+        GridPane.setColumnIndex(slectedPic,y);
+
     }
 
-    public void fieldslected02(MouseEvent mouseEvent) {
-    }
 
-    public void fieldslected03(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected04(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected05(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected06(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected07(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected10(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected11(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected12(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected13(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected14(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected15(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected16(MouseEvent mouseEvent) {
-    }
-
-    public void fieldslected17(MouseEvent mouseEvent) {
-    }
 }

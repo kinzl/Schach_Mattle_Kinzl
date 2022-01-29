@@ -14,6 +14,10 @@ public class Server {
     private int port = 23;
     private ServerSocket s = null;
 
+    public static void main(String[] args) throws IOException {
+        Server server = new Server();
+        server.startServer();
+    }
     private static ArrayList<ServerThread> clients = new ArrayList<>();
     private static ExecutorService pool = Executors.newFixedThreadPool(3);
 
