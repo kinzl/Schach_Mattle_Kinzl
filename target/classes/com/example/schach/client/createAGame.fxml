@@ -10,7 +10,8 @@
       <Text layoutX="238.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your IP Address" />
       <Text fx:id="IpAddress" layoutX="233.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.0" />
       <Button layoutX="254.0" layoutY="253.0" mnemonicParsing="false" onAction="#startServer" text="Start Server" />
-      <Label fx:id="label" layoutX="199.0" layoutY="183.0" prefHeight="17.0" prefWidth="183.0" />
-      <Button fx:id="play" layoutX="271.0" layoutY="309.0" mnemonicParsing="false" onAction="#playChess" text="Play" />
+      <Button fx:id="play" layoutX="272.0" layoutY="338.0" mnemonicParsing="false" onAction="#playChess" text="Play" />
+      <Button layoutX="265.0" layoutY="298.0" mnemonicParsing="false" onAction="#Refreh" text="Refreh" />
+      <Label fx:id="label" layoutX="277.0" layoutY="175.0" />
    </children>
 </AnchorPane>
