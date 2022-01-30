@@ -27,11 +27,13 @@ public class CreateAGame implements Initializable {
         //ToDo: Auf verbindung überprüfen
         server = new Server();
         server.activate();
-        while (server.hasClient()) {
+        if (server.hasClient()) {
             label.setText("Connected");
+            play.setDisable(false);
+        } else {
+            label.setText("Waiting for Connection");
+            play.setDisable(true);
         }
-        label.setText("Waiting for Connection");
-
     }
 
     private void setIpAddress() {
@@ -47,9 +49,19 @@ public class CreateAGame implements Initializable {
     public void playChess(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 350);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Chessfield");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void Refreh(ActionEvent actionEvent) {
+        if(server.hasClient()){
+            label.setText("Client connected");
+            System.out.println("Client connected");
+            play.setDisable(false);
+        }
+        label.setText("Waiting for Connection");
+        play.setDisable(true);
     }
 }

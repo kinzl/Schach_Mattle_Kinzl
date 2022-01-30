@@ -5,12 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="575.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.server.CreateAGame">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.CreateAGame">
    <children>
-      <Text layoutX="274.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your IP Address" AnchorPane.topAnchor="113.05078125" />
-      <Text fx:id="IpAddress" layoutX="274.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.0" AnchorPane.topAnchor="140.05078125" />
-      <Button layoutX="274.0" layoutY="402.0" mnemonicParsing="false" onAction="#startServer" prefHeight="16.0" prefWidth="84.0" text="Start Server" AnchorPane.bottomAnchor="148.0" />
-      <Label fx:id="label" layoutX="199.0" layoutY="183.0" prefHeight="17.0" prefWidth="183.0" />
-      <Button fx:id="play" layoutX="274.0" layoutY="476.0" mnemonicParsing="false" onAction="#playChess" prefHeight="16.0" prefWidth="84.0" text="Play" AnchorPane.bottomAnchor="74.0" />
+      <Text layoutX="238.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your IP Address" />
+      <Text fx:id="IpAddress" layoutX="233.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.0" />
+      <Button layoutX="254.0" layoutY="253.0" mnemonicParsing="false" onAction="#startServer" text="Start Server" />
+      <Button fx:id="play" layoutX="272.0" layoutY="338.0" mnemonicParsing="false" onAction="#playChess" text="Play" />
+      <Button layoutX="265.0" layoutY="298.0" mnemonicParsing="false" onAction="#Refreh" text="Refreh" />
+      <Label fx:id="label" layoutX="277.0" layoutY="175.0" />
    </children>
 </AnchorPane>

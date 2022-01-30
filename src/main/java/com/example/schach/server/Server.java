@@ -15,7 +15,7 @@ public class Server {
     private final List<MyServerThread> clients;
     private final int portNumber;
     private  boolean stop;
-    private boolean hasClient = false;
+    private boolean hasClient;
 
 
     public Server() {
