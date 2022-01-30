@@ -47,8 +47,9 @@ public class CreateAGame implements Initializable {
     public void playChess(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 350);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Chessfield");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }

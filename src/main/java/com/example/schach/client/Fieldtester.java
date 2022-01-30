@@ -15,6 +15,7 @@ public class Fieldtester extends Application {
         try {
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("join a game");
+            stage.setResizable(false);
             stage.setScene(scene);
             stage.show();
         }catch (Exception e)

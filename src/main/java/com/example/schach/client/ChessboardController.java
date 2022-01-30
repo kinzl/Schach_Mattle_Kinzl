@@ -48,14 +48,21 @@ public class ChessboardController {
     public ImageView black_bauer6;
     public ImageView black_bauer7;
     public ImageView black_bauer8;
+    public boolean isChoosen = false;
 
     public void fieldslected00(MouseEvent mouseEvent) {
-        slectedPic = (ImageView) mouseEvent.getSource();
-
+        int i = 0;
+        if (isChoosen = false){
+            slectedPic = (ImageView) mouseEvent.getSource();
+            isChoosen = true;
+        }else if(isChoosen == true){
+            isChoosen = false;
+            slectedPic = (ImageView) mouseEvent.getSource();
+            mouseDragExited(mouseEvent);
+        }
     }
 
     public void mouseDragExited(MouseEvent mouseEvent2) {
-
         Integer b = null;
         Integer x = GridPane.getRowIndex((Node) mouseEvent2.getSource());
         Integer y = GridPane.getColumnIndex((Node) mouseEvent2.getSource());
@@ -67,11 +74,6 @@ public class ChessboardController {
         }
         //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
             int []move = movePawn(x,y);
-        GridPane.setRowIndex(slectedPic,move[0]);
-        GridPane.setColumnIndex(slectedPic,move[1]);
-
-
-            checkField = (ImageView) mouseEvent2.getSource();
             Integer newFieldx  = GridPane.getRowIndex((Node) mouseEvent2.getSource());
             Integer newFieldy =  GridPane.getColumnIndex((Node) mouseEvent2.getSource());
             if(newFieldx == b){
@@ -81,10 +83,12 @@ public class ChessboardController {
                 newFieldy = 0;
             }
             String name = slectedPic.getId().replaceAll(".$","");
-
-           if (newFieldx == move[0] && newFieldy == move[1])
+            GridPane.setRowIndex(slectedPic,move[0]);
+            GridPane.setColumnIndex(slectedPic,move[1]);
+           if (newFieldx != null && newFieldy != null)
             {
-                checkField.setImage(new Image(String.valueOf(this.getClass().getResource("@../../../../images/"+ name +".png"))));
+                checkField.setImage(new Image(String.valueOf(this.getClass().getResource("/images/black_pawn.png"))));
+                chessBoardView.getChildren().set(0,checkField);
             }else{
 
             }
