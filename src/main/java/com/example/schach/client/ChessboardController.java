@@ -47,21 +47,39 @@ public class ChessboardController {
         public Node slectedPic;
 
 
+
     public void fieldslected00(MouseEvent mouseEvent) {
         slectedPic = (ImageView) mouseEvent.getSource();
+
 
 
     }
 
     public void mouseDragExited(MouseEvent mouseEvent) {
+        Integer b = null;
+        Integer x = GridPane.getRowIndex((Node) mouseEvent.getSource());
+        Integer y = GridPane.getColumnIndex((Node) mouseEvent.getSource());
+        if(x == b){
+            x = 0;
+        }
+        if(y == b){
+            y = 0;
+        }
 
-        int x = GridPane.getRowIndex((Node) mouseEvent.getSource());
-        int y = GridPane.getColumnIndex((Node) mouseEvent.getSource());
 
         GridPane.setRowIndex(slectedPic,x);
         GridPane.setColumnIndex(slectedPic,y);
 
     }
 
+
+    public static int[] movePawn()
+    {
+        Integer x = 0;
+        Integer y = 0;
+
+
+        return new int[]{x, y};
+    }
 
 }

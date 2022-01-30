@@ -27,22 +27,22 @@
                 <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Pane fx:id="pane00" onMouseClicked="#fieldslected00" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" />
-                <Pane fx:id="pane01" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
-                <Pane fx:id="pane02" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" />
-                <Pane fx:id="pane03" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" />
-                <Pane fx:id="pane04" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" />
-                <Pane fx:id="pane05" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" />
-                <Pane fx:id="pane06" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" />
-                <Pane fx:id="pane07" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" />
-                <Pane fx:id="pane10" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1" />
-                <Pane fx:id="pane11" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Pane fx:id="pane12" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                <Pane fx:id="pane13" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                <Pane fx:id="pane14" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                <Pane fx:id="pane15" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                <Pane fx:id="pane16" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                <Pane fx:id="pane17" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                <Pane fx:id="pane00" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" />
+                <Pane fx:id="pane01" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
+                <Pane fx:id="pane02" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" />
+                <Pane fx:id="pane03" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" />
+                <Pane fx:id="pane04" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" />
+                <Pane fx:id="pane05" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" />
+                <Pane fx:id="pane06" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" />
+                <Pane fx:id="pane07" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" />
+                <Pane fx:id="pane10" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1" />
+                <Pane fx:id="pane11" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Pane fx:id="pane12" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Pane fx:id="pane13" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Pane fx:id="pane14" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Pane fx:id="pane15" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                <Pane fx:id="pane16" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                <Pane fx:id="pane17" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
                 <Pane fx:id="pane20" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="2" />
                 <Pane fx:id="pane21" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <Pane fx:id="pane22" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
@@ -75,22 +75,22 @@
                 <Pane fx:id="pane55" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                 <Pane fx:id="pane56" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
                 <Pane fx:id="pane57" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                <Pane fx:id="pane60" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="6" />
-                <Pane fx:id="pane61" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                <Pane fx:id="pane62" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                <Pane fx:id="pane63" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                <Pane fx:id="pane64" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                <Pane fx:id="pane65" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                <Pane fx:id="pane66" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                <Pane fx:id="pane67" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                <Pane fx:id="pane70" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="7" />
-                <Pane fx:id="pane71" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                <Pane fx:id="pane72" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                <Pane fx:id="pane73" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                <Pane fx:id="pane74" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                <Pane fx:id="pane75" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                <Pane fx:id="pane76" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                <Pane fx:id="pane77" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                <Pane fx:id="pane60" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="6" />
+                <Pane fx:id="pane61" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Pane fx:id="pane62" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Pane fx:id="pane63" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                <Pane fx:id="pane64" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                <Pane fx:id="pane65" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                <Pane fx:id="pane66" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                <Pane fx:id="pane67" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                <Pane fx:id="pane70" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="7" />
+                <Pane fx:id="pane71" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Pane fx:id="pane72" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <Pane fx:id="pane73" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                <Pane fx:id="pane74" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                <Pane fx:id="pane75" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                <Pane fx:id="pane76" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                <Pane fx:id="pane77" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
                   <ImageView fx:id="black_left_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true">
                       <image>
                           <Image url="@../../../../images/black_rook.png" />
