@@ -1,5 +1,7 @@
 package com.example.schach.server;
 
+import com.example.schach.client.LoginController;
+
 import java.io.*;
 import java.net.Inet4Address;
 import java.net.ServerSocket;
@@ -14,7 +16,7 @@ public class Server {
     private final ExecutorService pool;
     private final List<MyServerThread> clients;
     private final int portNumber;
-    private  boolean stop;
+    private boolean stop;
     private boolean hasClient;
 
 
@@ -24,14 +26,14 @@ public class Server {
         clients = new ArrayList<>();
     }
 
-    private void runServer(){
+    private void runServer() {
 
         System.out.println("SERVER: Waiting for client");
-        try{
+        try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
             stop = false;
 
-            while(! stop){//do in loop to support multiple clients
+            while (!stop) {//do in loop to support multiple clients
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("SERVER: client connected");
                 hasClient = true;
@@ -43,15 +45,15 @@ public class Server {
         }
     }
 
-    public void stop(){
-        for( MyServerThread st : clients) {
+    public void stop() {
+        for (MyServerThread st : clients) {
             st.stopServerTread();
         }
         stop = true;
         pool.shutdown();
     }
 
-    public static String getIpAddress(){
+    public static String getIpAddress() {
         try {
             return Inet4Address.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
@@ -59,45 +61,12 @@ public class Server {
         }
         return "No IP Address found";
     }
+
     public boolean hasClient() {
         return hasClient;
     }
 
-    public void activate(){
-        new Thread(()->runServer()).start();
+    public void activate() {
+        new Thread(() -> runServer()).start();
     }
 }
-
-class MyServerThread extends Thread {
-
-    private Socket socket = null;
-    private  boolean stop;
-
-    public MyServerThread(Socket socket) {
-        this.socket = socket;
-    }
-
-    @Override
-    public void run() {
-
-        try{
-            stop = false;
-            DataInputStream in = new DataInputStream( socket.getInputStream() );
-            String fromClient;
-            while(!stop){
-                System.out.println("We have a connection");
-                if((fromClient = in.readUTF()) != null) {
-                    System.out.println("SERVER: recieved message - " + fromClient);
-                }
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();;
-        }
-    }
-
-    void stopServerTread(){
-        stop = true;
-    }
-}
-

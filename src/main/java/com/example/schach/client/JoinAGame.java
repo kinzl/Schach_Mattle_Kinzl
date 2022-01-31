@@ -30,7 +30,7 @@ public class JoinAGame implements Initializable {
 
         if(isValidIpAddress(ipAddress.getText())){
             client = new Client(ipAddress.getText());
-            client.start();
+            client.run();
             if(Client.isConnectedWithTheServer){
                 status.setText("Connected");
                 playButton.setDisable(false);
@@ -62,8 +62,6 @@ public class JoinAGame implements Initializable {
 
     public void play(ActionEvent actionEvent) throws IOException {
         //Opens new Window(Chessfield.fxml
-        Client client = new Client(ipAddress.getText());
-        client.start();
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

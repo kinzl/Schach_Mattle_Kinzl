@@ -19,8 +19,9 @@ import java.util.ResourceBundle;
 public class CreateAGame implements Initializable {
 
     public Text IpAddress;
-    public Label label;
+    //public Label label;
     public Button play;
+    public Text text;
     private Server server;
 
     public void startServer(ActionEvent actionEvent) throws IOException {
@@ -28,10 +29,12 @@ public class CreateAGame implements Initializable {
         server = new Server();
         server.activate();
         if (server.hasClient()) {
-            label.setText("Connected");
+            //label.setText("Connected");
+            text.setText("Connected");
             play.setDisable(false);
         } else {
-            label.setText("Waiting for Connection");
+            //label.setText("Waiting for Connection");
+            text.setText("Waiting for Connection");
             play.setDisable(true);
         }
     }
@@ -58,11 +61,14 @@ public class CreateAGame implements Initializable {
 
     public void Refreh(ActionEvent actionEvent) {
         if(server.hasClient()){
-            label.setText("Client connected");
-            System.out.println("Client connected");
+            //label.setText("Client connected");
+            text.setText("Client connected");
             play.setDisable(false);
+        } else {
+            //label.setText("Waiting for Connection");
+            text.setText("Waiting for Connection");
+            play.setDisable(true);
         }
-        label.setText("Waiting for Connection");
-        play.setDisable(true);
+
     }
 }

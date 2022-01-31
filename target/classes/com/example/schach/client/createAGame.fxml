@@ -13,5 +13,6 @@
       <Button fx:id="play" layoutX="272.0" layoutY="338.0" mnemonicParsing="false" onAction="#playChess" text="Play" />
       <Button layoutX="265.0" layoutY="298.0" mnemonicParsing="false" onAction="#Refreh" text="Refreh" />
       <Label fx:id="label" layoutX="277.0" layoutY="175.0" />
+      <Text fx:id="text" layoutX="280.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
