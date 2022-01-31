@@ -9,6 +9,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
+import java.nio.channels.Pipe;
+
 public class ChessboardController {
     public GridPane chessBoardView;
     public ImageView black_left_horse;
@@ -50,20 +52,19 @@ public class ChessboardController {
     public ImageView black_bauer7;
     public ImageView black_bauer8;
     public boolean isChoosen = false;
+    public boolean pressed = false;
     public MouseEvent mouseEvent1;
     public int isChoosenInt = 0;
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
 
-        if (isChoosen == false ){
-            clickedpic = (ImageView) mouseEvent.getSource();
-
+        if (clickedpic ==  (Node) mouseEvent.getSource() ){
+            pressed = false;
             isChoosen = true;
-        }else if(clickedpic != (Node) mouseEvent.getSource()&& isChoosen == true){
-
+            clickedpic = null;
+            System.out.println("Feld deaktiviert");
+        }else if(clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true){
             slectedPic  = (Node) mouseEvent.getSource();
-
-
             for (Node n: chessBoardView.getChildren()) {
                 if(n == slectedPic){
                     n.setVisible(false);
@@ -82,14 +83,23 @@ public class ChessboardController {
             GridPane.setRowIndex(clickedpic,move[0]);
             GridPane.setColumnIndex(clickedpic,move[1]);
             isChoosen = false;
-            clickedpic = null;
+            pressed = false;
+
+            System.out.println("Feld ersetzt");
+
+        }else
+        {
+            clickedpic = (ImageView) mouseEvent.getSource();
+            pressed = true;
+            isChoosen = true;
+            System.out.println("Feld ausgewählt");
+
         }
 
     }
 
     public void mouseDragExited(MouseEvent mouseEvent2) {
-       //4 slectedPic = (ImageView) mouseEvent2.getSource();
-        Integer b = null;
+       Integer b = null;
         Integer x = GridPane.getRowIndex((Node) mouseEvent2.getSource());
         Integer y = GridPane.getColumnIndex((Node) mouseEvent2.getSource());
         if(x == b){
@@ -101,7 +111,7 @@ public class ChessboardController {
         int []move = movePawn(x,y);
         GridPane.setRowIndex(clickedpic,move[0]);
         GridPane.setColumnIndex(clickedpic,move[1]);
-
+        System.out.println("Feld verschoben");
         //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
 //            Integer newFieldx  = GridPane.getRowIndex((Node) mouseEvent2.getSource());
 //            Integer newFieldy =  GridPane.getColumnIndex((Node) mouseEvent2.getSource());
@@ -112,7 +122,8 @@ public class ChessboardController {
 //                newFieldy = 0;
 //            }
 //           String name = slectedPic.getId().replaceAll(".$","");
-
+            isChoosen = false;
+            pressed = false;
         }
 
     public static int[] movePawn(int x, int y)
