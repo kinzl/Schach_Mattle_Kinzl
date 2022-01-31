@@ -52,14 +52,14 @@ public class ChessboardController {
 
     public void fieldslected00(MouseEvent mouseEvent) {
         int i = 0;
-        if (isChoosen = false){
+        //if (isChoosen = false){
             slectedPic = (ImageView) mouseEvent.getSource();
             isChoosen = true;
-        }else if(isChoosen == true){
-            isChoosen = false;
-            slectedPic = (ImageView) mouseEvent.getSource();
-            mouseDragExited(mouseEvent);
-        }
+//        }else if(isChoosen == true){
+//            isChoosen = false;
+//            slectedPic = (ImageView) mouseEvent.getSource();
+//            mouseDragExited(mouseEvent);
+//        }
     }
 
     public void mouseDragExited(MouseEvent mouseEvent2) {
@@ -74,6 +74,8 @@ public class ChessboardController {
         }
         //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
             int []move = movePawn(x,y);
+        GridPane.setRowIndex(slectedPic,move[0]);
+        GridPane.setColumnIndex(slectedPic,move[1]);
             Integer newFieldx  = GridPane.getRowIndex((Node) mouseEvent2.getSource());
             Integer newFieldy =  GridPane.getColumnIndex((Node) mouseEvent2.getSource());
             if(newFieldx == b){
@@ -82,9 +84,9 @@ public class ChessboardController {
             if(newFieldy == b){
                 newFieldy = 0;
             }
-            String name = slectedPic.getId().replaceAll(".$","");
-            GridPane.setRowIndex(slectedPic,move[0]);
-            GridPane.setColumnIndex(slectedPic,move[1]);
+           // String name = slectedPic.getId().replaceAll(".$","");
+
+
            if (newFieldx != null && newFieldy != null)
             {
                 checkField.setImage(new Image(String.valueOf(this.getClass().getResource("/images/black_pawn.png"))));
