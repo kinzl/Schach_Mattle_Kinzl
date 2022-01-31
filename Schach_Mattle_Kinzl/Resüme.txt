@@ -1,8 +1,0 @@
-Resüme von der 1. Woche (10.01 - 17.01):
-Wir haben lange gebraucht, bis unser Github richtig eingerichtet ist sprich 2 beim Projekt arbeiten können.
-Als wir es aber dann nach einiger Zeit geschafft haben, haben wir mit dem Login Fenster begonnen. Hier stehen wir immer noch
-weil wir überlegen müssen, wie der Server mit dem Client kommunizieren soll.
-
-Ziele für nächste Woche:
-Connection für 2 Clients auf 1 Server.
-Bedienbare User Interface bis zum Schachfeld.
