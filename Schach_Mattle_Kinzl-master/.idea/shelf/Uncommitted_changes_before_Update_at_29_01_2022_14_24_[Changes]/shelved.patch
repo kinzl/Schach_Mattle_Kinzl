@@ -1,0 +1,375 @@
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27__Changes_.xml	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ /dev/null	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
+@@ -1,19 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]" date="1642411648443" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 17.01.2022 10:27 [Changes]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/com/example/schach/server/Server.class" />
+-    <option name="AFTER_PATH" value="target/classes/com/example/schach/server/Server.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/Server.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/com/example/schach/client/Client.class" />
+-    <option name="AFTER_PATH" value="target/classes/com/example/schach/client/Client.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/Client.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/com/example/schach/client/LoginController.class" />
+-    <option name="AFTER_PATH" value="target/classes/com/example/schach/client/LoginController.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/LoginController.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ /dev/null	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
+@@ -1,84 +0,0 @@
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	(revision fbdb5589b3c1227e047609e514473fee4a466e51)
+-+++ b/.idea/misc.xml	(date 1642411542176)
+-@@ -7,7 +7,7 @@
+-       </list>
+-     </option>
+-   </component>
+--  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+-+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+-     <output url="file://$PROJECT_DIR$/out" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: src/main/java/com/example/schach/client/LoginController.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.schach.client;\r\n\r\nimport com.example.schach.server.Server;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.control.TextField;\r\n\r\nimport java.net.URL;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class LoginController implements Initializable {\r\n\r\n    public TextField username;\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n    }\r\n\r\n    public void joinAGame(ActionEvent actionEvent) {\r\n\r\n    }\r\n\r\n    public void createAGame(ActionEvent actionEvent) {\r\n\r\n        Server.startServer();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/java/com/example/schach/client/LoginController.java b/src/main/java/com/example/schach/client/LoginController.java
+---- a/src/main/java/com/example/schach/client/LoginController.java	(revision fbdb5589b3c1227e047609e514473fee4a466e51)
+-+++ b/src/main/java/com/example/schach/client/LoginController.java	(date 1642411542194)
+-@@ -3,9 +3,13 @@
+- import com.example.schach.server.Server;
+- import javafx.event.ActionEvent;
+- import javafx.fxml.FXML;
+-+import javafx.fxml.FXMLLoader;
+- import javafx.fxml.Initializable;
+-+import javafx.scene.Scene;
+- import javafx.scene.control.TextField;
+-+import javafx.stage.Stage;
+- 
+-+import java.io.IOException;
+- import java.net.URL;
+- import java.util.ResourceBundle;
+- 
+-@@ -22,8 +26,12 @@
+- 
+-     }
+- 
+--    public void createAGame(ActionEvent actionEvent) {
+--
+--        Server.startServer();
+-+    public void createAGame(ActionEvent actionEvent) throws IOException {
+-+        Stage stage = new Stage();
+-+        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Login.fxml"));
+-+        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+-+        stage.setTitle("Login");
+-+        stage.setScene(scene);
+-+        stage.show();
+-     }
+- }
+-Index: src/main/java/com/example/schach/client/testFile.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/java/com/example/schach/client/testFile.java b/src/main/java/com/example/schach/client/testFile.java
+-new file mode 100644
+---- /dev/null	(date 1642411542236)
+-+++ b/src/main/java/com/example/schach/client/testFile.java	(date 1642411542236)
+-@@ -0,0 +1,14 @@
+-+package com.example.schach.client;
+-+
+-+import java.net.Inet4Address;
+-+import java.net.UnknownHostException;
+-+
+-+public class testFile {
+-+    public static void main(String[] args) {
+-+        try {
+-+            System.out.println(Inet4Address.getLocalHost().getHostAddress());
+-+        } catch (UnknownHostException e) {
+-+            e.printStackTrace();
+-+        }
+-+    }
+-+}
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]/shelved.patch	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ /dev/null	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
+@@ -1,35 +0,0 @@
+-Index: ../.idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"117c5d02-50bf-417d-9de2-daf361b268dc\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/module-info.class\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"23oxalfihbxJF34DC85CCGfnjTh\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/Schach_Mattle_Kinzl\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"117c5d02-50bf-417d-9de2-daf361b268dc\" name=\"Changes\" comment=\"\" />\r\n      <created>1642414310322</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1642414310322</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/../.idea/workspace.xml b/../.idea/workspace.xml
+---- a/../.idea/workspace.xml	(revision 24da32c891a171095dc010901abdbcb922d05bca)
+-+++ b/../.idea/workspace.xml	(date 1642418920001)
+-@@ -4,23 +4,7 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="">
+--      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" beforeDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
+--    </list>
+-+    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="" />
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30__Changes_.xml	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ /dev/null	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]" date="1642419072813" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 17.01.2022 12:30 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/shelved.patch	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ /dev/null	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
+@@ -1,109 +0,0 @@
+-Index: .idea/misc.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/misc.xml b/.idea/misc.xml
+---- a/.idea/misc.xml	(revision d795058f1d3fd365f9c39849ea67c061a65eb19a)
+-+++ b/.idea/misc.xml	(date 1642410932359)
+-@@ -7,7 +7,7 @@
+-       </list>
+-     </option>
+-   </component>
+--  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+-+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
+-     <output url="file://$PROJECT_DIR$/out" />
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: src/main/java/com/example/schach/client/LoginController.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.schach.client;\r\n\r\nimport com.example.schach.server.Server;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.control.TextField;\r\n\r\nimport java.net.URL;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class LoginController implements Initializable {\r\n\r\n    public TextField username;\r\n\r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n\r\n    }\r\n\r\n    public void joinAGame(ActionEvent actionEvent) {\r\n\r\n    }\r\n\r\n    public void createAGame(ActionEvent actionEvent) {\r\n\r\n        Server.startServer();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/java/com/example/schach/client/LoginController.java b/src/main/java/com/example/schach/client/LoginController.java
+---- a/src/main/java/com/example/schach/client/LoginController.java	(revision d795058f1d3fd365f9c39849ea67c061a65eb19a)
+-+++ b/src/main/java/com/example/schach/client/LoginController.java	(date 1642411473081)
+-@@ -3,9 +3,13 @@
+- import com.example.schach.server.Server;
+- import javafx.event.ActionEvent;
+- import javafx.fxml.FXML;
+-+import javafx.fxml.FXMLLoader;
+- import javafx.fxml.Initializable;
+-+import javafx.scene.Scene;
+- import javafx.scene.control.TextField;
+-+import javafx.stage.Stage;
+- 
+-+import java.io.IOException;
+- import java.net.URL;
+- import java.util.ResourceBundle;
+- 
+-@@ -22,8 +26,12 @@
+- 
+-     }
+- 
+--    public void createAGame(ActionEvent actionEvent) {
+--
+--        Server.startServer();
+-+    public void createAGame(ActionEvent actionEvent) throws IOException {
+-+        Stage stage = new Stage();
+-+        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Login.fxml"));
+-+        Scene scene = new Scene(fxmlLoader.load(), 400, 600);
+-+        stage.setTitle("Login");
+-+        stage.setScene(scene);
+-+        stage.show();
+-     }
+- }
+-Index: target/classes/com/example/schach/client/Login.fxml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"300.0\" prefWidth=\"400.0\" xmlns=\"http://javafx.com/javafx/17\" xmlns:fx=\"http://javafx.com/fxml/1\">\r\n   <Button layoutX=\"129.0\" layoutY=\"199.0\" mnemonicParsing=\"false\" prefHeight=\"37.0\" prefWidth=\"159.0\" text=\"ConnectToServer\" />\r\n   <TextField id=\"IP Address\" layoutX=\"134.0\" layoutY=\"87.0\" promptText=\"IP Address\" />\r\n   <TextField id=\"Port\" layoutX=\"134.0\" layoutY=\"138.0\" promptText=\"Port\" />\r\n   <opaqueInsets>\r\n      <Insets />\r\n   </opaqueInsets>\r\n</AnchorPane>\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/target/classes/com/example/schach/client/Login.fxml b/target/classes/com/example/schach/client/Login.fxml
+---- a/target/classes/com/example/schach/client/Login.fxml	(revision d795058f1d3fd365f9c39849ea67c061a65eb19a)
+-+++ b/target/classes/com/example/schach/client/Login.fxml	(date 1642409699372)
+-@@ -5,10 +5,10 @@
+- <?import javafx.scene.control.TextField?>
+- <?import javafx.scene.layout.AnchorPane?>
+- 
+--<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+--   <Button layoutX="129.0" layoutY="199.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="159.0" text="ConnectToServer" />
+--   <TextField id="IP Address" layoutX="134.0" layoutY="87.0" promptText="IP Address" />
+--   <TextField id="Port" layoutX="134.0" layoutY="138.0" promptText="Port" />
+-+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.LoginController">
+-+   <Button layoutX="57.0" layoutY="199.0" mnemonicParsing="false" onAction="#createAGame" prefHeight="37.0" prefWidth="159.0" text="Create a game" />
+-+   <Button layoutX="227.0" layoutY="199.0" mnemonicParsing="false" onAction="#joinAGame" prefHeight="37.0" prefWidth="159.0" text="Join a game" />
+-+   <TextField fx:id="username" layoutX="116.0" layoutY="88.0" promptText="Username" />
+-    <opaqueInsets>
+-       <Insets />
+-    </opaqueInsets>
+-Index: src/main/java/com/example/schach/client/testFile.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/src/main/java/com/example/schach/client/testFile.java b/src/main/java/com/example/schach/client/testFile.java
+-new file mode 100644
+---- /dev/null	(date 1642411195079)
+-+++ b/src/main/java/com/example/schach/client/testFile.java	(date 1642411195079)
+-@@ -0,0 +1,14 @@
+-+package com.example.schach.client;
+-+
+-+import java.net.Inet4Address;
+-+import java.net.UnknownHostException;
+-+
+-+public class testFile {
+-+    public static void main(String[] args) {
+-+        try {
+-+            System.out.println(Inet4Address.getLocalHost().getHostAddress());
+-+        } catch (UnknownHostException e) {
+-+            e.printStackTrace();
+-+        }
+-+    }
+-+}
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24__Changes_.xml	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ /dev/null	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
+@@ -1,19 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]" date="1642411543315" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 17.01.2022 10:24 [Changes]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/com/example/schach/server/Server.class" />
+-    <option name="AFTER_PATH" value="target/classes/com/example/schach/server/Server.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/Server.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/com/example/schach/client/Client.class" />
+-    <option name="AFTER_PATH" value="target/classes/com/example/schach/client/Client.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/Client.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/com/example/schach/client/LoginController.class" />
+-    <option name="AFTER_PATH" value="target/classes/com/example/schach/client/LoginController.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/LoginController.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"117c5d02-50bf-417d-9de2-daf361b268dc\" name=\"Changes\" comment=\"chessfiel with figures\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/figure/Bishop.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/figure/Bishop.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/schach/server/ServerThread.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/schach/server/ServerThread.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/module-info.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/module-info.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--follow-tags\" />\r\n        <option name=\"title\" value=\"Current Branch\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"23oxalfihbxJF34DC85CCGfnjTh\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../../POS/Hoemwork5_Threads2.0\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Login\">\r\n    <configuration name=\"Client\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.schach.client.Client\" />\r\n      <module name=\"Schach\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.schach.client.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Login\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.schach.client.Login\" />\r\n      <module name=\"Schach\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.schach.client.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Login\" />\r\n        <item itemvalue=\"Application.Client\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"117c5d02-50bf-417d-9de2-daf361b268dc\" name=\"Changes\" comment=\"\" />\r\n      <created>1642414310322</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1642414310322</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"chessfiel with figures\">\r\n      <created>1642974504271</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1642974504271</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"chessfiel with figures\">\r\n      <created>1643014342850</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1643014342850</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"chessfiel with figures\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"chessfiel with figures\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 23239840c82bfc50cc1e15376a6bdf9ee08975ef)
++++ b/.idea/workspace.xml	(date 1643462617736)
+@@ -5,19 +5,19 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="chessfiel with figures">
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/figure/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/figure/Bishop.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/ServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/ServerThread.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/Client.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/LoginController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/Server.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_24__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/Client.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/LoginController.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/Server.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_10_27__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_01_2022_12_30__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -42,7 +42,7 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../POS/Hoemwork5_Threads2.0" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hoemwork5_Threads2.0" />
+   </component>
+   <component name="RunManager" selected="Application.Login">
+     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+@@ -114,6 +114,7 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="chessfiel with figures" />
