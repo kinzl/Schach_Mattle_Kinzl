@@ -53,7 +53,7 @@ public class ChessboardController {
     public ImageView black_bauer8;
     public boolean isChoosen = false;
     public boolean pressed = false;
-    public MouseEvent mouseEvent1;
+    public static MouseEvent mouseEvent1;
     public int isChoosenInt = 0;
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
@@ -111,26 +111,33 @@ public class ChessboardController {
         int []move = movePawn(x,y);
         GridPane.setRowIndex(clickedpic,move[0]);
         GridPane.setColumnIndex(clickedpic,move[1]);
+
         System.out.println("Feld verschoben");
-        //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
-//            Integer newFieldx  = GridPane.getRowIndex((Node) mouseEvent2.getSource());
-//            Integer newFieldy =  GridPane.getColumnIndex((Node) mouseEvent2.getSource());
-//            if(newFieldx == b){
-//                newFieldx = 0;
-//            }
-//            if(newFieldy == b){
-//                newFieldy = 0;
-//            }
-//           String name = slectedPic.getId().replaceAll(".$","");
             isChoosen = false;
             pressed = false;
         }
 
-    public static int[] movePawn(int x, int y)
+    public int[] movePawn(int x, int y)
     {
-        Integer x1 = x;
-        Integer y1 = y;
-        return new int[]{x1, y1};
+        Integer newX = x;
+        Integer newY = y;
+        Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
+        Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
+        String name = clickedpic.getId().replaceAll(".$","");
+
+        if(newX < oldX && name.contains("black"))
+        {
+            return new int[]{oldX, oldY};
+        }else if(newX > oldX && name.contains("white"))
+        {
+            return new int[]{oldX, oldY};
+        }else if(oldX== 6 && name.contains("white"))
+        {
+
+        }
+
+
+        return new int[]{newX, newY};
 
     }
 
