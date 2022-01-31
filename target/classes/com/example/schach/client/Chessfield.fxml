@@ -8,10 +8,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="844.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
+<AnchorPane prefHeight="864.0" prefWidth="666.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
    <children>
-      <AnchorPane layoutX="46.0" layoutY="227.0" prefHeight="606.0" prefWidth="649.0" style="-fx-background-color: #8B4513;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="227.0">
+      <AnchorPane layoutX="185.0" layoutY="237.0" prefHeight="627.0" prefWidth="690.0" style="-fx-background-color: #8B4513;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="237.0">
           <children>
               <GridPane fx:id="chessBoardView" gridLinesVisible="true" layoutX="1.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="520.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="35.0">
                   <columnConstraints>
@@ -263,13 +264,19 @@
               </GridPane>
           </children>
       </AnchorPane>
-      <ImageView fitHeight="167.0" fitWidth="395.0" layoutX="167.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="167.0" AnchorPane.rightAnchor="166.51922607421875" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="239.0" fitWidth="541.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="144.0" AnchorPane.topAnchor="-1.0">
          <image>
             <Image url="@../../../../images/xVsY.png" />
          </image>
       </ImageView>
-      <Label fx:id="player1" layoutX="193.0" layoutY="51.0" prefHeight="66.0" prefWidth="117.0" AnchorPane.leftAnchor="193.0" AnchorPane.rightAnchor="380.0" AnchorPane.topAnchor="51.0" />
-      <Label fx:id="player2" layoutX="382.0" layoutY="45.0" prefHeight="91.0" prefWidth="117.0" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="45.0" />
+      <Label fx:id="player1" layoutX="154.0" layoutY="55.0" prefHeight="121.0" prefWidth="132.0" textFill="WHITE" AnchorPane.leftAnchor="154.0" AnchorPane.rightAnchor="404.0" AnchorPane.topAnchor="55.0">
+         <font>
+            <Font size="30.0" />
+         </font></Label>
+      <Label fx:id="player2" layoutX="400.0" layoutY="44.0" prefHeight="136.0" prefWidth="152.0" textFill="WHITE" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="138.0" AnchorPane.topAnchor="44.0">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font></Label>
       <Label fx:id="TimerPlayer1" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="99.0" />
       <Label fx:id="TimerPlayer2" layoutX="568.0" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" />
       <Label fx:id="TimeOverAll" layoutX="317.0" layoutY="198.0" />
