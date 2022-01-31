@@ -38,8 +38,9 @@ public class ChessboardController {
     public ImageView black_bauer;
     public ImageView img;
     public Node node;
-    public ImageView checkField;
+    public Node checkField;
     public Node slectedPic;
+    public Node clickedpic;
     public ImageView black_bauer1;
     public ImageView black_bauer2;
     public ImageView black_bauer3;
@@ -49,20 +50,45 @@ public class ChessboardController {
     public ImageView black_bauer7;
     public ImageView black_bauer8;
     public boolean isChoosen = false;
-
+    public MouseEvent mouseEvent1;
+    public int isChoosenInt = 0;
     public void fieldslected00(MouseEvent mouseEvent) {
-        int i = 0;
-        //if (isChoosen = false){
-            slectedPic = (ImageView) mouseEvent.getSource();
+        mouseEvent1 = mouseEvent;
+
+        if (isChoosen == false ){
+            clickedpic = (ImageView) mouseEvent.getSource();
+
             isChoosen = true;
-//        }else if(isChoosen == true){
-//            isChoosen = false;
-//            slectedPic = (ImageView) mouseEvent.getSource();
-//            mouseDragExited(mouseEvent);
-//        }
+        }else if(clickedpic != (Node) mouseEvent.getSource()&& isChoosen == true){
+
+            slectedPic  = (Node) mouseEvent.getSource();
+
+
+            for (Node n: chessBoardView.getChildren()) {
+                if(n == slectedPic){
+                    n.setVisible(false);
+                }
+            }
+            Integer b = null;
+            Integer x = GridPane.getRowIndex((Node) slectedPic);
+            Integer y = GridPane.getColumnIndex((Node) slectedPic);
+            if(x == b){
+                x = 0;
+            }
+            if(y == b){
+                y = 0;
+            }
+            int []move = movePawn(x,y);
+            GridPane.setRowIndex(clickedpic,move[0]);
+            GridPane.setColumnIndex(clickedpic,move[1]);
+            isChoosen = false;
+            clickedpic = null;
+        }
+
     }
 
     public void mouseDragExited(MouseEvent mouseEvent2) {
+       //4 slectedPic = (ImageView) mouseEvent2.getSource();
         Integer b = null;
         Integer x = GridPane.getRowIndex((Node) mouseEvent2.getSource());
         Integer y = GridPane.getColumnIndex((Node) mouseEvent2.getSource());
@@ -72,33 +98,22 @@ public class ChessboardController {
         if(y == b){
             y = 0;
         }
+        int []move = movePawn(x,y);
+        GridPane.setRowIndex(clickedpic,move[0]);
+        GridPane.setColumnIndex(clickedpic,move[1]);
+
         //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
-            int []move = movePawn(x,y);
-        GridPane.setRowIndex(slectedPic,move[0]);
-        GridPane.setColumnIndex(slectedPic,move[1]);
-            Integer newFieldx  = GridPane.getRowIndex((Node) mouseEvent2.getSource());
-            Integer newFieldy =  GridPane.getColumnIndex((Node) mouseEvent2.getSource());
-            if(newFieldx == b){
-                newFieldx = 0;
-            }
-            if(newFieldy == b){
-                newFieldy = 0;
-            }
-           // String name = slectedPic.getId().replaceAll(".$","");
+//            Integer newFieldx  = GridPane.getRowIndex((Node) mouseEvent2.getSource());
+//            Integer newFieldy =  GridPane.getColumnIndex((Node) mouseEvent2.getSource());
+//            if(newFieldx == b){
+//                newFieldx = 0;
+//            }
+//            if(newFieldy == b){
+//                newFieldy = 0;
+//            }
+//           String name = slectedPic.getId().replaceAll(".$","");
 
-
-           if (newFieldx != null && newFieldy != null)
-            {
-                checkField.setImage(new Image(String.valueOf(this.getClass().getResource("/images/black_pawn.png"))));
-                chessBoardView.getChildren().set(0,checkField);
-            }else{
-
-            }
-
-        //}
-
-    }
-
+        }
 
     public static int[] movePawn(int x, int y)
     {

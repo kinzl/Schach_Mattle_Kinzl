@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="movement">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_14_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_14_24__Changes_.xml" afterDir="false" />
+    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +29,14 @@
       </GitPushTagMode>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="23oxalfihbxJF34DC85CCGfnjTh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -130,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643612241291</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="field changes">
+      <created>1643612607638</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1643612607638</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +161,7 @@
     <MESSAGE value="first movement" />
     <MESSAGE value="chessfiel with onaction" />
     <MESSAGE value="movement" />
-    <option name="LAST_COMMIT_MESSAGE" value="movement" />
+    <MESSAGE value="field changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="field changes" />
   </component>
 </project>
