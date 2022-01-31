@@ -1,11 +1,9 @@
 package com.example.schach.client;
 
-import com.example.schach.server.MyServerThread;
 import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseDragEvent;
@@ -15,7 +13,6 @@ import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Timer;
 
 public class ChessboardController implements Initializable {
     public GridPane chessBoardView;
@@ -85,7 +82,7 @@ public class ChessboardController implements Initializable {
         if(y == b){
             y = 0;
         }
-        //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)||slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
+        //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
             int []move = movePawn(x,y);
         GridPane.setRowIndex(slectedPic,move[0]);
         GridPane.setColumnIndex(slectedPic,move[1]);
@@ -123,9 +120,6 @@ public class ChessboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        player1.setText(MyServerThread.getClientUsername());
-        player2.setText(MyServerThread.getUsername());
-
 
     }
 }

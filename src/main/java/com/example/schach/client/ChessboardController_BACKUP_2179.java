@@ -5,7 +5,10 @@ import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+<<<<<<< HEAD:Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController.java
 import javafx.scene.control.MenuBar;
+=======
+>>>>>>> 1bbe6b4ee63ac6fc46462dcaed94f75adb6f22c8:src/main/java/com/example/schach/client/ChessboardController.java
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseDragEvent;
@@ -15,7 +18,10 @@ import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+<<<<<<< HEAD:Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController.java
 import java.util.Timer;
+=======
+>>>>>>> 1bbe6b4ee63ac6fc46462dcaed94f75adb6f22c8:src/main/java/com/example/schach/client/ChessboardController.java
 
 public class ChessboardController implements Initializable {
     public GridPane chessBoardView;
@@ -85,7 +91,11 @@ public class ChessboardController implements Initializable {
         if(y == b){
             y = 0;
         }
+<<<<<<< HEAD:Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController.java
         //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)||slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
+=======
+        //if(slectedPic.equals(black_bauer1)||slectedPic.equals(black_bauer2)|| slectedPic.equals(black_bauer3)|| slectedPic.equals(black_bauer4)|| slectedPic.equals(black_bauer5)|| slectedPic.equals(black_bauer6)|| slectedPic.equals(black_bauer7)|| slectedPic.equals(black_bauer8)){
+>>>>>>> 1bbe6b4ee63ac6fc46462dcaed94f75adb6f22c8:src/main/java/com/example/schach/client/ChessboardController.java
             int []move = movePawn(x,y);
         GridPane.setRowIndex(slectedPic,move[0]);
         GridPane.setColumnIndex(slectedPic,move[1]);
@@ -123,9 +133,12 @@ public class ChessboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+<<<<<<< HEAD:Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController.java
         player1.setText(MyServerThread.getClientUsername());
         player2.setText(MyServerThread.getUsername());
 
+=======
+>>>>>>> 1bbe6b4ee63ac6fc46462dcaed94f75adb6f22c8:src/main/java/com/example/schach/client/ChessboardController.java
 
     }
 }
