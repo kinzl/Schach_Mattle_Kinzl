@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.CreateAGame">
+   <children>
+      <Text layoutX="238.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your IP Address" />
+      <Text fx:id="IpAddress" layoutX="233.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="115.0" />
+      <Button layoutX="254.0" layoutY="253.0" mnemonicParsing="false" onAction="#startServer" text="Start Server" />
+      <Button fx:id="play" layoutX="272.0" layoutY="338.0" mnemonicParsing="false" onAction="#playChess" text="Play" />
+      <Button layoutX="265.0" layoutY="298.0" mnemonicParsing="false" onAction="#Refreh" text="Refreh" />
+      <Label fx:id="label" layoutX="277.0" layoutY="175.0" />
+      <Text fx:id="text" layoutX="280.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
