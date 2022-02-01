@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Schach.iml" filepath="$PROJECT_DIR$/Schach.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Project_Schach_Mattle_Kinzl.iml" filepath="$PROJECT_DIR$/.idea/Project_Schach_Mattle_Kinzl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Schach_Mattle_Kinzl-29e686b7096eb6d4c58110cc65e08b38ce1bd775/Schach.iml" filepath="$PROJECT_DIR$/Schach_Mattle_Kinzl-29e686b7096eb6d4c58110cc65e08b38ce1bd775/Schach.iml" />
     </modules>
   </component>
 </project>

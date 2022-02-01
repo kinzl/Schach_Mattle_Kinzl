@@ -5,123 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / movment">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_base_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_controls_win_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_14_24_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_29_01_2022_14_24__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_07_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_07_56__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_05_[Changes]/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_05_[Changes]1/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_06_[Changes]/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_06_[Changes]1/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_08_[Changes]/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_09_[Changes]/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_10_[Changes]/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_14_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/shelf/Uncommitted_changes_before_Update_at_31_01_2022_11_14__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/Arbeitspakete_Stundenzuteilung" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/Resüme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/Schach.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_BACKUP_1682.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_BACKUP_2179.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_BASE_1682.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_BASE_2179.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_LOCAL_1682.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_LOCAL_2179.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_REMOTE_1682.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/ChessboardController_REMOTE_2179.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/CreateAGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/Fieldtester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/JoinAGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/client/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/com/example/schach/server/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/com/example/schach/client/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/com/example/schach/client/createAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/com/example/schach/client/joinAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/black_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/black_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/black_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/black_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/black_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/black_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/clear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/load.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/remove.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/reset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/save.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/swap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/white_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/white_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/white_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/white_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/white_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/white_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/src/main/resources/images/xVsY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/Chessfield.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/createAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/client/joinAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/com/example/schach/server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/black_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/black_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/black_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/black_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/black_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/black_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/clear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/load.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/remove.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/reset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/save.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/swap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/white_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/white_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/white_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/white_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/white_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/white_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/images/xVsY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Schach_Mattle_Kinzl-master/target/classes/module-info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schach.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +28,7 @@
         <option name="title" value="Current Branch" />
       </GitPushTagMode>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -168,7 +54,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../3 Klasse/POS/chess-master" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
   <component name="RunManager" selected="Application.Fieldtester">
@@ -289,6 +175,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chessfiel with figures" />
