@@ -108,9 +108,18 @@ public class ChessboardController {
         if(y == b){
             y = 0;
         }
-        int []move = movePawn(x,y);
-        GridPane.setRowIndex(clickedpic,move[0]);
-        GridPane.setColumnIndex(clickedpic,move[1]);
+        if(clickedpic != null)
+        {
+            String name2 = clickedpic.getId().replaceAll(".$","");
+
+        }
+
+            //if(name2.contains("pawn")) {
+                int[] move = movePawn(x, y);
+                GridPane.setRowIndex(clickedpic, move[0]);
+                GridPane.setColumnIndex(clickedpic, move[1]);
+           // }
+
 
         System.out.println("Feld verschoben");
             isChoosen = false;
@@ -123,22 +132,55 @@ public class ChessboardController {
         Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
+        Integer b = null;
+        if(oldX == b){
+            oldX = 0;
+        }
+        if(oldY == b){
+            oldY = 0;
+        }
         String name = clickedpic.getId().replaceAll(".$","");
 
-        if(newX < oldX && name.contains("black"))
-        {
+
+            if(newX < oldX && name.contains("black"))
+            {
+                return new int[]{oldX, oldY};
+            }
+            if(newX > oldX && name.contains("white"))
+            {
+                return new int[]{oldX, oldY};
+            }
+            //nicht weiter als 2 felder beim ersten zug (weiß)
+            if(oldX== 6 && name.contains("white") && newX >= 4)
+            {
+                return new int[]{newX, newY};
+            }
+            //immer nur ein feld
+            if(oldX != 6 && name.contains("white") && newX <= newX+1)
+            {
+                return  new int[]{newX,newY};
+            }
+            //nicht weiter als 2 felder beim ersten zug(black)
+            if(oldX== 1 && name.contains("black") && newX <= 3)
+            {
+                return new int[]{newX, newY};
+            }
+            //immer nur ein feld(black)
+            if(oldX != 1 && name.contains("black") && newX <= newX+1)
+            {
+                return  new int[]{newX,newY};
+            }
+            //nicht nach links/rechts
+            if(newY == oldY && name.contains("black"))
+            {
+                return new int[]{oldX,oldY};
+            }
+            if(newY == oldY  && name.contains("white"))
+            {
+                return new int[]{oldX,oldY};
+            }
+
             return new int[]{oldX, oldY};
-        }else if(newX > oldX && name.contains("white"))
-        {
-            return new int[]{oldX, oldY};
-        }else if(oldX== 6 && name.contains("white"))
-        {
-
-        }
-
-
-        return new int[]{newX, newY};
-
     }
 
 }
