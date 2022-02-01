@@ -1,7 +1,9 @@
 package com.example.schach.client;
 
 import javafx.event.EventType;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseDragEvent;
@@ -9,9 +11,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
+import java.net.URL;
 import java.nio.channels.Pipe;
+import java.util.ResourceBundle;
 
-public class ChessboardController {
+public class ChessboardController implements Initializable {
     public GridPane chessBoardView;
     public ImageView black_left_horse;
     public ImageView black_left_runner;
@@ -55,6 +59,9 @@ public class ChessboardController {
     public boolean pressed = false;
     public static MouseEvent mouseEvent1;
     public int isChoosenInt = 0;
+    public Label player1;
+    public Label player2;
+
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
 
@@ -183,4 +190,9 @@ public class ChessboardController {
             return new int[]{oldX, oldY};
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        player1.setText(Client.getUsername());
+        player2.setText(Client.getServerUsername());
+    }
 }

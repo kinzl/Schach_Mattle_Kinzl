@@ -19,8 +19,6 @@ public class Client implements Runnable {
         this.IPADDRESS = IPADDRESS;
     }
 
-
-
     @Override
     public void run() {
         try {
@@ -78,5 +76,9 @@ public class Client implements Runnable {
 
     public static String getServerUsername() {
         return serverUsername;
+    }
+
+    public static String getUsername() {
+        return username;
     }
 }
