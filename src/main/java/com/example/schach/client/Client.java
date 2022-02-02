@@ -14,7 +14,9 @@ public class Client implements Runnable {
     private static String username;
     private BufferedWriter writer;
     private BufferedReader reader;
-    private static boolean isWhite = true;
+    private static boolean isClientWhite = true;
+    private static boolean isServerWhite = false;
+
 
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
@@ -84,7 +86,11 @@ public class Client implements Runnable {
         return username;
     }
 
-    public static boolean getIsWhite() {
-        return isWhite;
+    public static boolean isIsClientWhite() {
+        return isClientWhite;
+    }
+
+    public static boolean isIsServerWhite() {
+        return isServerWhite;
     }
 }
