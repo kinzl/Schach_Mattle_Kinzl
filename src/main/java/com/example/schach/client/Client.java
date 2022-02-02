@@ -44,11 +44,12 @@ public class Client implements Runnable {
         } catch (UnknownHostException ex) {
 
             System.out.println("Server not found: " + ex.getMessage());
-            ex.printStackTrace();
+
+            //ex.printStackTrace();
         } catch (IOException ex) {
 
             System.out.println("I/O error: " + ex.getMessage());
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
 

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / movment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-    </list>
+    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="overall push" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +38,8 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/Fieldtester.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="23oxalfihbxJF34DC85CCGfnjTh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,7 +53,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../3 Klasse/POS/chess-master" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
-  <component name="RunManager" selected="Application.Fieldtester">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="Fieldtester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.schach.client.Fieldtester" />
       <module name="Schach" />
@@ -97,10 +93,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Schach" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Schach" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Fieldtester" />
         <item itemvalue="Application.Login" />
+        <item itemvalue="Application.Fieldtester" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +184,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chessfiel with figures" />

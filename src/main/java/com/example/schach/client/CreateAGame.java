@@ -22,9 +22,11 @@ public class CreateAGame implements Initializable {
     //public Label label;
     public Button play;
     public Text text;
+    public Button startServerID;
     private Server server;
 
     public void startServer(ActionEvent actionEvent) throws IOException {
+        startServerID.setDisable(true);
         //ToDo: Auf verbindung überprüfen
         server = new Server();
         server.activate();
@@ -34,7 +36,7 @@ public class CreateAGame implements Initializable {
             play.setDisable(false);
         } else {
             //label.setText("Waiting for Connection");
-            text.setText("Waiting for Connection");
+            text.setText("Server started");
             play.setDisable(true);
         }
     }

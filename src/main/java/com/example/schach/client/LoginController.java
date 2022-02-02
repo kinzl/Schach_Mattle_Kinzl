@@ -34,7 +34,7 @@ public class LoginController implements Initializable {
             Client.setUsername(username.getText());
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("joinAGame.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Join a Game");
             stage.setScene(scene);
             stage.show();
@@ -50,7 +50,7 @@ public class LoginController implements Initializable {
             MyServerThread.setUsername(username.getText());
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("createAGame.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 500, 500);
+            Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Create a Game");
             stage.setScene(scene);
             stage.show();

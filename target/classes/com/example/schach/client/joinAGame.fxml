@@ -12,11 +12,11 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <Button layoutX="255.0" layoutY="236.0" mnemonicParsing="false" onAction="#connectToServer" text="Connect" AnchorPane.bottomAnchor="134.0">
+      <Button fx:id="connectButtonID" layoutX="255.0" layoutY="236.0" mnemonicParsing="false" onAction="#connectToServer" text="Connect" AnchorPane.bottomAnchor="134.0">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Text fx:id="status" layoutX="161.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="255.0" AnchorPane.topAnchor="189.8134765625">
+      <Text fx:id="status" layoutX="161.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="255.0" AnchorPane.topAnchor="189.8134765625">
          <font>
             <Font size="15.0" />
          </font></Text>
