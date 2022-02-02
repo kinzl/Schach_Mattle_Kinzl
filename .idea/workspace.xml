@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / movment from pawn">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

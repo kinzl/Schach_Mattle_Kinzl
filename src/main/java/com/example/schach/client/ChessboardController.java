@@ -121,9 +121,7 @@ public class ChessboardController implements Initializable {
         }
         if (clickedpic != null) {
             String name2 = clickedpic.getId().replaceAll(".$", "");
-
         }
-
         //if(name2.contains("pawn")) {
         int[] move = movePawn(x, y);
         GridPane.setRowIndex(clickedpic, move[0]);
@@ -142,12 +140,25 @@ public class ChessboardController implements Initializable {
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
         String name = clickedpic.getId().replaceAll(".$", "");
+        Integer b = null;
+        if (newX == b) {
+            newX = 0;
+        }
+        if (newY == b) {
+            newY = 0;
+        }
+        if (oldX == b) {
+            oldX = 0;
+        }
+        if (oldY == b) {
+            oldY = 0;
+        }
 
 
         if (name.contains("black")) {
-            if (oldX == 1 && newX <= 3) {
+            if (oldX == 1 && newX <= 3 && newY == oldY) {
                 return new int[]{newX, newY};
-            } else if (oldX > 1 && newX == oldX + 1) {
+            } else if (oldX > 1 && newX == oldX + 1 && newY == oldY) {
                 return new int[]{newX, newY};
             } else {
                 newY = oldY;
@@ -155,11 +166,10 @@ public class ChessboardController implements Initializable {
             }
 
             return new int[]{newX, newY};
-
         } else if (name.contains("white")) {
-            if (oldX == 6 && newX >= 4) {
+            if (oldX == 6 && newX >= 4 && newY == oldY) {
                 return new int[]{newX, newY};
-            } else if (oldX < 6 && newX == oldX - 1) {
+            } else if (oldX < 6 && newX == oldX - 1 && newY == oldY) {
                 return new int[]{newX, newY};
             } else {
                 newY = oldY;
