@@ -21,21 +21,21 @@
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="704.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <Button layoutX="194.0" layoutY="359.0" mnemonicParsing="false" onAction="#createAGame" prefHeight="37.0" prefWidth="159.0" text="Create a game" AnchorPane.bottomAnchor="64.0">
+         <Button layoutX="210.0" layoutY="384.0" mnemonicParsing="false" onAction="#createAGame" prefHeight="37.0" prefWidth="159.0" text="Create a game" AnchorPane.bottomAnchor="82.0">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
-         <Button layoutX="369.0" layoutY="359.0" mnemonicParsing="false" onAction="#joinAGame" prefHeight="37.0" prefWidth="159.0" text="Join a game" AnchorPane.bottomAnchor="64.0">
+         <Button layoutX="418.0" layoutY="384.0" mnemonicParsing="false" onAction="#joinAGame" prefHeight="37.0" prefWidth="159.0" text="Join a game" AnchorPane.bottomAnchor="82.0">
             <font>
                <Font size="14.0" />
             </font>
          </Button>
-         <Text fx:id="status" fill="WHITE" layoutX="210.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="287.0" AnchorPane.topAnchor="75.576171875">
+         <Text fx:id="status" fill="WHITE" layoutX="252.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="287.0" AnchorPane.topAnchor="79.576171875">
             <font>
                <Font size="18.0" />
             </font></Text>
-         <TextField fx:id="username" layoutX="283.0" layoutY="244.0" promptText="Username" AnchorPane.topAnchor="244.0">
+         <TextField fx:id="username" layoutX="309.0" layoutY="244.0" promptText="Username" AnchorPane.topAnchor="244.0">
             <font>
                <Font size="14.0" />
             </font>
