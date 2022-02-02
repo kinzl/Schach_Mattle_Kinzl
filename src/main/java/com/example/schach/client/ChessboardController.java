@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import javafx.collections.ObservableList;
 import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -64,8 +65,11 @@ public class ChessboardController implements Initializable {
     private boolean isWhiteTurn = true;
     private boolean isBlackTurn = false;
     String farbe;
+    private ObservableList<Node> list;
+
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
+        System.out.println(chessBoardView.getChildren());
 
         if (clickedpic == (Node) mouseEvent.getSource()) {
             pressed = false;
@@ -97,6 +101,9 @@ public class ChessboardController implements Initializable {
             pressed = false;
 
             System.out.println("Feld ersetzt");
+            list.addAll(chessBoardView.getChildren());
+            sendToServer(list);
+            list.clear();
 
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
@@ -141,6 +148,10 @@ public class ChessboardController implements Initializable {
         isChoosen = false;
         pressed = false;
         clickedpic = null;
+        list.addAll(chessBoardView.getChildren());
+        sendToServer(list);
+        list.clear();
+
     }
 
     private int[] moveKing(Integer x, Integer y) {
@@ -208,6 +219,8 @@ public class ChessboardController implements Initializable {
 
             return new int[]{newX, newY};
         } else if (name.contains("white") ) {
+
+        } else if (name.contains("white") && !Client.isIsClientWhite()) {
             if (oldX == 6 && newX >= 4 && newY == oldY) {
                 return new int[]{newX, newY};
             } else if (oldX < 6 && newX == oldX - 1 && newY == oldY) {
@@ -227,5 +240,9 @@ public class ChessboardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         player1.setText(Client.getUsername());
         player2.setText(Client.getServerUsername());
+    }
+
+    private void sendToServer(ObservableList<Node> list){
+
     }
 }

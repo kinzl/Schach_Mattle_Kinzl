@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="844.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
+<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
    <children>
       <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="227.0">
           <children>
@@ -264,7 +264,7 @@
               </GridPane>
           </children>
       </AnchorPane>
-      <ImageView fitHeight="227.0" fitWidth="620.0" layoutX="103.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="102.44232177734375" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="227.0" fitWidth="620.0" layoutX="103.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="20.0">
          <image>
             <Image url="@../../../../images/xVsY.png" />
          </image>
