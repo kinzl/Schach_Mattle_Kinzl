@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="overall push" />
+    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="overall push">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +46,9 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23oxalfihbxJF34DC85CCGfnjTh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -89,19 +98,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Schach" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Schach" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
