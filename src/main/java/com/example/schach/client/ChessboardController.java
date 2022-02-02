@@ -198,7 +198,7 @@ public class ChessboardController implements Initializable {
             }
 
             return new int[]{newX, newY};
-        } else if (name.contains("white") && Client.isIsServerWhite()) {
+        } else if (name.contains("white") && !Client.isIsClientWhite()) {
             if (oldX == 6 && newX >= 4 && newY == oldY) {
                 return new int[]{newX, newY};
             } else if (oldX < 6 && newX == oldX - 1 && newY == oldY) {

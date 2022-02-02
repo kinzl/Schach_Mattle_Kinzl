@@ -17,7 +17,6 @@ public class Client implements Runnable {
     private static boolean isClientWhite = true;
     private static boolean isServerWhite = false;
 
-
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
     }
