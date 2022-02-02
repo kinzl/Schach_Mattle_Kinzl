@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import javafx.collections.ObservableList;
 import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -61,9 +62,11 @@ public class ChessboardController implements Initializable {
     public int isChoosenInt = 0;
     public Label player1;
     public Label player2;
+    private ObservableList<Node> list;
 
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
+        System.out.println(chessBoardView.getChildren());
 
         if (clickedpic == (Node) mouseEvent.getSource()) {
             pressed = false;
@@ -98,6 +101,9 @@ public class ChessboardController implements Initializable {
             pressed = false;
 
             System.out.println("Feld ersetzt");
+            list.addAll(chessBoardView.getChildren());
+            sendToServer(list);
+            list.clear();
 
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
@@ -137,6 +143,10 @@ public class ChessboardController implements Initializable {
         System.out.println("Feld verschoben");
         isChoosen = false;
         pressed = false;
+        list.addAll(chessBoardView.getChildren());
+        sendToServer(list);
+        list.clear();
+
     }
 
     private int[] moveKing(Integer x, Integer y) {
@@ -218,5 +228,9 @@ public class ChessboardController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         player1.setText(Client.getUsername());
         player2.setText(Client.getServerUsername());
+    }
+
+    private void sendToServer(ObservableList<Node> list){
+
     }
 }
