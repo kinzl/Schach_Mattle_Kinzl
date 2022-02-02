@@ -61,7 +61,9 @@ public class ChessboardController implements Initializable {
     public int isChoosenInt = 0;
     public Label player1;
     public Label player2;
-
+    private boolean isWhiteTurn = true;
+    private boolean isBlackTurn = false;
+    String farbe;
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
 
@@ -71,29 +73,26 @@ public class ChessboardController implements Initializable {
             clickedpic = null;
             System.out.println("Feld deaktiviert");
         } else if (clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true) {
-            slectedPic = (Node) mouseEvent.getSource();
-            for (Node n : chessBoardView.getChildren()) {
-                if (n == slectedPic) {
-                    n.setVisible(false);
+                slectedPic = (Node) mouseEvent.getSource();
+                for (Node n : chessBoardView.getChildren()) {
+                    if (n == slectedPic) {
+                        n.setVisible(false);
+                    }
                 }
-            }
-            Integer b = null;
-            Integer x = GridPane.getRowIndex((Node) slectedPic);
-            Integer y = GridPane.getColumnIndex((Node) slectedPic);
-            if (x == b) {
-                x = 0;
-            }
-            if (y == b) {
-                y = 0;
-            }
-            if (clickedpic != null) {
+                Integer b = null;
+                Integer x = GridPane.getRowIndex((Node) slectedPic);
+                Integer y = GridPane.getColumnIndex((Node) slectedPic);
+                if (x == b) {
+                    x = 0;
+                }
+                if (y == b) {
+                    y = 0;
+                }
+                if (clickedpic != null) {
 
-                int[] move = movePawn(x, y);
-                GridPane.setRowIndex(clickedpic, move[0]);
-                GridPane.setColumnIndex(clickedpic, move[1]);
-
-            }
-
+                    GridPane.setRowIndex(clickedpic, x);
+                    GridPane.setColumnIndex(clickedpic,y);
+                }
             isChoosen = false;
             pressed = false;
 
@@ -101,6 +100,7 @@ public class ChessboardController implements Initializable {
 
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
+            farbe = clickedpic.getId().replaceAll(".$", "");
             pressed = true;
             isChoosen = true;
             System.out.println("Feld ausgewählt");
@@ -121,15 +121,18 @@ public class ChessboardController implements Initializable {
         }
         String name2 = "";
         if (clickedpic != null) {
-             name2 = clickedpic.getId().replaceAll(".$", "");
+             name2 = clickedpic.getId();
         }
         if(name2.contains("bauer")) {
-        int[] move = movePawn(x, y);
+            int[] move = movePawn(x, y);
             GridPane.setRowIndex(clickedpic, move[0]);
             GridPane.setColumnIndex(clickedpic, move[1]);
-        }else if(name2.contains("king"))
+
+        }else if(name2.contains("king1"))
         {
-            int[] move = moveKing(x, y);
+            int[] moveKing = moveKing(x, y);
+            GridPane.setRowIndex(clickedpic, moveKing[0]);
+            GridPane.setColumnIndex(clickedpic, moveKing[1]);
         }
 
 
@@ -137,6 +140,7 @@ public class ChessboardController implements Initializable {
         System.out.println("Feld verschoben");
         isChoosen = false;
         pressed = false;
+        clickedpic = null;
     }
 
     private int[] moveKing(Integer x, Integer y) {
@@ -144,27 +148,32 @@ public class ChessboardController implements Initializable {
         Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        String name = clickedpic.getId().replaceAll(".$", "");
+        String name = clickedpic.getId();
         Integer b = null;
-        if (newX == b) {
-            newX = 0;
-        }
-        if (newY == b) {
-            newY = 0;
-        }
         if (oldX == b) {
             oldX = 0;
         }
         if (oldY == b) {
             oldY = 0;
         }
-        if (newX == oldX+1)
+        if((oldX == newX && newY == oldY+1))
         {
             return new int[]{newX,newY };
-        }else {
+        }else if((oldY == newY && newX == oldX+1))
+        {
+            return new int[]{newX,newY };
+        }else if((oldX == newX && newY == oldY-1))
+        {
+            return new int[]{newX,newY };
+        }else if((oldY == newY && newX == oldX-1))
+        {
+            return new int[]{newX,newY };
+        }else if((oldX-1 == newX && oldY+1 == newY)||(oldX+1 == newX && oldY+1 == newY)||(oldX -1 == newX && oldY-1 == newY)||(oldX+1 ==newX && oldY-1 == newY))
+        {
+            return new int[]{newX,newY };
+        }else{
             return new int[]{oldX,oldY };
         }
-
     }
 
     private int[] movePawn(Integer x, Integer y) {
@@ -187,7 +196,7 @@ public class ChessboardController implements Initializable {
             oldY = 0;
         }
 
-        if (name.contains("black") && Client.isIsClientWhite()) {
+        if (name.contains("black") ) {
             if (oldX == 1 && newX <= 3 && newY == oldY) {
                 return new int[]{newX, newY};
             } else if (oldX > 1 && newX == oldX + 1 && newY == oldY) {
@@ -198,7 +207,7 @@ public class ChessboardController implements Initializable {
             }
 
             return new int[]{newX, newY};
-        } else if (name.contains("white") && Client.isIsServerWhite()) {
+        } else if (name.contains("white") ) {
             if (oldX == 6 && newX >= 4 && newY == oldY) {
                 return new int[]{newX, newY};
             } else if (oldX < 6 && newX == oldX - 1 && newY == oldY) {

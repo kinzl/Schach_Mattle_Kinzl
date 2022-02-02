@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / movment from pawn">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Fieldtester.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Fieldtester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MessangerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/MessangerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +52,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../3 Klasse/POS/chess-master" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Application.Login">
+  <component name="RunManager" selected="Application.Fieldtester">
     <configuration name="Fieldtester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.schach.client.Fieldtester" />
       <module name="Schach" />
@@ -97,8 +96,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Login" />
         <item itemvalue="Application.Fieldtester" />
+        <item itemvalue="Application.Login" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643625748984</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="field aktion / movment from pawn">
+      <created>1643822086871</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1643822086871</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,6 +189,7 @@
     <MESSAGE value="field changes" />
     <MESSAGE value="field changes/ actions" />
     <MESSAGE value="field aktion / movment" />
-    <option name="LAST_COMMIT_MESSAGE" value="field aktion / movment" />
+    <MESSAGE value="field aktion / movment from pawn" />
+    <option name="LAST_COMMIT_MESSAGE" value="field aktion / movment from pawn" />
   </component>
 </project>
