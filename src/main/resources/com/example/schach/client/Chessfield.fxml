@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="844.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
    <children>
-      <AnchorPane layoutX="46.0" layoutY="227.0" prefHeight="606.0" prefWidth="649.0" style="-fx-background-color: #8B4513;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="227.0">
+      <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="227.0">
           <children>
               <GridPane fx:id="chessBoardView" gridLinesVisible="true" layoutX="1.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="520.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="35.0">
                   <columnConstraints>
@@ -105,17 +105,22 @@
                                 <Image url="@../../../../images/black_rook.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_left_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                        <ImageView fx:id="white_left_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                            <image>
+                                <Image url="@../../../../images/white_bishop.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="black_left_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_knight.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_left_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                        <ImageView fx:id="black_left_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_bishop.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_queen" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <ImageView fx:id="black_queen" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_queen.png" />
                             </image>
@@ -125,87 +130,87 @@
                                 <Image url="@../../../../images/black_king.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_right_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                        <ImageView fx:id="black_right_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_bishop.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_right_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+                        <ImageView fx:id="black_right_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_knight.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_right_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+                        <ImageView fx:id="black_right_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_rook.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer4" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer4" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                           <ImageView fx:id="black_bauer5" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <ImageView fx:id="black_bauer5" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer7" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer7" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_bauer8" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <ImageView fx:id="black_bauer8" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                   <image>
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_right_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                        <ImageView fx:id="white_right_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_bishop.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_right_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                        <ImageView fx:id="white_right_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_knight.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_right_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                        <ImageView fx:id="white_right_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_rook.png" />
                             </image>
@@ -225,22 +230,22 @@
                                 <Image url="@../../../../images/white_knight.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer4_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer4_6" fitHeight="65.0" fitWidth="70.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer7_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer7_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer5_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer5_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_bauer8" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                        <ImageView fx:id="white_bauer8" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_pawn.png" />
                             </image>
@@ -250,7 +255,7 @@
                                 <Image url="@../../../../images/white_rook.png" />
                             </image>
                         </ImageView>
-                  <ImageView fx:id="white_bauer6_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                  <ImageView fx:id="white_bauer6_6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
                         <Image url="@../../../../images/white_pawn.png" />
                      </image>
@@ -259,12 +264,12 @@
               </GridPane>
           </children>
       </AnchorPane>
-      <ImageView fitHeight="167.0" fitWidth="395.0" layoutX="167.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="167.0" AnchorPane.rightAnchor="166.51922607421875" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="227.0" fitWidth="620.0" layoutX="103.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="102.44232177734375" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../../../images/xVsY.png" />
          </image>
       </ImageView>
-      <Label fx:id="player1" layoutX="193.0" layoutY="51.0" prefHeight="66.0" prefWidth="117.0" textFill="WHITE" AnchorPane.leftAnchor="193.0" AnchorPane.rightAnchor="380.0" AnchorPane.topAnchor="51.0">
+      <Label fx:id="player1" layoutX="165.0" layoutY="66.0" prefHeight="66.0" prefWidth="117.0" textFill="WHITE" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="408.0" AnchorPane.topAnchor="66.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Label>

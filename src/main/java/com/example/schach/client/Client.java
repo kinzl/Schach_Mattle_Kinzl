@@ -12,11 +12,10 @@ public class Client implements Runnable {
     private Socket socket;
     private static String serverUsername;
     private static String username;
-    private BufferedWriter writer;
-    private BufferedReader reader;
+    private ObjectOutputStream   writer;
+    private ObjectInputStream  reader;
     private static boolean isClientWhite = true;
     private static boolean isServerBlack = false;
-
 
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
@@ -30,9 +29,11 @@ public class Client implements Runnable {
             socket = new Socket(IPADDRESS, PORT);
             isConnectedWithTheServer = true;
 
-
-            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            System.out.println("CLIENT: before");
+            reader = new ObjectInputStream(socket.getInputStream());
+            System.out.println("CLIENT: middle");
+            writer = new ObjectOutputStream(socket.getOutputStream());
+            System.out.println("CLIENT: after");
             System.out.println("CLIENT: Connected to Server");
 
             handleUsername();
@@ -60,12 +61,15 @@ public class Client implements Runnable {
 
     private void handleUsername(){
         try {
-            writer.write("handleUsername");
-            writer.newLine();
-            writer.flush();
-            writer.write(username);
-            writer.newLine();
-            writer.flush();
+//            writer.write("handleUsername");
+//            writer.newLine();
+//            writer.flush();
+//            writer.write(username);
+//            writer.newLine();
+//            writer.flush();
+
+            writer.writeObject("handleUsername");
+            writer.writeObject(username);
 
             String s = reader.readLine();
             if(s.equals("handleUsername")) {
