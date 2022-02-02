@@ -78,32 +78,41 @@ public class ChessboardController implements Initializable {
             System.out.println("Feld deaktiviert");
         } else if (clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true) {
                 slectedPic = (Node) mouseEvent.getSource();
-                for (Node n : chessBoardView.getChildren()) {
-                    if (n == slectedPic) {
-                        n.setVisible(false);
+                String farbeChosen1 = clickedpic.getId();
+                String farbeChosen2 = slectedPic.getId();
+                if((farbeChosen1.contains("white") && farbeChosen2.contains("white"))||(farbeChosen1.contains("black") && farbeChosen2.contains("black"))) {
+                    System.out.println("Diese Farbe kann nicht geschlagen werden.");
+                }else
+                {
+                    for (Node n : chessBoardView.getChildren()) {
+                        if (n == slectedPic) {
+                            n.setVisible(false);
+                        }
                     }
-                }
-                Integer b = null;
-                Integer x = GridPane.getRowIndex((Node) slectedPic);
-                Integer y = GridPane.getColumnIndex((Node) slectedPic);
-                if (x == b) {
-                    x = 0;
-                }
-                if (y == b) {
-                    y = 0;
-                }
-                if (clickedpic != null) {
+                    Integer b = null;
+                    Integer x = GridPane.getRowIndex((Node) slectedPic);
+                    Integer y = GridPane.getColumnIndex((Node) slectedPic);
+                    if (x == b) {
+                        x = 0;
+                    }
+                    if (y == b) {
+                        y = 0;
+                    }
+                    if (clickedpic != null) {
 
-                    GridPane.setRowIndex(clickedpic, x);
-                    GridPane.setColumnIndex(clickedpic,y);
+                        GridPane.setRowIndex(clickedpic, x);
+                        GridPane.setColumnIndex(clickedpic,y);
+                    }
+                    System.out.println("Feld ersetzt");
                 }
+
             isChoosen = false;
             pressed = false;
 
-            System.out.println("Feld ersetzt");
-            list.addAll(chessBoardView.getChildren());
+
+           /* list.addAll(chessBoardView.getChildren());
             sendToServer(list);
-            list.clear();
+            list.clear();*/
 
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
@@ -148,9 +157,9 @@ public class ChessboardController implements Initializable {
         isChoosen = false;
         pressed = false;
         clickedpic = null;
-        list.addAll(chessBoardView.getChildren());
+        /*list.addAll(chessBoardView.getChildren());
         sendToServer(list);
-        list.clear();
+        list.clear();*/
 
     }
 
