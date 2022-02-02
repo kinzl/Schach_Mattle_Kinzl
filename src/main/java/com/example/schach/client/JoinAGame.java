@@ -18,6 +18,7 @@ public class JoinAGame implements Initializable {
     public TextField ipAddress;
     public Text status;
     public Button playButton;
+    public Button connectButtonID;
     private Client client;
 
     @Override
@@ -33,6 +34,7 @@ public class JoinAGame implements Initializable {
             client.run();
             if(Client.isConnectedWithTheServer){
                 status.setText("Connected");
+                connectButtonID.setDisable(true);
                 playButton.setDisable(false);
             } else {
                 status.setText("No Server found");
@@ -45,7 +47,7 @@ public class JoinAGame implements Initializable {
     private boolean isValidIpAddress(String ipAddress){
         //Checks if the entered ip address is valid
         if(ipAddress.isEmpty()){
-            status.setText("Please enter Ip Address");
+            status.setText("Please enter a Ip Address");
             return false;
         }
         String[] temp = ipAddress.split("\\.");
