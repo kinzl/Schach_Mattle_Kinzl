@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / movment from pawn">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Fieldtester.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Fieldtester.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MessangerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/MessangerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,13 +43,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/Fieldtester.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="23oxalfihbxJF34DC85CCGfnjTh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -64,7 +55,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../3 Klasse/POS/chess-master" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
   </component>
-  <component name="RunManager" selected="Application.Fieldtester">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="Fieldtester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.schach.client.Fieldtester" />
       <module name="Schach" />
@@ -106,8 +97,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Fieldtester" />
         <item itemvalue="Application.Login" />
+        <item itemvalue="Application.Fieldtester" />
       </list>
     </recent_temporary>
   </component>

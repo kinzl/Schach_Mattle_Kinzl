@@ -119,14 +119,19 @@ public class ChessboardController implements Initializable {
         if (y == b) {
             y = 0;
         }
+        String name2 = "";
         if (clickedpic != null) {
-            String name2 = clickedpic.getId().replaceAll(".$", "");
+             name2 = clickedpic.getId().replaceAll(".$", "");
         }
-        //if(name2.contains("pawn")) {
+        if(name2.contains("bauer")) {
         int[] move = movePawn(x, y);
-        GridPane.setRowIndex(clickedpic, move[0]);
-        GridPane.setColumnIndex(clickedpic, move[1]);
-        // }
+            GridPane.setRowIndex(clickedpic, move[0]);
+            GridPane.setColumnIndex(clickedpic, move[1]);
+        }else if(name2.contains("king"))
+        {
+            int[] move = moveKing(x, y);
+        }
+
 
 
         System.out.println("Feld verschoben");
@@ -134,7 +139,35 @@ public class ChessboardController implements Initializable {
         pressed = false;
     }
 
-    public int[] movePawn(int x, int y) {
+    private int[] moveKing(Integer x, Integer y) {
+        Integer newX = x;
+        Integer newY = y;
+        Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
+        Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
+        String name = clickedpic.getId().replaceAll(".$", "");
+        Integer b = null;
+        if (newX == b) {
+            newX = 0;
+        }
+        if (newY == b) {
+            newY = 0;
+        }
+        if (oldX == b) {
+            oldX = 0;
+        }
+        if (oldY == b) {
+            oldY = 0;
+        }
+        if (newX == oldX+1)
+        {
+            return new int[]{newX,newY };
+        }else {
+            return new int[]{oldX,oldY };
+        }
+
+    }
+
+    private int[] movePawn(Integer x, Integer y) {
         Integer newX = x;
         Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
@@ -154,8 +187,7 @@ public class ChessboardController implements Initializable {
             oldY = 0;
         }
 
-
-        if (name.contains("black")) {
+        if (name.contains("black") && Client.isIsClientWhite()) {
             if (oldX == 1 && newX <= 3 && newY == oldY) {
                 return new int[]{newX, newY};
             } else if (oldX > 1 && newX == oldX + 1 && newY == oldY) {
@@ -166,7 +198,7 @@ public class ChessboardController implements Initializable {
             }
 
             return new int[]{newX, newY};
-        } else if (name.contains("white")) {
+        } else if (name.contains("white") && Client.isIsServerWhite()) {
             if (oldX == 6 && newX >= 4 && newY == oldY) {
                 return new int[]{newX, newY};
             } else if (oldX < 6 && newX == oldX - 1 && newY == oldY) {
@@ -180,38 +212,6 @@ public class ChessboardController implements Initializable {
 
         }
         return new int[]{newX, newY};
-
-            /*if(newX < oldX && name.contains("black")||((newX > oldX && name.contains("white"))))
-            {
-                newX = oldX;
-                newY = oldY;
-               //return new int[]{oldX, oldY};
-            }
-            //nicht weiter als 2 felder beim ersten zug (weiß)
-            if(oldX== 6 && name.contains("white") && newX >= 4|| (oldX != 6 && name.contains("white") && newX <= newX+1)||(oldX== 1 && name.contains("black") && newX <= 3))
-            {
-                newY = newY;
-                newX = newX;
-            }
-
-            //immer nur ein feld(black)
-            if(oldX != 1 && name.contains("black") && newX <= newX+1)
-            {
-                newY = newY;
-                newX = newX;
-            }
-            //nicht nach links/rechts
-            if(newY != oldY && name.contains("black"))
-            {
-                newX = oldX;
-                newY = oldY;
-            }else if(newY != oldY  && name.contains("white"))
-            {
-                newX = oldX;
-                newY = oldY;
-            }
-
-            return new int[]{newX, newY};*/
     }
 
     @Override
