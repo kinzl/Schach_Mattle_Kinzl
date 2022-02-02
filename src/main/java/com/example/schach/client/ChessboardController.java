@@ -65,37 +65,41 @@ public class ChessboardController implements Initializable {
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
 
-        if (clickedpic ==  (Node) mouseEvent.getSource() ){
+        if (clickedpic == (Node) mouseEvent.getSource()) {
             pressed = false;
             isChoosen = true;
             clickedpic = null;
             System.out.println("Feld deaktiviert");
-        }else if(clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true){
-            slectedPic  = (Node) mouseEvent.getSource();
-            for (Node n: chessBoardView.getChildren()) {
-                if(n == slectedPic){
+        } else if (clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true) {
+            slectedPic = (Node) mouseEvent.getSource();
+            for (Node n : chessBoardView.getChildren()) {
+                if (n == slectedPic) {
                     n.setVisible(false);
                 }
             }
             Integer b = null;
             Integer x = GridPane.getRowIndex((Node) slectedPic);
             Integer y = GridPane.getColumnIndex((Node) slectedPic);
-            if(x == b){
+            if (x == b) {
                 x = 0;
             }
-            if(y == b){
+            if (y == b) {
                 y = 0;
             }
-            int []move = movePawn(x,y);
-            GridPane.setRowIndex(clickedpic,move[0]);
-            GridPane.setColumnIndex(clickedpic,move[1]);
+            if (clickedpic != null) {
+
+                int[] move = movePawn(x, y);
+                GridPane.setRowIndex(clickedpic, move[0]);
+                GridPane.setColumnIndex(clickedpic, move[1]);
+
+            }
+
             isChoosen = false;
             pressed = false;
 
             System.out.println("Feld ersetzt");
 
-        }else
-        {
+        } else {
             clickedpic = (ImageView) mouseEvent.getSource();
             pressed = true;
             isChoosen = true;
@@ -106,88 +110,98 @@ public class ChessboardController implements Initializable {
     }
 
     public void mouseDragExited(MouseEvent mouseEvent2) {
-       Integer b = null;
+        Integer b = null;
         Integer x = GridPane.getRowIndex((Node) mouseEvent2.getSource());
         Integer y = GridPane.getColumnIndex((Node) mouseEvent2.getSource());
-        if(x == b){
+        if (x == b) {
             x = 0;
         }
-        if(y == b){
+        if (y == b) {
             y = 0;
         }
-        if(clickedpic != null)
-        {
-            String name2 = clickedpic.getId().replaceAll(".$","");
+        if (clickedpic != null) {
+            String name2 = clickedpic.getId().replaceAll(".$", "");
 
         }
 
-            //if(name2.contains("pawn")) {
-                int[] move = movePawn(x, y);
-                GridPane.setRowIndex(clickedpic, move[0]);
-                GridPane.setColumnIndex(clickedpic, move[1]);
-           // }
+        //if(name2.contains("pawn")) {
+        int[] move = movePawn(x, y);
+        GridPane.setRowIndex(clickedpic, move[0]);
+        GridPane.setColumnIndex(clickedpic, move[1]);
+        // }
 
 
         System.out.println("Feld verschoben");
-            isChoosen = false;
-            pressed = false;
-        }
+        isChoosen = false;
+        pressed = false;
+    }
 
-    public int[] movePawn(int x, int y)
-    {
+    public int[] movePawn(int x, int y) {
         Integer newX = x;
         Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        Integer b = null;
-        if(oldX == b){
-            oldX = 0;
-        }
-        if(oldY == b){
-            oldY = 0;
-        }
-        String name = clickedpic.getId().replaceAll(".$","");
+        String name = clickedpic.getId().replaceAll(".$", "");
 
 
-            if(newX < oldX && name.contains("black"))
-            {
-                return new int[]{oldX, oldY};
+        if (name.contains("black")) {
+            if (oldX == 1 && newX <= 3) {
+                return new int[]{newX, newY};
+            } else if (oldX > 1 && newX == oldX + 1) {
+                return new int[]{newX, newY};
+            } else {
+                newY = oldY;
+                newX = oldX;
             }
-            if(newX > oldX && name.contains("white"))
+
+            return new int[]{newX, newY};
+
+        } else if (name.contains("white")) {
+            if (oldX == 6 && newX >= 4) {
+                return new int[]{newX, newY};
+            } else if (oldX < 6 && newX == oldX - 1) {
+                return new int[]{newX, newY};
+            } else {
+                newY = oldY;
+                newX = oldX;
+            }
+
+            return new int[]{newX, newY};
+
+        }
+        return new int[]{newX, newY};
+
+            /*if(newX < oldX && name.contains("black")||((newX > oldX && name.contains("white"))))
             {
-                return new int[]{oldX, oldY};
+                newX = oldX;
+                newY = oldY;
+               //return new int[]{oldX, oldY};
             }
             //nicht weiter als 2 felder beim ersten zug (weiß)
-            if(oldX== 6 && name.contains("white") && newX >= 4)
+            if(oldX== 6 && name.contains("white") && newX >= 4|| (oldX != 6 && name.contains("white") && newX <= newX+1)||(oldX== 1 && name.contains("black") && newX <= 3))
             {
-                return new int[]{newX, newY};
+                newY = newY;
+                newX = newX;
             }
-            //immer nur ein feld
-            if(oldX != 6 && name.contains("white") && newX <= newX+1)
-            {
-                return  new int[]{newX,newY};
-            }
-            //nicht weiter als 2 felder beim ersten zug(black)
-            if(oldX== 1 && name.contains("black") && newX <= 3)
-            {
-                return new int[]{newX, newY};
-            }
+
             //immer nur ein feld(black)
             if(oldX != 1 && name.contains("black") && newX <= newX+1)
             {
-                return  new int[]{newX,newY};
+                newY = newY;
+                newX = newX;
             }
             //nicht nach links/rechts
-            if(newY == oldY && name.contains("black"))
+            if(newY != oldY && name.contains("black"))
             {
-                return new int[]{oldX,oldY};
-            }
-            if(newY == oldY  && name.contains("white"))
+                newX = oldX;
+                newY = oldY;
+            }else if(newY != oldY  && name.contains("white"))
             {
-                return new int[]{oldX,oldY};
+                newX = oldX;
+                newY = oldY;
             }
 
-            return new int[]{oldX, oldY};
+            return new int[]{newX, newY};*/
     }
 
     @Override
