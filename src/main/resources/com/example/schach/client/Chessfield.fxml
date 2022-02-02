@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: #01003a;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
+<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
    <children>
       <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="227.0">
           <children>
@@ -100,7 +95,12 @@
                       <Pane fx:id="pane75" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
                       <Pane fx:id="pane76" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
                       <Pane fx:id="pane77" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                        <ImageView fx:id="black_left_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="white_king1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                            <image>
+                                <Image url="@../../../../images/white_king.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="black_left_tower" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../../images/black_rook.png" />
                             </image>
@@ -125,7 +125,7 @@
                                 <Image url="@../../../../images/black_queen.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="black_king" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                        <ImageView fx:id="black_king1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                             <image>
                                 <Image url="@../../../../images/black_king.png" />
                             </image>
@@ -200,11 +200,6 @@
                                 <Image url="@../../../../images/black_pawn.png" />
                             </image>
                         </ImageView>
-                        <ImageView fx:id="white_king" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_king.png" />
-                            </image>
-                        </ImageView>
                         <ImageView fx:id="white_right_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_bishop.png" />
@@ -223,6 +218,11 @@
                         <ImageView fx:id="white_queen" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                             <image>
                                 <Image url="@../../../../images/white_queen.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="white_left_runner" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                            <image>
+                                <Image url="@../../../../images/white_bishop.png" />
                             </image>
                         </ImageView>
                         <ImageView fx:id="white_left_horse" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
@@ -264,7 +264,7 @@
               </GridPane>
           </children>
       </AnchorPane>
-      <ImageView fitHeight="227.0" fitWidth="620.0" layoutX="103.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="102.44232177734375" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="227.0" fitWidth="620.0" layoutX="103.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="20.0">
          <image>
             <Image url="@../../../../images/xVsY.png" />
          </image>

@@ -15,11 +15,13 @@ public class Client implements Runnable {
     private ObjectOutputStream   writer;
     private ObjectInputStream  reader;
     private static boolean isClientWhite = true;
-    private static boolean isServerWhite = false;
+    private static boolean isServerBlack = false;
 
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
     }
+
+
 
     @Override
     public void run() {
@@ -94,7 +96,8 @@ public class Client implements Runnable {
         return isClientWhite;
     }
 
-    public static boolean isIsServerWhite() {
-        return isServerWhite;
+    public static boolean isIsServerBlack() {
+        return isServerBlack;
     }
+
 }
