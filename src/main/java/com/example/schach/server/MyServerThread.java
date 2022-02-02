@@ -9,8 +9,10 @@ public class MyServerThread extends Thread {
     private Socket socket = null;
     private boolean running;
     private static String username;
-    private ObjectInputStream reader;
-    private ObjectOutputStream  writer;
+    private BufferedReader reader;
+    private BufferedWriter writer;
+//    private ObjectInputStream reader;
+//    private ObjectOutputStream  writer;
     private static String clientUsername;
 
     public static void setUsername(String username) {
@@ -28,9 +30,11 @@ public class MyServerThread extends Thread {
             running = true;
 
             System.out.println("SERVER: before");
-            reader = new ObjectInputStream(socket.getInputStream());
+            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            //reader = new ObjectInputStream(socket.getInputStream());
             System.out.println("SERVER: middle");
-            writer = new ObjectOutputStream(socket.getOutputStream());
+            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            //writer = new ObjectOutputStream(socket.getOutputStream());
             System.out.println("SERVER: after");
 
             handleUsername();
@@ -62,12 +66,12 @@ public class MyServerThread extends Thread {
                 clientUsername = reader.readLine();
             }
 
-//            writer.write("handleUsername");
-//            writer.newLine();
-//            writer.flush();
-//            writer.write(username);
-//            writer.newLine();
-//            writer.flush();
+            writer.write("handleUsername");
+            writer.newLine();
+            writer.flush();
+            writer.write(username);
+            writer.newLine();
+            writer.flush();
 
         } catch (IOException e) {
             e.printStackTrace();

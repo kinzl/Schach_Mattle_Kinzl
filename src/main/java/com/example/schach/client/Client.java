@@ -5,6 +5,9 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client implements Runnable {
+    private BufferedWriter writer;
+    private BufferedReader reader;
+
     private String IPADDRESS;
     private int PORT = 23;
     private boolean running = true;
@@ -12,8 +15,8 @@ public class Client implements Runnable {
     private Socket socket;
     private static String serverUsername;
     private static String username;
-    private ObjectOutputStream   writer;
-    private ObjectInputStream  reader;
+   /* private ObjectOutputStream   writer;
+    private ObjectInputStream  reader;*/
     private static boolean isClientWhite = true;
     private static boolean isServerBlack = false;
 
@@ -30,9 +33,11 @@ public class Client implements Runnable {
             isConnectedWithTheServer = true;
 
             System.out.println("CLIENT: before");
-            reader = new ObjectInputStream(socket.getInputStream());
+                reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            //reader = new ObjectInputStream(socket.getInputStream());
             System.out.println("CLIENT: middle");
-            writer = new ObjectOutputStream(socket.getOutputStream());
+            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            //writer = new ObjectOutputStream(socket.getOutputStream());
             System.out.println("CLIENT: after");
             System.out.println("CLIENT: Connected to Server");
 
@@ -61,15 +66,15 @@ public class Client implements Runnable {
 
     private void handleUsername(){
         try {
-//            writer.write("handleUsername");
-//            writer.newLine();
-//            writer.flush();
-//            writer.write(username);
-//            writer.newLine();
-//            writer.flush();
+            writer.write("handleUsername");
+            writer.newLine();
+            writer.flush();
+            writer.write(username);
+            writer.newLine();
+            writer.flush();
 
-            writer.writeObject("handleUsername");
-            writer.writeObject(username);
+            //writer.writeObject("handleUsername");
+            //writer.writeObject(username);
 
             String s = reader.readLine();
             if(s.equals("handleUsername")) {

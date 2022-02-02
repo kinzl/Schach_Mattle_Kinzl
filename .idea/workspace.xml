@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / pawn &amp; king">
+    <list default="true" id="117c5d02-50bf-417d-9de2-daf361b268dc" name="Changes" comment="field aktion / pawn &amp; king/ no self damage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="4" />
   </component>
   <component name="ProjectId" id="23oxalfihbxJF34DC85CCGfnjTh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -177,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643835101176</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="field aktion / pawn &amp; king/ no self damage">
+      <created>1643837070381</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1643837070381</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +212,7 @@
     <MESSAGE value="field aktion / movment" />
     <MESSAGE value="field aktion / movment from pawn" />
     <MESSAGE value="field aktion / pawn &amp; king" />
-    <option name="LAST_COMMIT_MESSAGE" value="field aktion / pawn &amp; king" />
+    <MESSAGE value="field aktion / pawn &amp; king/ no self damage" />
+    <option name="LAST_COMMIT_MESSAGE" value="field aktion / pawn &amp; king/ no self damage" />
   </component>
 </project>
