@@ -66,10 +66,11 @@ public class ChessboardController implements Initializable {
     private boolean isBlackTurn = false;
     String farbe;
     private ObservableList<Node> list;
+    private  boolean isMovePossible = false;
 
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
-        System.out.println(chessBoardView.getChildren());
+        //System.out.println(chessBoardView.getChildren());
 
         if (clickedpic == (Node) mouseEvent.getSource()) {
             pressed = false;
@@ -80,30 +81,46 @@ public class ChessboardController implements Initializable {
                 slectedPic = (Node) mouseEvent.getSource();
                 String farbeChosen1 = clickedpic.getId();
                 String farbeChosen2 = slectedPic.getId();
+                Integer b = null;
+                Integer x = GridPane.getRowIndex((Node) slectedPic);
+                Integer y = GridPane.getColumnIndex((Node) slectedPic);
+                Integer oldX = GridPane.getRowIndex((Node) clickedpic);
+                Integer oldY = GridPane.getColumnIndex((Node) clickedpic);
+                 if (x == b) {
+                    x = 0;
+                }
+                if (y == b) {
+                    y = 0;
+                }
+            if (oldX == b) {
+                oldX = 0;
+            }
+            if (oldY == b) {
+                oldY = 0;
+            }
                 if((farbeChosen1.contains("white") && farbeChosen2.contains("white"))||(farbeChosen1.contains("black") && farbeChosen2.contains("black"))) {
                     System.out.println("Diese Farbe kann nicht geschlagen werden.");
                 }else
                 {
-                    for (Node n : chessBoardView.getChildren()) {
-                        if (n == slectedPic) {
-                            n.setVisible(false);
+                    if(farbeChosen1.contains("bauer"))
+                    {
+
+                        if(ispawnKill(x,y,oldX,oldY) == true)
+                        {
+                            for (Node n : chessBoardView.getChildren()) {
+                                if (n == slectedPic) {
+                                    n.setVisible(false);
+                                }
+                            }
+                            GridPane.setRowIndex(clickedpic, x);
+                            GridPane.setColumnIndex(clickedpic, y);
+                            System.out.println("Feld ersetzt");
+                        }else{
+                            clickedpic = null;
+                            slectedPic= null;
                         }
                     }
-                    Integer b = null;
-                    Integer x = GridPane.getRowIndex((Node) slectedPic);
-                    Integer y = GridPane.getColumnIndex((Node) slectedPic);
-                    if (x == b) {
-                        x = 0;
-                    }
-                    if (y == b) {
-                        y = 0;
-                    }
-                    if (clickedpic != null) {
 
-                        GridPane.setRowIndex(clickedpic, x);
-                        GridPane.setColumnIndex(clickedpic,y);
-                    }
-                    System.out.println("Feld ersetzt");
                 }
 
             isChoosen = false;
@@ -150,9 +167,6 @@ public class ChessboardController implements Initializable {
             GridPane.setRowIndex(clickedpic, moveKing[0]);
             GridPane.setColumnIndex(clickedpic, moveKing[1]);
         }
-
-
-
         System.out.println("Feld verschoben");
         isChoosen = false;
         pressed = false;
@@ -196,6 +210,26 @@ public class ChessboardController implements Initializable {
         }
     }
 
+    private boolean ispawnKill(Integer newX, Integer newY,Integer oldX, Integer oldY) {
+        String colurPawn = clickedpic.getId();
+
+        if(oldX-1 == newX && oldY-1 == newY &&colurPawn.contains("white"))
+        {
+            return true;
+        }else if(oldX-1 == newX && oldY+1 == newY && colurPawn.contains("white"))
+        {
+            return true;
+        }else if(oldX+1 == newX && oldY+1 == newY && colurPawn.contains("black"))
+        {
+            return true;
+        }else if(oldX+1 == newX && oldY-1 == newY && colurPawn.contains("black"))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
     private int[] movePawn(Integer x, Integer y) {
         Integer newX = x;
         Integer newY = y;
@@ -218,31 +252,38 @@ public class ChessboardController implements Initializable {
 
         if (name.contains("black") ) {
             if (oldX == 1 && newX <= 3 && newY == oldY) {
+                isMovePossible = true;
                 return new int[]{newX, newY};
             } else if (oldX > 1 && newX == oldX + 1 && newY == oldY) {
+                isMovePossible = true;
                 return new int[]{newX, newY};
             } else {
+                isMovePossible = false;
                 newY = oldY;
                 newX = oldX;
             }
-
+            isMovePossible = false;
             return new int[]{newX, newY};
-        } else if (name.contains("white") ) {
+        } else if (name.contains("white") ){
+            if (oldX == 6 && newX >= 4 && newY == oldY&& newX < oldX) {
+                isMovePossible = true;
+                return new int[]{newX, newY};
+            } else if (oldX < 6 && newX == oldX - 1 && newY == oldY&& newX < oldX) {
+                isMovePossible = true;
+                return new int[]{newX, newY};
 
-        } else if (name.contains("white") && !Client.isIsClientWhite()) {
-            if (oldX == 6 && newX >= 4 && newY == oldY) {
-                return new int[]{newX, newY};
-            } else if (oldX < 6 && newX == oldX - 1 && newY == oldY) {
-                return new int[]{newX, newY};
+
             } else {
+                isMovePossible= false;
                 newY = oldY;
                 newX = oldX;
             }
-
-            return new int[]{newX, newY};
+            isMovePossible= false;
+            return new int[]{oldX , oldY};
 
         }
-        return new int[]{newX, newY};
+        isMovePossible= false;
+        return new int[]{oldX, oldY};
     }
 
     @Override
@@ -250,6 +291,8 @@ public class ChessboardController implements Initializable {
         player1.setText(Client.getUsername());
         player2.setText(Client.getServerUsername());
     }
+
+
 
     private void sendToServer(ObservableList<Node> list){
 
