@@ -10,6 +10,8 @@ public class MyServerThread extends Thread {
     private boolean running;
     private static String username;
     private static String clientUsername;
+    private static ObjectInputStream reader;
+    private static ObjectOutputStream writer;
 
     public static void setUsername(String username) {
         MyServerThread.username = username;
@@ -21,24 +23,25 @@ public class MyServerThread extends Thread {
 
     @Override
     public void run() {
-        try(Socket socket = this.socket;
-        ObjectOutputStream writer = new ObjectOutputStream(socket.getOutputStream());
-        ObjectInputStream reader = new ObjectInputStream(socket.getInputStream());
-        ) {
+        try {
+            Socket socket = this.socket;
+            writer = new ObjectOutputStream(socket.getOutputStream());
+            reader = new ObjectInputStream(socket.getInputStream());
+
             running = true;
 
-            writer.writeObject("Hello");
-            String s = reader.readObject().toString();
-            System.out.println(s);
-            handleUsername();
+
+            handleUsername(writer, reader);
+
 
 
             while (running) {
                 //s = reader.readLine();
                 //TODO: Connection to Server
-                System.out.println("Server received from Client: " + clientUsername);
-                running = false;
-
+                //System.out.println("Server received from Client: " + clientUsername);
+//                running = false;
+                Object o = reader.readObject();
+                System.out.println(o.toString());
 
             }
         } catch (IOException e) {
@@ -54,23 +57,12 @@ public class MyServerThread extends Thread {
     }
 
 
-    private void handleUsername(){
-//        try {
-//            String s = reader.readLine();
-//            if(s.equals("handleUsername")) {
-//                clientUsername = reader.readLine();
-//            }
-//
-//            writer.write("handleUsername");
-//            writer.newLine();
-//            writer.flush();
-//            writer.write(username);
-//            writer.newLine();
-//            writer.flush();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+    private void handleUsername(ObjectOutputStream writer, ObjectInputStream reader) {
+        try {
+            writer.writeObject(username);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String getClientUsername() {

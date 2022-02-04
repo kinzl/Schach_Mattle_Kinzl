@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
+<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: linear-gradient(to left,#0192d1,#440174);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
    <children>
       <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="227.0">
           <children>
@@ -264,16 +269,16 @@
               </GridPane>
           </children>
       </AnchorPane>
-      <ImageView fitHeight="227.0" fitWidth="620.0" layoutX="103.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="600.0" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="103.0" AnchorPane.topAnchor="20.0">
+      <ImageView fitHeight="156.0" fitWidth="346.0" layoutX="188.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="656.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="35.0">
          <image>
             <Image url="@../../../../images/xVsY.png" />
          </image>
       </ImageView>
-      <Label fx:id="player1" layoutX="165.0" layoutY="66.0" prefHeight="66.0" prefWidth="117.0" textFill="WHITE" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="408.0" AnchorPane.topAnchor="66.0">
+      <Label fx:id="player1" layoutX="219.0" layoutY="81.0" prefHeight="65.0" prefWidth="98.0" textFill="WHITE" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="81.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Label>
-      <Label fx:id="player2" layoutX="382.0" layoutY="45.0" prefHeight="91.0" prefWidth="117.0" textFill="WHITE" AnchorPane.leftAnchor="382.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="45.0">
+      <Label fx:id="player2" layoutX="406.0" layoutY="79.0" prefHeight="69.0" prefWidth="86.0" textFill="WHITE" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="79.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font></Label>

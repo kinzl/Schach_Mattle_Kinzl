@@ -1,5 +1,8 @@
 package com.example.schach.client;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -8,11 +11,13 @@ import java.net.Socket;
 public class MyClientThread implements Runnable {
     private String IPADDRESS;
     private int PORT;
-    private ObjectInputStream reader;
-    private ObjectOutputStream writer;
+    private static ObjectInputStream reader;
+    private static ObjectOutputStream writer;
     public static boolean isConnectedWithTheServer = false;
     private static String serverUsername;
-    private static String username;
+    private static String clientUsername;
+    private boolean running = true;
+    private String s;
 
     public MyClientThread(String IPADDRESS, int PORT) {
         this.IPADDRESS = IPADDRESS;
@@ -23,16 +28,23 @@ public class MyClientThread implements Runnable {
     public void run() {
         //ToDO: Methods of Client
 
-        try (
+        try {
                 Socket socket = new Socket("localhost", 23);
-                ObjectInputStream reader = new ObjectInputStream(socket.getInputStream());
-                ObjectOutputStream writer = new ObjectOutputStream(socket.getOutputStream());
-        ) {
+                reader = new ObjectInputStream(socket.getInputStream());
+                writer = new ObjectOutputStream(socket.getOutputStream());
+
             isConnectedWithTheServer = true;
 
-            String s = reader.readObject().toString();
-            System.out.println("CLIENT received: " + s);
-            writer.writeObject("foo");
+            handleUsername(writer, reader);
+
+            while (running) {
+                s = reader.readObject().toString();
+
+                if(s.equals("updateChessfield")) {
+
+                }
+
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,14 +54,32 @@ public class MyClientThread implements Runnable {
 
     }
     public static void setUsername(String username) {
-        MyClientThread.username = username;
+        MyClientThread.clientUsername = username;
+    }
+
+    private void handleUsername(ObjectOutputStream writer, ObjectInputStream reader){
+        try {
+            serverUsername = reader.readObject().toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String getServerUsername() {
         return serverUsername;
     }
 
-    public static String getUsername() {
-        return username;
+    public static String getClientUsername() {
+        return clientUsername;
+    }
+
+    public static ObjectInputStream getReader() {
+        return reader;
+    }
+
+    public static ObjectOutputStream getWriter() {
+        return writer;
     }
 }

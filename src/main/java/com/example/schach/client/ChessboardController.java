@@ -1,19 +1,18 @@
 package com.example.schach.client;
 
 import javafx.collections.ObservableList;
-import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
-import java.nio.channels.Pipe;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable {
@@ -68,10 +67,16 @@ public class ChessboardController implements Initializable {
     private ObservableList<Node> list;
     private  boolean isMovePossible = false;
 
+
+    private static ObjectOutputStream writer;
+    private static ObjectInputStream reader;
+
+
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
 
+        System.out.println(chessBoardView.getChildren().toString());
         if (clickedpic == (Node) mouseEvent.getSource()) {
             pressed = false;
             isChoosen = true;
@@ -156,9 +161,7 @@ public class ChessboardController implements Initializable {
             pressed = false;
 
 
-           /* list.addAll(chessBoardView.getChildren());
-            sendToServer(list);
-            list.clear();*/
+           sendChessfieldToServer();
 
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
@@ -210,9 +213,8 @@ public class ChessboardController implements Initializable {
         isChoosen = false;
         pressed = false;
         clickedpic = null;
-        /*list.addAll(chessBoardView.getChildren());
-        sendToServer(list);
-        list.clear();*/
+
+        sendChessfieldToServer();
 
     }
 
@@ -393,13 +395,19 @@ public class ChessboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        player1.setText(MyClientThread.getUsername());
-        player2.setText(MyClientThread.getServerUsername());
+        player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
+        player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
+
+        this.reader = MyClientThread.getReader();
+        this.writer = MyClientThread.getWriter();
     }
 
-
-
-    private void sendToServer(ObservableList<Node> list){
-
+    private void sendChessfieldToServer(){
+        try {
+            writer.writeObject(list);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }
