@@ -16,8 +16,7 @@ public class Client {
     private boolean running = true;
 
     private Socket socket;
-    private static String serverUsername;
-    private static String username;
+
 
     private static boolean isClientWhite = true;
     private static boolean isServerBlack = false;
@@ -46,17 +45,7 @@ public class Client {
         new Thread(() -> runClient()).start();
     }
 
-    public static void setUsername(String username) {
-        Client.username = username;
-    }
 
-    public static String getServerUsername() {
-        return serverUsername;
-    }
-
-    public static String getUsername() {
-        return username;
-    }
 
     public static boolean isIsClientWhite() {
         return isClientWhite;

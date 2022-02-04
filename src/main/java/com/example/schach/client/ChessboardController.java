@@ -288,8 +288,8 @@ public class ChessboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        player1.setText(Client.getUsername());
-        player2.setText(Client.getServerUsername());
+        player1.setText(MyClientThread.getUsername());
+        player2.setText(MyClientThread.getServerUsername());
     }
 
 

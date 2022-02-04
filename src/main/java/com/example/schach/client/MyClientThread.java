@@ -11,6 +11,8 @@ public class MyClientThread implements Runnable {
     private ObjectInputStream reader;
     private ObjectOutputStream writer;
     public static boolean isConnectedWithTheServer = false;
+    private static String serverUsername;
+    private static String username;
 
     public MyClientThread(String IPADDRESS, int PORT) {
         this.IPADDRESS = IPADDRESS;
@@ -39,8 +41,15 @@ public class MyClientThread implements Runnable {
         }
 
     }
+    public static void setUsername(String username) {
+        MyClientThread.username = username;
+    }
 
-    public static boolean isIsConnectedWithTheServer() {
-        return isConnectedWithTheServer;
+    public static String getServerUsername() {
+        return serverUsername;
+    }
+
+    public static String getUsername() {
+        return username;
     }
 }
