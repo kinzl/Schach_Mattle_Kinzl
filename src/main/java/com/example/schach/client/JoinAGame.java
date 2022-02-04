@@ -31,8 +31,13 @@ public class JoinAGame implements Initializable {
 
         if(isValidIpAddress(ipAddress.getText())){
             client = new Client(ipAddress.getText());
-            client.run();
-            if(Client.isConnectedWithTheServer){
+            client.activate();
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if (MyClientThread.isConnectedWithTheServer){
                 status.setText("Connected");
                 connectButtonID.setDisable(true);
                 playButton.setDisable(false);

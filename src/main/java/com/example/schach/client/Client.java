@@ -3,86 +3,47 @@ package com.example.schach.client;
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-public class Client implements Runnable {
+public class Client {
     private BufferedWriter writer;
     private BufferedReader reader;
-
     private String IPADDRESS;
     private int PORT = 23;
     private boolean running = true;
-    public static boolean isConnectedWithTheServer = false;
+
     private Socket socket;
     private static String serverUsername;
     private static String username;
-   /* private ObjectOutputStream   writer;
-    private ObjectInputStream  reader;*/
+
     private static boolean isClientWhite = true;
     private static boolean isServerBlack = false;
 
+    private final ExecutorService pool;
+    private final List<MyClientThread> clientThreads;
+    private boolean stop;
+
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
+        pool = Executors.newFixedThreadPool(3);
+        clientThreads = new ArrayList<>();
     }
 
+    private void runClient() {
+        System.out.println("CLIENT: Waiting for Server");
 
+        stop = false;
 
-    @Override
-    public void run() {
-        try {
-            socket = new Socket(IPADDRESS, PORT);
-            isConnectedWithTheServer = true;
+        MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT);
+        pool.execute(myClientThread);
 
-            System.out.println("CLIENT: before");
-                reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            //reader = new ObjectInputStream(socket.getInputStream());
-            System.out.println("CLIENT: middle");
-            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            //writer = new ObjectOutputStream(socket.getOutputStream());
-            System.out.println("CLIENT: after");
-            System.out.println("CLIENT: Connected to Server");
-
-            handleUsername();
-
-            while (running) {
-
-                //TODO: Connection to Server
-                System.out.println("Server received from Client: " + serverUsername);
-
-                running = false;
-
-
-            }
-        } catch (UnknownHostException ex) {
-
-            System.out.println("Server not found: " + ex.getMessage());
-
-            //ex.printStackTrace();
-        } catch (IOException ex) {
-
-            System.out.println("I/O error: " + ex.getMessage());
-            //ex.printStackTrace();
-        }
     }
 
-    private void handleUsername(){
-        try {
-            writer.write("handleUsername");
-            writer.newLine();
-            writer.flush();
-            writer.write(username);
-            writer.newLine();
-            writer.flush();
-
-            //writer.writeObject("handleUsername");
-            //writer.writeObject(username);
-
-            String s = reader.readLine();
-            if(s.equals("handleUsername")) {
-                serverUsername = reader.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void activate() {
+        new Thread(() -> runClient()).start();
     }
 
     public static void setUsername(String username) {

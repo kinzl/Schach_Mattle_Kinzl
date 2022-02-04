@@ -9,10 +9,6 @@ public class MyServerThread extends Thread {
     private Socket socket = null;
     private boolean running;
     private static String username;
-    private BufferedReader reader;
-    private BufferedWriter writer;
-//    private ObjectInputStream reader;
-//    private ObjectOutputStream  writer;
     private static String clientUsername;
 
     public static void setUsername(String username) {
@@ -25,20 +21,17 @@ public class MyServerThread extends Thread {
 
     @Override
     public void run() {
-
-        try {
+        try(Socket socket = this.socket;
+        ObjectOutputStream writer = new ObjectOutputStream(socket.getOutputStream());
+        ObjectInputStream reader = new ObjectInputStream(socket.getInputStream());
+        ) {
             running = true;
 
-            System.out.println("SERVER: before");
-            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            //reader = new ObjectInputStream(socket.getInputStream());
-            System.out.println("SERVER: middle");
-            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            //writer = new ObjectOutputStream(socket.getOutputStream());
-            System.out.println("SERVER: after");
-
+            writer.writeObject("Hello");
+            String s = reader.readObject().toString();
+            System.out.println(s);
             handleUsername();
-            String s;
+
 
             while (running) {
                 //s = reader.readLine();
@@ -51,6 +44,8 @@ public class MyServerThread extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
 
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
@@ -60,22 +55,22 @@ public class MyServerThread extends Thread {
 
 
     private void handleUsername(){
-        try {
-            String s = reader.readLine();
-            if(s.equals("handleUsername")) {
-                clientUsername = reader.readLine();
-            }
-
-            writer.write("handleUsername");
-            writer.newLine();
-            writer.flush();
-            writer.write(username);
-            writer.newLine();
-            writer.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            String s = reader.readLine();
+//            if(s.equals("handleUsername")) {
+//                clientUsername = reader.readLine();
+//            }
+//
+//            writer.write("handleUsername");
+//            writer.newLine();
+//            writer.flush();
+//            writer.write(username);
+//            writer.newLine();
+//            writer.flush();
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public static String getClientUsername() {
