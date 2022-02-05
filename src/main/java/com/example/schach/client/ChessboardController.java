@@ -532,6 +532,11 @@ public class ChessboardController implements Initializable, Serializable {
 
     public void updateChessfield() {
         try {
+            //ToDo: in informationList is da geupdatete stand vom Server gspeichert.
+            //ToDo: Dei Aufgabe ist dassd de informationList durchlaufst und de Felder neich
+            //ToDo: setzt. Dazua gibts a methode mit demsd fieldName, x und y koordinate griagsd(untn auskommentiert)
+
+
             informationList = (List<Information>) reader.readObject();
             //informationList.get(i).getFieldName();
 
