@@ -14,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -186,13 +187,29 @@ public class ChessboardController implements Initializable , Serializable {
             isChoosen = true;
             if (clickedpic != null)
             System.out.println("Feld ausgewählt");
-
+            getAll();
         }
 
     }
-
-
-
+    public void getAll()
+    {
+        for (Node n : chessBoardView.getChildren()) {
+            List<String> s = new ArrayList<String>();
+            Integer x;
+            Integer y;
+            Integer rowN = GridPane.getRowIndex(n);
+            Integer columnN = GridPane.getColumnIndex(n);
+            if (rowN == null) {
+                rowN = 0;
+            }
+            if (columnN == null) {
+                columnN = 0;
+            }
+            s.add(n.getId());
+            System.out.println(n.getId());
+            System.out.println(rowN +"+" +columnN);
+        }
+    }
     public void mouseDragExited(MouseEvent mouseEvent2) {
         Integer b = null;
         Integer x = GridPane.getRowIndex((Node) mouseEvent2.getSource());
@@ -233,8 +250,6 @@ public class ChessboardController implements Initializable , Serializable {
         }
 
 
-
-
         isChoosen = false;
         pressed = false;
         clickedpic = null;
@@ -242,9 +257,7 @@ public class ChessboardController implements Initializable , Serializable {
         //sendChessfieldToServer();
 
     }
-
-    private boolean isrunnerKill(Integer x, Integer y, Integer oldX, Integer oldY)
-    {
+    private boolean isrunnerKill(Integer x, Integer y, Integer oldX, Integer oldY) {
         if(Math.abs(x - oldX) != Math.abs(y- oldY)){
             return false;
         }else{
@@ -287,7 +300,6 @@ public class ChessboardController implements Initializable , Serializable {
 
 
     }
-
     private int[] moveRunner(Integer x, Integer y) {
         Integer newX = x;
         Integer newY = y;
