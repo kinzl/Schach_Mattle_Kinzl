@@ -11,12 +11,13 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class ChessboardController implements Initializable {
+public class ChessboardController implements Initializable , Serializable {
     public GridPane chessBoardView;
     public ImageView black_left_horse;
     public ImageView black_left_runner;
@@ -156,14 +157,27 @@ public class ChessboardController implements Initializable {
                             clickedpic = null;
                             slectedPic= null;
                         }
+                    }else if (farbeChosen1.contains("runner")){
+                        if(isrunnerKill(x,y,oldX,oldY) == true)
+                        {
+                            for (Node n : chessBoardView.getChildren()) {
+                                if (n == slectedPic) {
+                                    n.setVisible(false);
+                                }
+                            }
+                            GridPane.setRowIndex(clickedpic, x);
+                            GridPane.setColumnIndex(clickedpic, y);
+                            System.out.println("Feld ersetzt");
+                        }else{
+                            clickedpic = null;
+                            slectedPic= null;
+                        }
                     }
 
                 }
             isChoosen = false;
             pressed = false;
-
-
-           sendChessfieldToServer();
+           //sendChessfieldToServer();
 
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
@@ -176,6 +190,9 @@ public class ChessboardController implements Initializable {
         }
 
     }
+
+
+
     public void mouseDragExited(MouseEvent mouseEvent2) {
         Integer b = null;
         Integer x = GridPane.getRowIndex((Node) mouseEvent2.getSource());
@@ -207,6 +224,12 @@ public class ChessboardController implements Initializable {
             GridPane.setRowIndex(clickedpic, moveHorse[0]);
             GridPane.setColumnIndex(clickedpic, moveHorse[1]);
             System.out.println("Feld verschoben");
+        }else if(name2.contains("runner"))
+        {
+            int[] moveRunner = moveRunner(x,y);
+            GridPane.setRowIndex(clickedpic, moveRunner[0]);
+            GridPane.setColumnIndex(clickedpic, moveRunner[1]);
+            System.out.println("Feld verschoben");
         }
 
 
@@ -216,10 +239,115 @@ public class ChessboardController implements Initializable {
         pressed = false;
         clickedpic = null;
 
-        sendChessfieldToServer();
+        //sendChessfieldToServer();
 
     }
 
+    private boolean isrunnerKill(Integer x, Integer y, Integer oldX, Integer oldY)
+    {
+        if(Math.abs(x - oldX) != Math.abs(y- oldY)){
+            return false;
+        }else{
+            int rowOffset, colOffset;
+
+            if(oldX < x){
+                rowOffset = 1;
+            }else{
+                rowOffset = -1;
+            }
+
+            if( oldY< y){
+                colOffset = 1;
+            }else{
+                colOffset = -1;
+            }
+
+            int y1 = oldY + colOffset;
+            for(int x1 = oldX + rowOffset; x1 != x; x1 += rowOffset) {
+
+                for (Node n : chessBoardView.getChildren()) {
+                    Integer rowN = GridPane.getRowIndex(n);
+                    Integer columnN = GridPane.getColumnIndex(n);
+                    if (rowN == null) {
+                        rowN = 0;
+                    }
+                    if (columnN == null) {
+                        columnN = 0;
+                    }
+                    if (rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView && n.isVisible()) {
+                        return false;
+                    }
+
+                }
+                y += colOffset;
+            }
+        }
+
+        return true;
+
+
+    }
+
+    private int[] moveRunner(Integer x, Integer y) {
+        Integer newX = x;
+        Integer newY = y;
+        Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
+        Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
+        String name = clickedpic.getId();
+        Integer b = null;
+        if (oldX == b) {
+            oldX = 0;
+        }
+        if (oldY == b) {
+            oldY = 0;
+        }
+        int row = oldX;
+        int column = oldY;
+        if(Math.abs(newX - oldX) != Math.abs(newY- oldY)){
+            return new int[]{oldX,oldY};
+        }else{
+            int rowOffset, colOffset;
+
+            if(oldX < newX){
+                rowOffset = 1;
+            }else{
+                rowOffset = -1;
+            }
+
+            if( oldY< newY){
+                colOffset = 1;
+            }else{
+                colOffset = -1;
+            }
+
+            int y1 = oldY + colOffset;
+            for(int x1 = oldX + rowOffset; x1 != newX; x1 += rowOffset) {
+
+                for (Node n : chessBoardView.getChildren()) {
+                    Integer rowN = GridPane.getRowIndex(n);
+                    Integer columnN = GridPane.getColumnIndex(n);
+                    if (rowN == null) {
+                        rowN = 0;
+                    }
+                    if (columnN == null) {
+                        columnN = 0;
+                    }
+                    if (rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView && n.isVisible()) {
+                        return new int[]{oldX, oldY};
+                    }
+
+                }
+                y += colOffset;
+            }
+        }
+
+            return new int[]{newX,newY};
+
+
+
+
+
+    }
     private int[] moveHorse(Integer x, Integer y) {
         Integer newX = x;
         Integer newY = y;
@@ -397,8 +525,8 @@ public class ChessboardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
-        player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
+        //player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
+        //player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
 
         this.reader = MyClientThread.getReader();
         this.writer = MyClientThread.getWriter();
@@ -406,7 +534,7 @@ public class ChessboardController implements Initializable {
 
     private void sendChessfieldToServer(){
         try {
-            writer.writeObject("Hallo");
+            writer.writeObject("hallo");
         } catch (IOException e) {
             e.printStackTrace();
         }
