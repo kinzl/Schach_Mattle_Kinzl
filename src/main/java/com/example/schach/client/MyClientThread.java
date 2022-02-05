@@ -6,9 +6,10 @@ import javafx.scene.Node;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.Socket;
 
-public class MyClientThread implements Runnable {
+public class MyClientThread implements Runnable, Serializable {
     private String IPADDRESS;
     private int PORT;
     private static ObjectInputStream reader;

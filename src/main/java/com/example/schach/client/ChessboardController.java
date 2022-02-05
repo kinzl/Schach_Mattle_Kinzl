@@ -11,12 +11,13 @@ import javafx.scene.layout.GridPane;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class ChessboardController implements Initializable {
+public class ChessboardController implements Initializable, Serializable {
     public GridPane chessBoardView;
     public ImageView black_left_horse;
     public ImageView black_left_runner;
@@ -406,7 +407,7 @@ public class ChessboardController implements Initializable {
 
     private void sendChessfieldToServer(){
         try {
-            writer.writeObject("Hallo");
+            writer.writeObject(list.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
