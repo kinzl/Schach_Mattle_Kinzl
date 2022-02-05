@@ -3,6 +3,7 @@ package com.example.schach.server;
 
 import com.example.schach.client.ChessboardController;
 import com.example.schach.client.Information;
+import com.example.schach.client.MessangerController;
 
 import java.io.*;
 import java.net.Socket;
@@ -18,6 +19,7 @@ public class MyServerThread extends Thread {
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
     private List<Information> informationList = new ArrayList<>();
+    private MessangerController messangerController;
 
     public static void setUsername(String username) {
         MyServerThread.username = username;
@@ -41,6 +43,7 @@ public class MyServerThread extends Thread {
 
             ChessboardController chessboardController = new ChessboardController();
             chessboardController.setStreams(writer, reader);
+            messangerController = new MessangerController(writer, reader);
 
             while (running) {
 
@@ -49,13 +52,15 @@ public class MyServerThread extends Thread {
                 if (o instanceof String) {
                     String s = o.toString();
                     System.out.println(s);
-                    o = reader.readObject();
-                    informationList = (List<Information>) o;
-                    System.out.println("\n\n\n**SERVER received Chessfield from Client**\n\n\n");
-                    for (int i = 0; i < informationList.size(); i++) {
-                        System.out.println(informationList.get(i));
+                    if(s.equals("writeUpdateChessfield")) {
+                        o = reader.readObject();
+                        informationList = (List<Information>) o;
+                        System.out.println("\n\n\n**SERVER received Chessfield from Client**\n\n\n");
+                        for (int i = 0; i < informationList.size(); i++) {
+                            System.out.println(informationList.get(i));
+                        }
+                        informationList = new ArrayList<>();
                     }
-                    informationList = new ArrayList<>();
                 }
 
             }
