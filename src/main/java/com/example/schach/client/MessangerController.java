@@ -39,7 +39,20 @@ public class MessangerController implements Initializable {
 
     }
 
-    public static void receiveMessage() {
+    public void receiveMessage() {
+        try {
+            Object o = reader.readObject();
+            if(o instanceof String){
+                String message = o.toString();
+                observableList.add(message);
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
     }
 

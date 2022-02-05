@@ -4,6 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -61,6 +62,9 @@ public class ChessboardController implements Initializable, Serializable {
     public int isChoosenInt = 0;
     public Label player1;
     public Label player2;
+    public MenuItem openChat;
+    public MenuItem exitSystem;
+
     private boolean isWhiteTurn = true;
     private boolean isBlackTurn = false;
     String farbe;

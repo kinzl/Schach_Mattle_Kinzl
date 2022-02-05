@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: linear-gradient(to left,#0196d1,#440174);" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
+<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: linear-gradient(to left,#0196d1,#440174);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
    <children>
       <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="227.0">
           <children>
@@ -275,5 +283,15 @@
       <Label fx:id="TimerPlayer1" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="99.0" />
       <Label fx:id="TimerPlayer2" layoutX="568.0" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" />
       <Label fx:id="TimeOverAll" layoutX="317.0" layoutY="198.0" />
+      <MenuBar prefHeight="25.0" prefWidth="690.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="openChat" mnemonicParsing="false" text="Open Chat" />
+                  <MenuItem fx:id="exitSystem" mnemonicParsing="false" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
