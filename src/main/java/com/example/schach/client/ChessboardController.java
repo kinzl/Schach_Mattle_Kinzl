@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -77,6 +78,7 @@ public class ChessboardController implements Initializable {
         //System.out.println(chessBoardView.getChildren());
 
         System.out.println(chessBoardView.getChildren().toString());
+        list = chessBoardView.getChildren();
         if (clickedpic == (Node) mouseEvent.getSource()) {
             pressed = false;
             isChoosen = true;
@@ -404,7 +406,7 @@ public class ChessboardController implements Initializable {
 
     private void sendChessfieldToServer(){
         try {
-            writer.writeObject(list);
+            writer.writeObject("Hallo");
         } catch (IOException e) {
             e.printStackTrace();
         }
