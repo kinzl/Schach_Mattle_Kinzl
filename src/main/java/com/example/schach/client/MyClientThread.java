@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyClientThread implements Runnable, Serializable {
     private String IPADDRESS;
@@ -19,6 +21,8 @@ public class MyClientThread implements Runnable, Serializable {
     private static String clientUsername;
     private boolean running = true;
     private String s;
+    private List<Information> informationList = new ArrayList<>();
+
 
     public MyClientThread(String IPADDRESS, int PORT) {
         this.IPADDRESS = IPADDRESS;
@@ -37,14 +41,21 @@ public class MyClientThread implements Runnable, Serializable {
             isConnectedWithTheServer = true;
 
             handleUsername(writer, reader);
+            ChessboardController chessboardController = new ChessboardController();
+            chessboardController.setStreams(writer, reader);
 
-            while (running) {
-                s = reader.readObject().toString();
+            Object o = reader.readObject();
 
-                if(s.equals("updateChessfield")) {
-
+            if (o instanceof String) {
+                String s = o.toString();
+                System.out.println(s);
+                o = reader.readObject();
+                informationList = (List<Information>) o;
+                System.out.println("\n\n\n**CLIENT received Chessfield from Server**\n\n\n");
+                for (int i = 0; i < informationList.size(); i++) {
+                    System.out.println(informationList.get(i));
                 }
-
+                informationList = new ArrayList<>();
             }
 
         } catch (IOException e) {

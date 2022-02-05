@@ -72,7 +72,8 @@ public class JoinAGame implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Chessfield");
+        stage.setTitle("Client Chessfield");
+        ChessboardController.setStreams(MyClientThread.getWriter(), MyClientThread.getReader());
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
