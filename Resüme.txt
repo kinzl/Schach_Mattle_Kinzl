@@ -20,7 +20,7 @@ Connection für 2 Clients auf 1 Server.
 Bedienbare User Interface bis zum Schachfeld.
 Erste Funktionen des schachfeldes und erste Regeln
 
-In dieser Woche haben wir das Schachfeld inklusive Regeln begonnen, auch schon eine fertige Server-Client verbindung.
+In dieser Woche haben wir das Schachfeld inklusive Regeln /verändert/begonnen, auch schon eine fertige Server-Client verbindung.
 Client funktionier einwandfrei, erste versuche mit dem Spielfeld.
 Ziele für nächste Woche:
 Funktionierende verbindung des Clients mit dem server und laden des Spielfelds für beide seiten.
