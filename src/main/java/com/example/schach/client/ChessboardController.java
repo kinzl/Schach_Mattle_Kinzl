@@ -513,7 +513,7 @@ public class ChessboardController implements Initializable, Serializable {
                     columnN = 0;
                 }
 
-                informationList.add(new Information(n.getId(), columnN, rowN));
+                informationList.add(new Information(n.getId(), rowN, columnN));
 //                System.out.println("n.getID: " + n.getId());
 //                System.out.println(rowN + " + " + columnN);
             }
