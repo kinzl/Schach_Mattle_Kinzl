@@ -71,15 +71,13 @@ public class ChessboardController implements Initializable, Serializable {
     String farbe;
     private ObservableList<Node> list;
     private boolean isMovePossible = false;
+    private boolean informationListAdded = false;
 
     List<Information> informationList = new ArrayList<>();
 
 
     private static ObjectOutputStream writer;
     private static ObjectInputStream reader;
-
-
-
 
 
     public void fieldslected00(MouseEvent mouseEvent) {
@@ -173,7 +171,7 @@ public class ChessboardController implements Initializable, Serializable {
                         clickedpic = null;
                         slectedPic = null;
                     }
-                }else if (farbeChosen1.contains("rook")) {
+                } else if (farbeChosen1.contains("rook")) {
                     if (rookKill(x, y, oldX, oldY) == true) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
@@ -239,9 +237,8 @@ public class ChessboardController implements Initializable, Serializable {
             GridPane.setRowIndex(clickedpic, moveRunner[0]);
             GridPane.setColumnIndex(clickedpic, moveRunner[1]);
             System.out.println("Feld verschoben");
-        }else if (name2.contains("rook"))
-        {
-            int[]moveRook = moveRock(x,y);
+        } else if (name2.contains("rook")) {
+            int[] moveRook = moveRock(x, y);
             GridPane.setRowIndex(clickedpic, moveRook[0]);
             GridPane.setColumnIndex(clickedpic, moveRook[1]);
             System.out.println("Feld verschoben");
@@ -252,14 +249,16 @@ public class ChessboardController implements Initializable, Serializable {
         pressed = false;
         clickedpic = null;
 
-        //sendChessfieldToServer();
+
         list = chessBoardView.getChildren();
-        //getAll();
-        //updateChessfield();
+        addInformationList();
+        informationListAdded = true;
+
 
     }
+
     private boolean rookKill(Integer x, Integer y, Integer oldX, Integer oldY) {
-        if(oldX != x && oldY != y){
+        if (oldX != x && oldY != y) {
             //Did not move along one rank/file
             return false;
         }
@@ -267,14 +266,14 @@ public class ChessboardController implements Initializable, Serializable {
         //First I will assumed the Rook is moving along the rows.
         int offset;
 
-        if(oldX != x){
-            if(oldX < x){
+        if (oldX != x) {
+            if (oldX < x) {
                 offset = 1;
-            }else{
+            } else {
                 offset = -1;
             }
 
-            for(int x1 = oldX + offset; x1 != x; x1 += offset){
+            for (int x1 = oldX + offset; x1 != x; x1 += offset) {
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
@@ -294,14 +293,14 @@ public class ChessboardController implements Initializable, Serializable {
         }
 
         //Now do the same for columns
-        if(oldY != y){
-            if(oldY < y){
+        if (oldY != y) {
+            if (oldY < y) {
                 offset = 1;
-            }else{
+            } else {
                 offset = -1;
             }
 
-            for(int x1 = oldY + offset; x1 != y; x1 += offset){
+            for (int x1 = oldY + offset; x1 != y; x1 += offset) {
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
@@ -322,6 +321,7 @@ public class ChessboardController implements Initializable, Serializable {
 
         return true;
     }
+
     private int[] moveRock(Integer x, Integer y) {
         int temp;
         Integer newX = x;
@@ -336,17 +336,16 @@ public class ChessboardController implements Initializable, Serializable {
         if (oldY == b) {
             oldY = 0;
         }
-        if(oldX != newX && oldY != newY){
-            return new int[]{oldX,oldY};
-        }else
-        if(oldX != newX){
-            if(oldX < newX){
+        if (oldX != newX && oldY != newY) {
+            return new int[]{oldX, oldY};
+        } else if (oldX != newX) {
+            if (oldX < newX) {
                 temp = 1;
-            }else{
+            } else {
                 temp = -1;
             }
 
-            for(int x1 = oldX + temp; x1 != newX; x1 += temp){
+            for (int x1 = oldX + temp; x1 != newX; x1 += temp) {
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
@@ -364,14 +363,14 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
         }
-        if(oldY != newY){
-            if(oldY < newY){
+        if (oldY != newY) {
+            if (oldY < newY) {
                 temp = 1;
-            }else{
-               temp = -1;
+            } else {
+                temp = -1;
             }
 
-            for(int x1 = oldY + temp; x1 != newY; x1 += temp){
+            for (int x1 = oldY + temp; x1 != newY; x1 += temp) {
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
@@ -481,7 +480,7 @@ public class ChessboardController implements Initializable, Serializable {
                     if (columnN == null) {
                         columnN = 0;
                     }
-                    if ((rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView) &&n.isVisible()) {
+                    if ((rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView) && n.isVisible()) {
                         return new int[]{oldX, oldY};
                     }
 
@@ -649,14 +648,10 @@ public class ChessboardController implements Initializable, Serializable {
         }
     }
 
+    public void addInformationList() {
 
-    public void getAll() {
-
-        Integer rowN = -1;
-        Integer columnN = -1;
-
-        List<Integer> x = new ArrayList<>();
-        List<Integer> y = new ArrayList<>();
+        Integer rowN;
+        Integer columnN;
 
         for (Node n : chessBoardView.getChildren()) {
             if (n.getTypeSelector().equals("ImageView")) {
@@ -670,21 +665,15 @@ public class ChessboardController implements Initializable, Serializable {
                     columnN = 0;
                 }
 
-                informationList.add(new Information(n.getId(), rowN,columnN));
-                System.out.println("n.getID: " + n.getId());
-                System.out.println(rowN + " + " + columnN);
+                informationList.add(new Information(n.getId(), rowN, columnN));
+                //System.out.println("n.getID: " + n.getId());
+                //System.out.println(rowN + " + " + columnN);
             }
         }
 
-//        System.out.println("\n\n\n**CLIENT** \n\n\n");
-//        for (int i = 0; i < informationList.size(); i++) {
-////            System.out.println(informationList.get(i).toString());
-//        }
-
         try {
-            writer.writeObject("writeUpdateChessfield");
+            writer.writeObject("sendInformationList");
             writer.writeObject(informationList);
-            informationList = new ArrayList<>();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -692,31 +681,26 @@ public class ChessboardController implements Initializable, Serializable {
     }
 
     public void updateChessfield() {
-        try {
-            //ToDo: in informationList is da geupdatete stand vom Server gspeichert.
-            //ToDo: Dei Aufgabe ist dassd de informationList durchlaufst und de Felder neich
-            //ToDo: setzt. Dazua gibts a methode mit demsd fieldName, x und y koordinate griagsd(untn auskommentiert)
 
-            chessBoardView = null;
-            informationList = (List<Information>) reader.readObject();
-            //informationList.get(i).getFieldName();
-            for (int i = 0; i < informationList.size(); i++) {
-                String name = informationList.get(i).getFieldName();
-                Integer x = informationList.get(i).getX();
-                Integer y = informationList.get(i).getY();
-                name = name.substring(0,name.length()-1);
-                System.out.println(name);
-                Image img = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
-                ImageView imgV= new ImageView();
-                imgV.setImage(img);
-                chessBoardView.add(imgV,x,y);
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+        //ToDo: in informationList is da geupdatete stand vom Server gspeichert.
+        //ToDo: Dei Aufgabe ist dassd de informationList durchlaufst und de Felder neich
+        //ToDo: setzt. Dazua gibts a methode mit demsd fieldName, x und y koordinate griagsd(untn auskommentiert)
+        System.out.println("UPDATE CHESSFIELD");
+        chessBoardView = null;
+        //informationList.get(i).getFieldName();
+        for (int i = 0; i < informationList.size(); i++) {
+            String name = informationList.get(i).getFieldName();
+            Integer x = informationList.get(i).getX();
+            Integer y = informationList.get(i).getY();
+            name = name.substring(0, name.length() - 1);
+            System.out.println(name);
+            Image img = new Image(String.valueOf(this.getClass().getResource(
+                    "/images/" + name + ".png")));
+            ImageView imgV = new ImageView();
+            imgV.setImage(img);
+            chessBoardView.add(imgV, x, y);
         }
+
     }
 
 
@@ -731,4 +715,16 @@ public class ChessboardController implements Initializable, Serializable {
         ChessboardController.reader = reader;
     }
 
+    public List<Information> getInformationList() {
+        return informationList;
+    }
+
+    public void setInformationList(List<Information> informationList) {
+        this.informationList = informationList;
+        updateChessfield();
+    }
+
+    public boolean isInformationListAdded() {
+        return informationListAdded;
+    }
 }

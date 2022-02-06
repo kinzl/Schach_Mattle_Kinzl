@@ -49,13 +49,16 @@ public class MyClientThread implements Runnable, Serializable {
             if (o instanceof String) {
                 String s = o.toString();
                 System.out.println(s);
-                o = reader.readObject();
-                informationList = (List<Information>) o;
-                System.out.println("\n\n\n**CLIENT received Chessfield from Server**\n\n\n");
-                for (int i = 0; i < informationList.size(); i++) {
-                    System.out.println(informationList.get(i));
+                if(s.equals("sendInformationList")) {
+                    informationList = (List<Information>) reader.readObject();
+
+                    System.out.println("INFOLIST:::CLIENT");
+                    for (int i = 0; i < informationList.size(); i++) {
+                        //System.out.println(informationList.get(i));
+                    }
+
+                    chessboardController.setInformationList(informationList);
                 }
-                informationList = new ArrayList<>();
             }
 
         } catch (IOException e) {
