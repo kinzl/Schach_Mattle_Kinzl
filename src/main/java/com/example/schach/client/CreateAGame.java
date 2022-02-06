@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import com.example.schach.server.MyServerThread;
 import com.example.schach.server.Server;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,7 +56,8 @@ public class CreateAGame implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Chessfield");
+        ChessboardController.setStreams(MyServerThread.getWriter(), MyServerThread.getReader());
+        stage.setTitle("Server Chessfield");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();

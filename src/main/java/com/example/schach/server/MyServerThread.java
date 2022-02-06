@@ -1,8 +1,14 @@
 package com.example.schach.server;
 
 
+import com.example.schach.client.ChessboardController;
+import com.example.schach.client.Information;
+import com.example.schach.client.MessangerController;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyServerThread extends Thread {
 
@@ -12,6 +18,8 @@ public class MyServerThread extends Thread {
     private static String clientUsername;
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
+    private List<Information> informationList = new ArrayList<>();
+    private MessangerController messangerController;
 
     public static void setUsername(String username) {
         MyServerThread.username = username;
@@ -33,15 +41,27 @@ public class MyServerThread extends Thread {
 
             handleUsername(writer, reader);
 
-
+            ChessboardController chessboardController = new ChessboardController();
+            chessboardController.setStreams(writer, reader);
+            messangerController = new MessangerController(writer, reader);
 
             while (running) {
-                //s = reader.readLine();
-                //TODO: Connection to Server
-                //System.out.println("Server received from Client: " + clientUsername);
-//                running = false;
+
                 Object o = reader.readObject();
-                System.out.println(o.toString());
+
+                if (o instanceof String) {
+                    String s = o.toString();
+                    System.out.println(s);
+                    if(s.equals("writeUpdateChessfield")) {
+                        o = reader.readObject();
+                        informationList = (List<Information>) o;
+                        System.out.println("\n\n\n**SERVER received Chessfield from Client**\n\n\n");
+                        for (int i = 0; i < informationList.size(); i++) {
+                            System.out.println(informationList.get(i));
+                        }
+                        informationList = new ArrayList<>();
+                    }
+                }
 
             }
         } catch (IOException e) {
@@ -67,6 +87,14 @@ public class MyServerThread extends Thread {
 
     public static String getClientUsername() {
         return clientUsername;
+    }
+
+    public static ObjectInputStream getReader() {
+        return reader;
+    }
+
+    public static ObjectOutputStream getWriter() {
+        return writer;
     }
 }
 
