@@ -79,6 +79,9 @@ public class ChessboardController implements Initializable, Serializable {
     private static ObjectInputStream reader;
 
 
+
+
+
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
@@ -170,6 +173,20 @@ public class ChessboardController implements Initializable, Serializable {
                         clickedpic = null;
                         slectedPic = null;
                     }
+                }else if (farbeChosen1.contains("rook")) {
+                    if (rookKill(x, y, oldX, oldY) == true) {
+                        for (Node n : chessBoardView.getChildren()) {
+                            if (n == slectedPic) {
+                                n.setVisible(false);
+                            }
+                        }
+                        GridPane.setRowIndex(clickedpic, x);
+                        GridPane.setColumnIndex(clickedpic, y);
+                        System.out.println("Feld ersetzt");
+                    } else {
+                        clickedpic = null;
+                        slectedPic = null;
+                    }
                 }
 
             }
@@ -222,6 +239,12 @@ public class ChessboardController implements Initializable, Serializable {
             GridPane.setRowIndex(clickedpic, moveRunner[0]);
             GridPane.setColumnIndex(clickedpic, moveRunner[1]);
             System.out.println("Feld verschoben");
+        }else if (name2.contains("rook"))
+        {
+            int[]moveRook = moveRock(x,y);
+            GridPane.setRowIndex(clickedpic, moveRook[0]);
+            GridPane.setColumnIndex(clickedpic, moveRook[1]);
+            System.out.println("Feld verschoben");
         }
 
 
@@ -231,9 +254,143 @@ public class ChessboardController implements Initializable, Serializable {
 
         //sendChessfieldToServer();
         list = chessBoardView.getChildren();
-        getAll();
-        updateChessfield();
+        //getAll();
+        //updateChessfield();
 
+    }
+    private boolean rookKill(Integer x, Integer y, Integer oldX, Integer oldY) {
+        if(oldX != x && oldY != y){
+            //Did not move along one rank/file
+            return false;
+        }
+
+        //First I will assumed the Rook is moving along the rows.
+        int offset;
+
+        if(oldX != x){
+            if(oldX < x){
+                offset = 1;
+            }else{
+                offset = -1;
+            }
+
+            for(int x1 = oldX + offset; x1 != x; x1 += offset){
+                for (Node n : chessBoardView.getChildren()) {
+                    Integer rowN = GridPane.getRowIndex(n);
+                    Integer columnN = GridPane.getColumnIndex(n);
+                    if (rowN == null) {
+                        rowN = 0;
+                    }
+                    if (columnN == null) {
+                        columnN = 0;
+                    }
+                    if ((rowN.equals(x1) && columnN.equals(oldY) && n instanceof ImageView) && n.isVisible()) {
+                        return false;
+                    }
+
+                }
+
+            }
+        }
+
+        //Now do the same for columns
+        if(oldY != y){
+            if(oldY < y){
+                offset = 1;
+            }else{
+                offset = -1;
+            }
+
+            for(int x1 = oldY + offset; x1 != y; x1 += offset){
+                for (Node n : chessBoardView.getChildren()) {
+                    Integer rowN = GridPane.getRowIndex(n);
+                    Integer columnN = GridPane.getColumnIndex(n);
+                    if (rowN == null) {
+                        rowN = 0;
+                    }
+                    if (columnN == null) {
+                        columnN = 0;
+                    }
+                    if ((rowN.equals(oldX) && columnN.equals(x1) && n instanceof ImageView) && n.isVisible()) {
+                        return false;
+                    }
+
+                }
+
+            }
+        }
+
+        return true;
+    }
+    private int[] moveRock(Integer x, Integer y) {
+        int temp;
+        Integer newX = x;
+        Integer newY = y;
+        Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
+        Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
+        String name = clickedpic.getId();
+        Integer b = null;
+        if (oldX == b) {
+            oldX = 0;
+        }
+        if (oldY == b) {
+            oldY = 0;
+        }
+        if(oldX != newX && oldY != newY){
+            return new int[]{oldX,oldY};
+        }else
+        if(oldX != newX){
+            if(oldX < newX){
+                temp = 1;
+            }else{
+                temp = -1;
+            }
+
+            for(int x1 = oldX + temp; x1 != newX; x1 += temp){
+                for (Node n : chessBoardView.getChildren()) {
+                    Integer rowN = GridPane.getRowIndex(n);
+                    Integer columnN = GridPane.getColumnIndex(n);
+                    if (rowN == null) {
+                        rowN = 0;
+                    }
+                    if (columnN == null) {
+                        columnN = 0;
+                    }
+                    if ((rowN.equals(x1) && columnN.equals(oldY) && n instanceof ImageView)) {
+                        return new int[]{oldX, oldY};
+                    }
+
+                }
+            }
+
+        }
+        if(oldY != newY){
+            if(oldY < newY){
+                temp = 1;
+            }else{
+               temp = -1;
+            }
+
+            for(int x1 = oldY + temp; x1 != newY; x1 += temp){
+                for (Node n : chessBoardView.getChildren()) {
+                    Integer rowN = GridPane.getRowIndex(n);
+                    Integer columnN = GridPane.getColumnIndex(n);
+                    if (rowN == null) {
+                        rowN = 0;
+                    }
+                    if (columnN == null) {
+                        columnN = 0;
+                    }
+                    if ((rowN.equals(oldX) && columnN.equals(x1) && n instanceof ImageView)) {
+                        return new int[]{oldX, oldY};
+                    }
+
+                }
+            }
+        }
+
+
+        return new int[]{newX, newY};
     }
 
     private boolean isrunnerKill(Integer x, Integer y, Integer oldX, Integer oldY) {
@@ -266,7 +423,7 @@ public class ChessboardController implements Initializable, Serializable {
                     if (columnN == null) {
                         columnN = 0;
                     }
-                    if (rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView && n.isVisible()) {
+                    if ((rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView) && n.isVisible()) {
                         return false;
                     }
 
@@ -324,12 +481,12 @@ public class ChessboardController implements Initializable, Serializable {
                     if (columnN == null) {
                         columnN = 0;
                     }
-                    if (rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView && n.isVisible()) {
+                    if ((rowN.equals(x1) && columnN.equals(y1) && n instanceof ImageView) &&n.isVisible()) {
                         return new int[]{oldX, oldY};
                     }
 
                 }
-                y += colOffset;
+                y1 += colOffset;
             }
         }
 
@@ -549,10 +706,11 @@ public class ChessboardController implements Initializable, Serializable {
                 Integer y = informationList.get(i).getY();
                 name = name.substring(0,name.length()-1);
                 System.out.println(name);
-                Image img = new Image(String.valueOf(this.getClass().getResource("/com/example/pcgf/images/" + name + ".png")));
-                //this.chessBoardView = chessBoardView
+                Image img = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
+                ImageView imgV= new ImageView();
+                imgV.setImage(img);
+                chessBoardView.add(imgV,x,y);
             }
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -564,10 +722,8 @@ public class ChessboardController implements Initializable, Serializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
-        player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-
-
+        //player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
+        //player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
     }
 
     public static void setStreams(ObjectOutputStream writer, ObjectInputStream reader) {
