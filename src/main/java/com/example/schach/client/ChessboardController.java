@@ -671,16 +671,6 @@ public class ChessboardController implements Initializable, Serializable {
             e.printStackTrace();
         }
         informationListAdded = false;
-//        for (int i = 0; i < informationList.size(); i++) {
-//            System.out.println("CHESSBOARD: " + informationList.get(i));
-//        }
-//        try {
-//            writer.writeObject("sendInformationList");
-//            writer.writeObject(informationList);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
     }
 
     public void updateChessfield() {
@@ -689,18 +679,21 @@ public class ChessboardController implements Initializable, Serializable {
 
         //informationList.get(i).getFieldName();
         for (int i = 0; i < informationList.size(); i++) {
-            System.out.println(informationList.get(i));
+            System.out.println("UPDATE: " + informationList.get(i));
+        }
+
+        for (int i = 0; i < informationList.size(); i++) {
             String name = informationList.get(i).getFieldName();
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
             name = name.substring(0, name.length() - 1);
 //            System.out.println(name);
-
+            System.out.println(name + " " + x + " " + y);
 
             ImageView imgV = new ImageView();
             Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
             imgV.setImage(image);
-            System.out.println("imgV: " + imgV);
+            //System.out.println("imgV: " + imgV);
             clickedpic = imgV;
             clickedpic.setId(name);
             movement(name, x, y);
@@ -721,7 +714,7 @@ public class ChessboardController implements Initializable, Serializable {
     }
 
     public void setInformationList(List<Information> informationList) {
-        this.informationList = informationList;
+        ChessboardController.informationList = informationList;
         updateChessfield();
     }
 
