@@ -187,7 +187,7 @@ public class ChessboardController implements Initializable , Serializable {
             isChoosen = true;
             if (clickedpic != null)
             System.out.println("Feld ausgewählt");
-            getAll();
+            //getAll();
         }
 
     }
