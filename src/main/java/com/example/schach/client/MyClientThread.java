@@ -22,6 +22,7 @@ public class MyClientThread implements Runnable, Serializable {
     private boolean running = true;
     private String s;
     private List<Information> informationList = new ArrayList<>();
+    private ChessboardController chessboardController;
 
 
     public MyClientThread(String IPADDRESS, int PORT) {
@@ -32,47 +33,54 @@ public class MyClientThread implements Runnable, Serializable {
     @Override
     public void run() {
         //ToDO: Methods of Client
-
         try {
-                Socket socket = new Socket("localhost", 23);
-                reader = new ObjectInputStream(socket.getInputStream());
-                writer = new ObjectOutputStream(socket.getOutputStream());
+            Socket socket = new Socket("localhost", 23);
+            reader = new ObjectInputStream(socket.getInputStream());
+            writer = new ObjectOutputStream(socket.getOutputStream());
 
             isConnectedWithTheServer = true;
 
-            handleUsername(writer, reader);
-            ChessboardController chessboardController = new ChessboardController();
-            chessboardController.setStreams(writer, reader);
+            handleUsername();
+            chessboardController = new ChessboardController();
 
-            Object o = reader.readObject();
+            System.out.println("CLIENT started");
+            while (running) {
 
-            if (o instanceof String) {
-                String s = o.toString();
-                System.out.println(s);
-                if(s.equals("sendInformationList")) {
-                    informationList = (List<Information>) reader.readObject();
 
-                    System.out.println("INFOLIST:::CLIENT");
-                    for (int i = 0; i < informationList.size(); i++) {
-                        System.out.println(informationList.get(i));
+                Object o = reader.readObject();
+
+                if (o instanceof String) {
+                    String s = o.toString();
+                    System.out.println("CLIENT: " + s);
+                    if (s.equals("sendInformationList")) {
+                        informationList = (List<Information>) reader.readObject();
+
+                        System.out.println("INFOLIST:::CLIENT");
+                        for (int i = 0; i < informationList.size(); i++) {
+                            System.out.println(informationList.get(i));
+                        }
+
+                        chessboardController.setInformationList(informationList);
                     }
-
-                    chessboardController.setInformationList(informationList);
                 }
-            }
 
+                Thread.sleep(200);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
     }
+
     public static void setUsername(String username) {
         MyClientThread.clientUsername = username;
     }
 
-    private void handleUsername(ObjectOutputStream writer, ObjectInputStream reader){
+    private void handleUsername() {
         try {
             serverUsername = reader.readObject().toString();
         } catch (IOException e) {

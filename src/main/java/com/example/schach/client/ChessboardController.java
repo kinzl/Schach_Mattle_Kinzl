@@ -73,14 +73,8 @@ public class ChessboardController implements Initializable, Serializable {
     String farbe;
     private ObservableList<Node> list;
     private boolean isMovePossible = false;
-    private boolean informationListAdded = false;
-
-    List<Information> informationList = new ArrayList<>();
-
-
-    private static ObjectOutputStream writer;
-    private static ObjectInputStream reader;
-
+    public static boolean informationListAdded = false;
+    public static List<Information> informationList = new ArrayList<>();
 
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
@@ -206,7 +200,7 @@ public class ChessboardController implements Initializable, Serializable {
                         GridPane.setRowIndex(clickedpic, x);
                         GridPane.setColumnIndex(clickedpic, y);
                         System.out.println("Feld ersetzt");
-                    }else {
+                    } else {
                         clickedpic = null;
                         slectedPic = null;
                     }
@@ -217,6 +211,7 @@ public class ChessboardController implements Initializable, Serializable {
             pressed = false;
 
             addInformationList();
+
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
             System.out.println(clickedpic);
@@ -250,10 +245,9 @@ public class ChessboardController implements Initializable, Serializable {
         pressed = false;
         clickedpic = null;
 
-
         list = chessBoardView.getChildren();
         addInformationList();
-        informationListAdded = true;
+
 
     }
 
@@ -274,7 +268,7 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
             for (int x1 = oldX + offset; x1 != x; x1 += offset) {
-                for (Node n : chessBoardView.getChildren()) {
+                for (Node n : this.chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -670,21 +664,27 @@ public class ChessboardController implements Initializable, Serializable {
                 //System.out.println(rowN + " + " + columnN);
             }
         }
-
+        informationListAdded = true;
         try {
-            writer.writeObject("sendInformationList");
-            writer.writeObject(informationList);
-        } catch (IOException e) {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        informationListAdded = false;
+//        for (int i = 0; i < informationList.size(); i++) {
+//            System.out.println("CHESSBOARD: " + informationList.get(i));
+//        }
+//        try {
+//            writer.writeObject("sendInformationList");
+//            writer.writeObject(informationList);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
     public void updateChessfield() {
 
-        //ToDo: in informationList is da geupdatete stand vom Server gspeichert.
-        //ToDo: Dei Aufgabe ist dassd de informationList durchlaufst und de Felder neich
-        //ToDo: setzt. Dazua gibts a methode mit demsd fieldName, x und y koordinate griagsd(untn auskommentiert)
         System.out.println("UPDATE CHESSFIELD");
 
         //informationList.get(i).getFieldName();
@@ -714,11 +714,6 @@ public class ChessboardController implements Initializable, Serializable {
     public void initialize(URL location, ResourceBundle resources) {
         player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
         player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-    }
-
-    public static void setStreams(ObjectOutputStream writer, ObjectInputStream reader) {
-        ChessboardController.writer = writer;
-        ChessboardController.reader = reader;
     }
 
     public List<Information> getInformationList() {
@@ -760,23 +755,23 @@ public class ChessboardController implements Initializable, Serializable {
             GridPane.setRowIndex(clickedpic, moveRook[0]);
             GridPane.setColumnIndex(clickedpic, moveRook[1]);
             System.out.println("Feld verschoben");
-        } else if( name.contains("queen"))
-        {
-            int[]moveQueen = moveQueen(x,y);
-            GridPane.setRowIndex(clickedpic,moveQueen[0]);
+        } else if (name.contains("queen")) {
+            int[] moveQueen = moveQueen(x, y);
+            GridPane.setRowIndex(clickedpic, moveQueen[0]);
             GridPane.setColumnIndex(clickedpic, moveQueen[1]);
         }
     }
+
     private int[] moveQueen(Integer x, Integer y) {
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        if((rookKill(x,y,oldX,oldY))== true)
-        {
-            return new int[]{x,y};
-        }else if(isrunnerKill(x,y,oldX,oldY) == true)
-        {
-            return new int[]{x,y};
+        if ((rookKill(x, y, oldX, oldY)) == true) {
+            return new int[]{x, y};
+        } else if (isrunnerKill(x, y, oldX, oldY) == true) {
+            return new int[]{x, y};
         }
-        return new int[]{oldX,oldY};
+        return new int[]{oldX, oldY};
     }
+
+
 }

@@ -20,6 +20,7 @@ public class MyServerThread extends Thread {
     private static ObjectOutputStream writer;
     private List<Information> informationList = new ArrayList<>();
     private MessangerController messangerController;
+    private ChessboardController chessboardController;
 
     public static void setUsername(String username) {
         MyServerThread.username = username;
@@ -39,36 +40,27 @@ public class MyServerThread extends Thread {
             running = true;
 
 
-            handleUsername(writer, reader);
+            handleUsername();
 
-            ChessboardController chessboardController = new ChessboardController();
-            chessboardController.setStreams(writer, reader);
+            chessboardController = new ChessboardController();
+
             messangerController = new MessangerController(writer, reader);
-
+            System.out.println("SERVER started");
             while (running) {
 
-                Object o = reader.readObject();
-
-                if (o instanceof String) {
-                    String s = o.toString();
-                    System.out.println(s);
-
-                    if(chessboardController.isInformationListAdded()) {
-                        informationList = chessboardController.getInformationList();
-                        writer.writeObject("sendInformationList");
-                        writer.flush();
-                        writer.writeObject(informationList);
-                        writer.flush();
-                    }
-
-
+                if (ChessboardController.informationListAdded) {
+                    informationList = ChessboardController.informationList;
+                    writer.writeObject("sendInformationList");
+                    writer.writeObject(informationList);
+                    System.out.println("SERVER SENT");
                 }
+Thread.sleep(200);
 
             }
         } catch (IOException e) {
             e.printStackTrace();
 
-        } catch (ClassNotFoundException e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -78,16 +70,12 @@ public class MyServerThread extends Thread {
     }
 
 
-    private void handleUsername(ObjectOutputStream writer, ObjectInputStream reader) {
+    private void handleUsername() {
         try {
             writer.writeObject(username);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static String getClientUsername() {
-        return clientUsername;
     }
 
     public static ObjectInputStream getReader() {
@@ -97,5 +85,7 @@ public class MyServerThread extends Thread {
     public static ObjectOutputStream getWriter() {
         return writer;
     }
+
+
 }
 
