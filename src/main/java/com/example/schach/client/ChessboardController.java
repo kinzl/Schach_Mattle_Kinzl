@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -185,14 +187,39 @@ public class ChessboardController implements Initializable, Serializable {
                         clickedpic = null;
                         slectedPic = null;
                     }
+                } else if (farbeChosen1.contains("queen")) {
+                    if (rookKill(x, y, oldX, oldY) == true) {
+                        for (Node n : chessBoardView.getChildren()) {
+                            if (n == slectedPic) {
+                                n.setVisible(false);
+                            }
+                        }
+                        GridPane.setRowIndex(clickedpic, x);
+                        GridPane.setColumnIndex(clickedpic, y);
+                        System.out.println("Feld ersetzt");
+                    } else if (isrunnerKill(x, y, oldX, oldY) == true) {
+                        for (Node n : chessBoardView.getChildren()) {
+                            if (n == slectedPic) {
+                                n.setVisible(false);
+                            }
+                        }
+                        GridPane.setRowIndex(clickedpic, x);
+                        GridPane.setColumnIndex(clickedpic, y);
+                        System.out.println("Feld ersetzt");
+                    }else {
+                        clickedpic = null;
+                        slectedPic = null;
+                    }
                 }
 
             }
             isChoosen = false;
             pressed = false;
 
+            addInformationList();
         } else {
             clickedpic = (ImageView) mouseEvent.getSource();
+            System.out.println(clickedpic);
             farbe = clickedpic.getId().replaceAll(".$", "");
             pressed = true;
             isChoosen = true;
@@ -217,33 +244,7 @@ public class ChessboardController implements Initializable, Serializable {
         if (clickedpic != null) {
             name2 = clickedpic.getId();
         }
-        if (name2.contains("pawn")) {
-            int[] move = movePawn(x, y);
-            GridPane.setRowIndex(clickedpic, move[0]);
-            GridPane.setColumnIndex(clickedpic, move[1]);
-            System.out.println("Feld verschoben");
-        } else if (name2.contains("king")) {
-            int[] moveKing = moveKing(x, y);
-            GridPane.setRowIndex(clickedpic, moveKing[0]);
-            GridPane.setColumnIndex(clickedpic, moveKing[1]);
-            System.out.println("Feld verschoben");
-        } else if (name2.contains("knight")) {
-            int[] moveHorse = moveHorse(x, y);
-            GridPane.setRowIndex(clickedpic, moveHorse[0]);
-            GridPane.setColumnIndex(clickedpic, moveHorse[1]);
-            System.out.println("Feld verschoben");
-        } else if (name2.contains("bishop")) {
-            int[] moveRunner = moveRunner(x, y);
-            GridPane.setRowIndex(clickedpic, moveRunner[0]);
-            GridPane.setColumnIndex(clickedpic, moveRunner[1]);
-            System.out.println("Feld verschoben");
-        } else if (name2.contains("rook")) {
-            int[] moveRook = moveRock(x, y);
-            GridPane.setRowIndex(clickedpic, moveRook[0]);
-            GridPane.setColumnIndex(clickedpic, moveRook[1]);
-            System.out.println("Feld verschoben");
-        }
-
+        movement(name2, x, y);
 
         isChoosen = false;
         pressed = false;
@@ -253,7 +254,6 @@ public class ChessboardController implements Initializable, Serializable {
         list = chessBoardView.getChildren();
         addInformationList();
         informationListAdded = true;
-
 
     }
 
@@ -686,19 +686,25 @@ public class ChessboardController implements Initializable, Serializable {
         //ToDo: Dei Aufgabe ist dassd de informationList durchlaufst und de Felder neich
         //ToDo: setzt. Dazua gibts a methode mit demsd fieldName, x und y koordinate griagsd(untn auskommentiert)
         System.out.println("UPDATE CHESSFIELD");
-        chessBoardView = null;
+
         //informationList.get(i).getFieldName();
         for (int i = 0; i < informationList.size(); i++) {
+            System.out.println(informationList.get(i));
             String name = informationList.get(i).getFieldName();
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
             name = name.substring(0, name.length() - 1);
-            System.out.println(name);
-            Image img = new Image(String.valueOf(this.getClass().getResource(
-                    "/images/" + name + ".png")));
+//            System.out.println(name);
+
+
             ImageView imgV = new ImageView();
-            imgV.setImage(img);
-            chessBoardView.add(imgV, x, y);
+            Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
+            imgV.setImage(image);
+            System.out.println("imgV: " + imgV);
+            clickedpic = imgV;
+            clickedpic.setId(name);
+            movement(name, x, y);
+
         }
 
     }
@@ -706,8 +712,8 @@ public class ChessboardController implements Initializable, Serializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
-        //player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
+        player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
+        player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
     }
 
     public static void setStreams(ObjectOutputStream writer, ObjectInputStream reader) {
@@ -726,5 +732,51 @@ public class ChessboardController implements Initializable, Serializable {
 
     public boolean isInformationListAdded() {
         return informationListAdded;
+    }
+
+    private void movement(String name, int x, int y) {
+        if (name.contains("pawn")) {
+            int[] move = movePawn(x, y);
+            GridPane.setRowIndex(clickedpic, move[0]);
+            GridPane.setColumnIndex(clickedpic, move[1]);
+            System.out.println("Feld verschoben");
+        } else if (name.contains("king")) {
+            int[] moveKing = moveKing(x, y);
+            GridPane.setRowIndex(clickedpic, moveKing[0]);
+            GridPane.setColumnIndex(clickedpic, moveKing[1]);
+            System.out.println("Feld verschoben");
+        } else if (name.contains("knight")) {
+            int[] moveHorse = moveHorse(x, y);
+            GridPane.setRowIndex(clickedpic, moveHorse[0]);
+            GridPane.setColumnIndex(clickedpic, moveHorse[1]);
+            System.out.println("Feld verschoben");
+        } else if (name.contains("bishop")) {
+            int[] moveRunner = moveRunner(x, y);
+            GridPane.setRowIndex(clickedpic, moveRunner[0]);
+            GridPane.setColumnIndex(clickedpic, moveRunner[1]);
+            System.out.println("Feld verschoben");
+        } else if (name.contains("rook")) {
+            int[] moveRook = moveRock(x, y);
+            GridPane.setRowIndex(clickedpic, moveRook[0]);
+            GridPane.setColumnIndex(clickedpic, moveRook[1]);
+            System.out.println("Feld verschoben");
+        } else if( name.contains("queen"))
+        {
+            int[]moveQueen = moveQueen(x,y);
+            GridPane.setRowIndex(clickedpic,moveQueen[0]);
+            GridPane.setColumnIndex(clickedpic, moveQueen[1]);
+        }
+    }
+    private int[] moveQueen(Integer x, Integer y) {
+        Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
+        Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
+        if((rookKill(x,y,oldX,oldY))== true)
+        {
+            return new int[]{x,y};
+        }else if(isrunnerKill(x,y,oldX,oldY) == true)
+        {
+            return new int[]{x,y};
+        }
+        return new int[]{oldX,oldY};
     }
 }

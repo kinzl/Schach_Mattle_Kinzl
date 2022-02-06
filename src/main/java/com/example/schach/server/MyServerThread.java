@@ -56,7 +56,9 @@ public class MyServerThread extends Thread {
                     if(chessboardController.isInformationListAdded()) {
                         informationList = chessboardController.getInformationList();
                         writer.writeObject("sendInformationList");
+                        writer.flush();
                         writer.writeObject(informationList);
+                        writer.flush();
                     }
 
 

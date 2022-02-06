@@ -54,7 +54,7 @@ public class MyClientThread implements Runnable, Serializable {
 
                     System.out.println("INFOLIST:::CLIENT");
                     for (int i = 0; i < informationList.size(); i++) {
-                        //System.out.println(informationList.get(i));
+                        System.out.println(informationList.get(i));
                     }
 
                     chessboardController.setInformationList(informationList);
