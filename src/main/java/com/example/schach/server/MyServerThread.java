@@ -1,17 +1,26 @@
 package com.example.schach.server;
 
 
+import com.example.schach.client.ChessboardController;
+import com.example.schach.client.Information;
+import com.example.schach.client.MessangerController;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyServerThread extends Thread {
 
     private Socket socket = null;
     private boolean running;
     private static String username;
-    private BufferedReader reader;
-    private BufferedWriter writer;
     private static String clientUsername;
+    private static ObjectInputStream reader;
+    private static ObjectOutputStream writer;
+    private List<Information> informationList = new ArrayList<>();
+    private MessangerController messangerController;
+    private ChessboardController chessboardController;
 
     public static void setUsername(String username) {
         MyServerThread.username = username;
@@ -23,28 +32,36 @@ public class MyServerThread extends Thread {
 
     @Override
     public void run() {
-
         try {
+            Socket socket = this.socket;
+            writer = new ObjectOutputStream(socket.getOutputStream());
+            reader = new ObjectInputStream(socket.getInputStream());
+
             running = true;
 
 
-            reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-
             handleUsername();
-            String s;
 
+            chessboardController = new ChessboardController();
+
+            messangerController = new MessangerController(writer, reader);
+            System.out.println("SERVER started");
             while (running) {
-                //s = reader.readLine();
-                //TODO: Connection to Server
-                System.out.println("Server received from Client: " + clientUsername);
-                running = false;
 
+                if (ChessboardController.informationListAdded) {
+                    informationList = ChessboardController.informationList;
+                    writer.writeObject("sendInformationList");
+                    writer.writeObject(informationList);
+                    System.out.println("SERVER SENT");
+                }
+Thread.sleep(200);
 
             }
         } catch (IOException e) {
             e.printStackTrace();
 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -53,27 +70,22 @@ public class MyServerThread extends Thread {
     }
 
 
-    private void handleUsername(){
+    private void handleUsername() {
         try {
-            String s = reader.readLine();
-            if(s.equals("handleUsername")) {
-                clientUsername = reader.readLine();
-            }
-
-            writer.write("handleUsername");
-            writer.newLine();
-            writer.flush();
-            writer.write(username);
-            writer.newLine();
-            writer.flush();
-
+            writer.writeObject(username);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static String getClientUsername() {
-        return clientUsername;
+    public static ObjectInputStream getReader() {
+        return reader;
     }
+
+    public static ObjectOutputStream getWriter() {
+        return writer;
+    }
+
+
 }
 

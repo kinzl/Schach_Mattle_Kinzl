@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import com.example.schach.server.MyServerThread;
 import com.example.schach.server.Server;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,7 +28,6 @@ public class CreateAGame implements Initializable {
 
     public void startServer(ActionEvent actionEvent) throws IOException {
         startServerID.setDisable(true);
-        //ToDo: Auf verbindung überprüfen
         server = new Server();
         server.activate();
         if (server.hasClient()) {
@@ -55,7 +55,7 @@ public class CreateAGame implements Initializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Chessfield");
+        stage.setTitle("Server Chessfield");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
