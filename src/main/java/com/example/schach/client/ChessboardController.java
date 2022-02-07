@@ -741,24 +741,25 @@ public class ChessboardController implements Initializable, Serializable {
     public void updateChessfield() {
 
         System.out.println("UPDATE CHESSFIELD");
-        chessBoardView.getChildren().clear();
+        //chessBoardView.getChildren().clear();
         //System.out.println(chessBoardView.getChildren().size());
         //chessBoardView = new GridPane();
         for (int i = 0; i < informationList.size(); i++) {
             String name = informationList.get(i).getFieldName();
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
-            name = name.substring(0, name.length() - 1);
+
 //            System.out.println(name);System.out.println(name + " " + x + " " + y);
 
-            for (Node n : chessBoardView.getChildren()) {
+            /*for (Node n : this.chessBoardView.getChildren()) {
+                System.out.println("hallo");
                 if(n.getId().contains(name)){
                     GridPane.setRowIndex(n, x);
                     GridPane.setColumnIndex(n, y);
                 }
-            }
+            }*/
 
-            /*ImageView imgV = new ImageView();
+            ImageView imgV = new ImageView();
             Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
             imgV.setImage(image);
             imgV.setId(name);
@@ -771,7 +772,7 @@ public class ChessboardController implements Initializable, Serializable {
                 System.out.println("Update chessfield: " + informationList.get(i));
             }
             GridPane.setRowIndex(imgV, x);
-            GridPane.setColumnIndex(imgV, y);*/
+            GridPane.setColumnIndex(imgV, y);
 
 
         }
