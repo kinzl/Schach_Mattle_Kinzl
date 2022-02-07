@@ -20,7 +20,7 @@ import java.net.URL;
 import java.util.*;
 
 public class ChessboardController implements Initializable, Serializable {
-    public GridPane chessBoardView;
+    public GridPane chessBoardView = new GridPane();
     public ImageView black_left_horse;
     public ImageView black_left_runner;
     public ImageView black_queen;
@@ -676,27 +676,57 @@ public class ChessboardController implements Initializable, Serializable {
     public void updateChessfield() {
 
         System.out.println("UPDATE CHESSFIELD");
-
-        //informationList.get(i).getFieldName();
-        for (int i = 0; i < informationList.size(); i++) {
-            System.out.println("UPDATE: " + informationList.get(i));
-        }
-
+        chessBoardView.getChildren().clear();
+        //System.out.println(chessBoardView.getChildren().size());
+        //chessBoardView = new GridPane();
         for (int i = 0; i < informationList.size(); i++) {
             String name = informationList.get(i).getFieldName();
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
             name = name.substring(0, name.length() - 1);
-//            System.out.println(name);
-            System.out.println(name + " " + x + " " + y);
+//            System.out.println(name);System.out.println(name + " " + x + " " + y);
 
             ImageView imgV = new ImageView();
             Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
             imgV.setImage(image);
+            imgV.setId(name);
             //System.out.println("imgV: " + imgV);
             clickedpic = imgV;
             clickedpic.setId(name);
+
+            chessBoardView.getChildren().add(imgV);
             movement(name, x, y);
+//            //System.out.println(clickedpic.toString());
+//            boolean nodeSet = false;
+//            boolean pieceTraded;
+//            Node node = null;
+//            for (Node n : chessBoardView.getChildren()) {
+//                if (n == null) {
+//                    continue;
+//                }
+//                if (n.toString().contains(name) && nodeSet == false) {
+//                    node = n;
+//                    pieceTraded = true;
+//                    System.out.println("Node: " + node);
+//                    nodeSet = true;
+//                }
+//            }
+//            if (node == null) {
+//                System.out.println("ID NOT FOUND");
+//                pieceTraded = false;
+//                nodeSet = false;
+//            } else if (nodeSet == true) {
+//                GridPane.setColumnIndex(node, y);
+//                GridPane.setRowIndex(node, x);
+//                pieceTraded = false;
+//                nodeSet = false;
+//
+//            } else {
+//                System.out.println("Id wurde nicht gefunden -> Node set false");
+//                pieceTraded = false;
+//                nodeSet = false;
+//            }
+
 
         }
 
@@ -707,6 +737,8 @@ public class ChessboardController implements Initializable, Serializable {
     public void initialize(URL location, ResourceBundle resources) {
         player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
         player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
+
+
     }
 
     public List<Information> getInformationList() {

@@ -34,7 +34,7 @@ public class MyClientThread implements Runnable, Serializable {
     public void run() {
         //ToDO: Methods of Client
         try {
-            Socket socket = new Socket("localhost", 23);
+            Socket socket = new Socket(IPADDRESS, PORT);
             reader = new ObjectInputStream(socket.getInputStream());
             writer = new ObjectOutputStream(socket.getOutputStream());
 
