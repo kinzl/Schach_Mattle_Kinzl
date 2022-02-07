@@ -19,8 +19,8 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable, Serializable {
-//    public GridPane chessBoardView = new GridPane();
-    public static GridPane chessBoardView;
+    public GridPane chessBoardView = new GridPane();
+//    public static GridPane chessBoardView;
     public Node slectedPic;
     public Node clickedpic;
     public boolean isChoosen = false;
@@ -726,9 +726,9 @@ public class ChessboardController implements Initializable, Serializable {
             }
         }
 
-        for (int i = 0; i < informationList.size(); i++) {
-            System.out.println(informationList.get(i));
-        }
+//        for (int i = 0; i < informationList.size(); i++) {
+//            System.out.println(informationList.get(i));
+//        }
         informationListAdded = true;
         try {
             Thread.sleep(200);
@@ -758,13 +758,13 @@ public class ChessboardController implements Initializable, Serializable {
             //System.out.println("imgV: " + imgV);
             clickedpic = imgV;
             clickedpic.setId(name);
-
-            chessBoardView.getChildren().add(imgV);
+movement(name, x,y);
+            //chessBoardView.getChildren().add(imgV);
             for (int j = 0; j < informationList.size(); j++) {
-                System.out.println(informationList.get(i));
+                System.out.println("Update chessfield: " + informationList.get(i));
             }
-            GridPane.setRowIndex(imgV, x);
-            GridPane.setColumnIndex(imgV, y);
+//            GridPane.setRowIndex(imgV, x);
+//            GridPane.setColumnIndex(imgV, y);
 
 
 //            movement(name, x, y);
@@ -814,7 +814,7 @@ public class ChessboardController implements Initializable, Serializable {
             player1.setText(MyServerThread.getServerUsername());
             player2.setText(MyServerThread.getClientUsername());
         }
-
+//ChessboardController.chessBoardView = new GridPane();
     }
 
     public List<Information> getInformationList() {
