@@ -1,7 +1,6 @@
 package com.example.schach.client;
 
 import com.example.schach.server.MyServerThread;
-import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -10,65 +9,127 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
+import javafx.scene.layout.Pane;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable, Serializable {
 //    public GridPane chessBoardView = new GridPane();
     public static GridPane chessBoardView;
-    public ImageView black_left_horse;
-    public ImageView black_left_runner;
-    public ImageView black_queen;
-    public ImageView black_king;
-    public ImageView black_right_runner;
-    public ImageView black_right_horse;
-    public ImageView black_right_tower;
-    public ImageView white_bauer0_6;
-    public ImageView white_bauer1_6;
-    public ImageView white_bauer2_6;
-    public ImageView black_left_tower;
-    public ImageView white_bauer3_6;
-    public ImageView white_bauer4_6;
-    public ImageView white_bauer5_6;
-    public ImageView white_bauer6_6;
-    public ImageView white_bauer7_6;
-    public ImageView white_left_tower;
-    public ImageView white_left_horse;
-    public ImageView white_left_runner;
-    public ImageView white_queen;
-    public ImageView white_king;
-    public ImageView white_right_runner;
-    public ImageView white_right_horse;
-    public ImageView white_right_tower;
-    public ImageView black_bauer;
-    public ImageView img;
-    public Node node;
-    public Node checkField;
     public Node slectedPic;
     public Node clickedpic;
-    public ImageView black_bauer1;
-    public ImageView black_bauer2;
-    public ImageView black_bauer3;
-    public ImageView black_bauer4;
-    public ImageView black_bauer5;
-    public ImageView black_bauer6;
-    public ImageView black_bauer7;
-    public ImageView black_bauer8;
     public boolean isChoosen = false;
     public boolean pressed = false;
     public static MouseEvent mouseEvent1;
-    public int isChoosenInt = 0;
     public Label player1;
     public Label player2;
     public MenuItem openChat;
     public MenuItem exitSystem;
+    public ImageView white_king1;
+    public ImageView black_rook1;
+    public ImageView white_bishop1;
+    public ImageView black_knight1;
+    public ImageView black_bishop1;
+    public ImageView black_queen1;
+    public ImageView black_king1;
+    public ImageView white_pawn0;
+    public ImageView white_pawn1;
+    public ImageView white_pawn2;
+    public ImageView black_bishop2;
+    public ImageView black_knight2;
+    public ImageView black_rook2;
+    public ImageView black_pawn1;
+    public ImageView black_pawn2;
+    public ImageView black_pawn3;
+    public ImageView black_pawn4;
+    public ImageView black_pawn5;
+    public ImageView black_pawn6;
+    public ImageView black_pawn7;
+    public ImageView black_pawn8;
+    public ImageView white_bishop2;
+    public ImageView white_knight2;
+    public ImageView white_rook2;
+    public ImageView white_queen1;
+    public ImageView white_knight1;
+    public ImageView white_pawn4;
+    public ImageView white_pawn7;
+    public ImageView white_pawn5;
+    public ImageView white_pawn3;
+    public ImageView white_rook1;
+    public ImageView white_pawn6;
+    public Pane pane00;
+    public Pane pane01;
+    public Pane pane02;
+    public Pane pane03;
+    public Pane pane04;
+    public Pane pane05;
+    public Pane pane06;
+    public Pane pane07;
+    public Pane pane10;
+    public Pane pane11;
+    public Pane pane12;
+    public Pane pane13;
+    public Pane pane14;
+    public Pane pane15;
+    public Pane pane16;
+    public Pane pane17;
+    public Pane pane20;
+    public Pane pane21;
+    public Pane pane22;
+    public Pane pane23;
+    public Pane pane24;
+    public Pane pane25;
+    public Pane pane26;
+    public Pane pane27;
+    public Pane pane30;
+    public Pane pane31;
+    public Pane pane32;
+    public Pane pane33;
+    public Pane pane34;
+    public Pane pane35;
+    public Pane pane36;
+    public Pane pane37;
+    public Pane pane40;
+    public Pane pane41;
+    public Pane pane42;
+    public Pane pane43;
+    public Pane pane44;
+    public Pane pane45;
+    public Pane pane46;
+    public Pane pane47;
+    public Pane pane50;
+    public Pane pane51;
+    public Pane pane52;
+    public Pane pane53;
+    public Pane pane54;
+    public Pane pane55;
+    public Pane pane56;
+    public Pane pane57;
+    public Pane pane60;
+    public Pane pane61;
+    public Pane pane62;
+    public Pane pane63;
+    public Pane pane64;
+    public Pane pane65;
+    public Pane pane66;
+    public Pane pane67;
+    public Pane pane70;
+    public Pane pane71;
+    public Pane pane72;
+    public Pane pane73;
+    public Pane pane74;
+    public Pane pane75;
+    public Pane pane76;
+    public Pane pane77;
+    public Label TimerPlayer1;
+    public Label TimerPlayer2;
+    public Label TimeOverAll;
+
 
     private boolean isWhiteTurn = true;
     private boolean isBlackTurn = false;
@@ -664,6 +725,10 @@ public class ChessboardController implements Initializable, Serializable {
                 //System.out.println(rowN + " + " + columnN);
             }
         }
+
+        for (int i = 0; i < informationList.size(); i++) {
+            System.out.println(informationList.get(i));
+        }
         informationListAdded = true;
         try {
             Thread.sleep(200);
@@ -695,7 +760,14 @@ public class ChessboardController implements Initializable, Serializable {
             clickedpic.setId(name);
 
             chessBoardView.getChildren().add(imgV);
-            movement(name, x, y);
+            for (int j = 0; j < informationList.size(); j++) {
+                System.out.println(informationList.get(i));
+            }
+            GridPane.setRowIndex(imgV, x);
+            GridPane.setColumnIndex(imgV, y);
+
+
+//            movement(name, x, y);
 //            //System.out.println(clickedpic.toString());
 //            boolean nodeSet = false;
 //            boolean pieceTraded;
