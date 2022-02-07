@@ -4,117 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eaa66a1b-e40b-438b-b2d7-c3298cd0869d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="eaa66a1b-e40b-438b-b2d7-c3298cd0869d" name="Changes" comment="last push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeitspakete_Stundenzuteilung" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resüme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/Schach.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/src/main/java/com/example/schach/server/MyServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/src/main/java/com/example/schach/client/MyClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/src/main/java/com/example/schach/client/MyClientThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/target/classes/com/example/schach/server/MyServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach_Mattle_Kinzl/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/Schach_Mattle_Kinzl/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/CreateAGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Fieldtester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Information.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoseScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MessangerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/WinScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/LoseScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Messenger.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/WinScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/joinAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/GameOver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/LoginPicture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/WinnerWinnerChickenDinner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/black_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/clear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/createAGame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/load.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/remove.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/reset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/save.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/swap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/white_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/xVsY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/CreateAGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Fieldtester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Information.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoseScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoseScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MessangerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Messenger.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/WinScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/WinScreen.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/joinAGame.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/GameOver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/LoginPicture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/WinnerWinnerChickenDinner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/black_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/black_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/black_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/black_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/black_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/black_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/clear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/createAGame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/load.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/remove.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/reset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/save.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/swap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/white_bishop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/white_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/white_knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/white_pawn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/white_queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/white_rook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/xVsY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +69,14 @@
       <option name="presentableId" value="Default" />
       <updated>1644198970793</updated>
     </task>
+    <task id="LOCAL-00001" summary="last push">
+      <created>1644215947863</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644215947863</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,5 +89,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="last push" />
+    <option name="LAST_COMMIT_MESSAGE" value="last push" />
   </component>
 </project>
