@@ -767,39 +767,6 @@ movement(name, x,y);
 //            GridPane.setColumnIndex(imgV, y);
 
 
-//            movement(name, x, y);
-//            //System.out.println(clickedpic.toString());
-//            boolean nodeSet = false;
-//            boolean pieceTraded;
-//            Node node = null;
-//            for (Node n : chessBoardView.getChildren()) {
-//                if (n == null) {
-//                    continue;
-//                }
-//                if (n.toString().contains(name) && nodeSet == false) {
-//                    node = n;
-//                    pieceTraded = true;
-//                    System.out.println("Node: " + node);
-//                    nodeSet = true;
-//                }
-//            }
-//            if (node == null) {
-//                System.out.println("ID NOT FOUND");
-//                pieceTraded = false;
-//                nodeSet = false;
-//            } else if (nodeSet == true) {
-//                GridPane.setColumnIndex(node, y);
-//                GridPane.setRowIndex(node, x);
-//                pieceTraded = false;
-//                nodeSet = false;
-//
-//            } else {
-//                System.out.println("Id wurde nicht gefunden -> Node set false");
-//                pieceTraded = false;
-//                nodeSet = false;
-//            }
-
-
         }
 
     }

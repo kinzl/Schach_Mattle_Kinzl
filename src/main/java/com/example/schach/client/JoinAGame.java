@@ -28,23 +28,28 @@ public class JoinAGame implements Initializable {
     }
 
     public void connectToServer(ActionEvent actionEvent) {
+        if (!MyClientThread.isConnectedWithTheServer) {
+            if (isValidIpAddress(ipAddress.getText())) {
+                client = new Client(ipAddress.getText());
+                client.activate();
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (MyClientThread.isConnectedWithTheServer) {
+                    status.setText("Connected");
+                    connectButtonID.setDisable(true);
+                    playButton.setDisable(false);
+                } else {
+                    status.setText("No Server found");
+                }
 
-        if(isValidIpAddress(ipAddress.getText())){
-            client = new Client(ipAddress.getText());
-            client.activate();
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
-            if (MyClientThread.isConnectedWithTheServer){
-                status.setText("Connected");
-                connectButtonID.setDisable(true);
-                playButton.setDisable(false);
-            } else {
-                status.setText("No Server found");
-            }
-
+        } else {
+            status.setText("Connected");
+            connectButtonID.setDisable(true);
+            playButton.setDisable(false);
         }
     }
 
