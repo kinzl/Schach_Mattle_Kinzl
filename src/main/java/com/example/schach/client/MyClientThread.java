@@ -22,7 +22,7 @@ public class MyClientThread implements Runnable, Serializable {
     private boolean running = true;
     private String s;
     private List<Information> informationList = new ArrayList<>();
-    private ChessboardController chessboardController;
+    private ChessboardController chessboardController = new ChessboardController();
 
 
     public MyClientThread(String IPADDRESS, int PORT) {
@@ -41,7 +41,6 @@ public class MyClientThread implements Runnable, Serializable {
             isConnectedWithTheServer = true;
 
             handleUsername();
-            chessboardController = new ChessboardController();
 
             System.out.println("CLIENT started");
             while (running) {
@@ -81,7 +80,9 @@ public class MyClientThread implements Runnable, Serializable {
 
     private void handleUsername() {
         try {
+            writer.writeObject(clientUsername);
             serverUsername = reader.readObject().toString();
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

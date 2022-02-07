@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import com.example.schach.server.MyServerThread;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -20,7 +21,8 @@ import java.net.URL;
 import java.util.*;
 
 public class ChessboardController implements Initializable, Serializable {
-    public GridPane chessBoardView = new GridPane();
+//    public GridPane chessBoardView = new GridPane();
+    public static GridPane chessBoardView;
     public ImageView black_left_horse;
     public ImageView black_left_runner;
     public ImageView black_queen;
@@ -71,7 +73,6 @@ public class ChessboardController implements Initializable, Serializable {
     private boolean isWhiteTurn = true;
     private boolean isBlackTurn = false;
     String farbe;
-    private ObservableList<Node> list;
     private boolean isMovePossible = false;
     public static boolean informationListAdded = false;
     public static List<Information> informationList = new ArrayList<>();
@@ -245,7 +246,6 @@ public class ChessboardController implements Initializable, Serializable {
         pressed = false;
         clickedpic = null;
 
-        list = chessBoardView.getChildren();
         addInformationList();
 
 
@@ -735,9 +735,13 @@ public class ChessboardController implements Initializable, Serializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
-        player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-
+        try {
+            player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
+            player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
+        }catch (Exception e) {
+            player1.setText(MyServerThread.getServerUsername());
+            player2.setText(MyServerThread.getClientUsername());
+        }
 
     }
 

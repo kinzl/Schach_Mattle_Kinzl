@@ -14,16 +14,16 @@ public class MyServerThread extends Thread {
 
     private Socket socket = null;
     private boolean running;
-    private static String username;
+    private static String serverUsername;
     private static String clientUsername;
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
     private List<Information> informationList = new ArrayList<>();
     private MessangerController messangerController;
-    private ChessboardController chessboardController;
+    private ChessboardController chessboardController = new ChessboardController();
 
-    public static void setUsername(String username) {
-        MyServerThread.username = username;
+    public static void setServerUsername(String serverUsername) {
+        MyServerThread.serverUsername = serverUsername;
     }
 
     public MyServerThread(Socket socket) {
@@ -42,7 +42,6 @@ public class MyServerThread extends Thread {
 
             handleUsername();
 
-            chessboardController = new ChessboardController();
 
             messangerController = new MessangerController(writer, reader);
             System.out.println("SERVER started");
@@ -72,8 +71,11 @@ Thread.sleep(200);
 
     private void handleUsername() {
         try {
-            writer.writeObject(username);
+            writer.writeObject(serverUsername);
+            clientUsername = reader.readObject().toString();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -86,6 +88,12 @@ Thread.sleep(200);
         return writer;
     }
 
+    public static String getServerUsername() {
+        return serverUsername;
+    }
 
+    public static String getClientUsername() {
+        return clientUsername;
+    }
 }
 
