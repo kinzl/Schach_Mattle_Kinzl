@@ -53,10 +53,10 @@ public class MyClientThread implements Runnable, Serializable {
                     if (s.equals("sendInformationList")) {
                         informationList = (List<Information>) reader.readObject();
 
-//                        System.out.println("INFOLIST:::CLIENT");
-//                        for (int i = 0; i < informationList.size(); i++) {
-//                            System.out.println(informationList.get(i));
-//                        }
+                        System.out.println("INFOLIST:::CLIENT");
+                        for (int i = 0; i < informationList.size(); i++) {
+                            System.out.println(informationList.get(i));
+                        }
                         chessboardController.setInformationList(informationList);
 
                     }
