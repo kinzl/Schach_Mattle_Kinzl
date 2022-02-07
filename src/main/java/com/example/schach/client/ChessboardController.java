@@ -751,20 +751,27 @@ public class ChessboardController implements Initializable, Serializable {
             name = name.substring(0, name.length() - 1);
 //            System.out.println(name);System.out.println(name + " " + x + " " + y);
 
-            ImageView imgV = new ImageView();
+            for (Node n : chessBoardView.getChildren()) {
+                if(n.getId().contains(name)){
+                    GridPane.setRowIndex(n, x);
+                    GridPane.setColumnIndex(n, y);
+                }
+            }
+
+            /*ImageView imgV = new ImageView();
             Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
             imgV.setImage(image);
             imgV.setId(name);
             //System.out.println("imgV: " + imgV);
             clickedpic = imgV;
             clickedpic.setId(name);
-movement(name, x,y);
+            //movement(name, x,y);
             //chessBoardView.getChildren().add(imgV);
             for (int j = 0; j < informationList.size(); j++) {
                 System.out.println("Update chessfield: " + informationList.get(i));
             }
-//            GridPane.setRowIndex(imgV, x);
-//            GridPane.setColumnIndex(imgV, y);
+            GridPane.setRowIndex(imgV, x);
+            GridPane.setColumnIndex(imgV, y);*/
 
 
 //            movement(name, x, y);

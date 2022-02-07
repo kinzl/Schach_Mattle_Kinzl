@@ -33,7 +33,7 @@ public class JoinAGame implements Initializable {
             client = new Client(ipAddress.getText());
             client.activate();
             try {
-                Thread.sleep(50);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
