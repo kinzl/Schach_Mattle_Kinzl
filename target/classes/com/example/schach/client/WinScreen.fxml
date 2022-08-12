@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="618.0" prefWidth="548.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.WinScreen">
+   <children>
+      <ImageView fitHeight="420.0" fitWidth="548.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../images/WinnerWinnerChickenDinner.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="125.0" layoutY="449.0" prefHeight="39.0" prefWidth="117.0" text="Time over all: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="timeOverAll" layoutX="343.0" layoutY="454.0" prefHeight="29.0" prefWidth="94.0" />
+   </children>
+</AnchorPane>
