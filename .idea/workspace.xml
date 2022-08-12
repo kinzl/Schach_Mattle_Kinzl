@@ -1,69 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8f60d1e-1774-4cec-95dc-02554b6ff623" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project_Schach_Mattle_Kinzl.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_11_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeitspakete_Stundenzuteilung" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitspakete_Stundenzuteilung" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resüme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Resüme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Schach.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/CreateAGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/CreateAGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Fieldtester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Fieldtester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Information.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Information.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/LoseScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MessangerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MessangerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/WinScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/WinScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/LoseScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/LoseScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Messenger.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Messenger.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/WinScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/WinScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/createAGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/joinAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/joinAGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/JoinAGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoseScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/LoseScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Messenger.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Messenger.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/WinScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/WinScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/createAGame.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/joinAGame.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/joinAGame.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="a8f60d1e-1774-4cec-95dc-02554b6ff623" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,5 +51,39 @@
         <item itemvalue="Application.Login" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8f60d1e-1774-4cec-95dc-02554b6ff623" name="Changes" comment="" />
+      <created>1660311320525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660311320525</updated>
+    </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1660311951562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660311951562</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
