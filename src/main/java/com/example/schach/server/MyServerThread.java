@@ -12,8 +12,8 @@ import java.util.List;
 
 public class MyServerThread extends Thread {
 
-    private Socket socket = null;
-    private boolean running;
+    private Socket socket;
+    private boolean running = true;
     private static String serverUsername;
     private static String clientUsername;
     private static ObjectInputStream reader;
@@ -37,22 +37,15 @@ public class MyServerThread extends Thread {
             Socket socket = this.socket;
             writer = new ObjectOutputStream(socket.getOutputStream());
             reader = new ObjectInputStream(socket.getInputStream());
-
-            running = true;
-
-
             handleUsername();
-
-
-            messangerController = new MessangerController(writer, reader);
             System.out.println("SERVER started");
             while (running) {
 
                 if (ChessboardController.informationListAdded) {
                     informationList = ChessboardController.informationList;
-                    for (int i = 0; i < informationList.size(); i++) {
-                        System.out.println(informationList.get(i));
-                    }
+//                    for (int i = 0; i < informationList.size(); i++) {
+//                        System.out.println(informationList.get(i));
+//                    }
                     System.out.println("\n\n");
                     writer.writeObject("sendInformationList");
                     writer.writeObject(informationList);

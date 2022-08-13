@@ -37,14 +37,10 @@ public class MyClientThread implements Runnable, Serializable {
             Socket socket = new Socket(IPADDRESS, PORT);
             reader = new ObjectInputStream(socket.getInputStream());
             writer = new ObjectOutputStream(socket.getOutputStream());
-
             isConnectedWithTheServer = true;
-
             handleUsername();
-
             System.out.println("CLIENT started");
             while (running) {
-
 
                 Object o = reader.readObject();
 
@@ -52,7 +48,6 @@ public class MyClientThread implements Runnable, Serializable {
                     String s = o.toString();
                     if (s.equals("sendInformationList")) {
                         informationList = (List<Information>) reader.readObject();
-
                         System.out.println("INFOLIST:::CLIENT");
                         for (int i = 0; i < informationList.size(); i++) {
                             System.out.println(informationList.get(i));
