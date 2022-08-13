@@ -131,6 +131,7 @@ public class ChessboardController implements Initializable, Serializable {
     public Label TimeOverAll;
     public Label infoText;
     public static boolean isLocalhostPlayer = true;
+    private boolean turn;
 
     String farbe;
     private boolean isMovePossible = false;
@@ -788,14 +789,17 @@ public class ChessboardController implements Initializable, Serializable {
             if(ChessboardController.isLocalhostPlayer) {
                 infoText.setText("White begins, black wins      Wait for your opponent");
                 ChessboardController.isLocalhostPlayer = false;
+                turn = false;
             } else {
                 infoText.setText("White begins, black wins      It's your turn");
+                turn = true;
             }
 
         } catch (Exception e) {
             player1.setText(MyServerThread.getServerUsername());
             player2.setText(MyServerThread.getClientUsername());
             infoText.setText("White begins, black wins      It's your turn");
+            turn = true;
         }
 
 //ChessboardController.chessBoardView = new GridPane();
