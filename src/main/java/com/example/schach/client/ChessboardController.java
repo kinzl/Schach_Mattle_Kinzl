@@ -139,6 +139,10 @@ public class ChessboardController implements Initializable, Serializable {
     public static List<Information> informationList = new ArrayList<>();
 
     public void fieldslected00(MouseEvent mouseEvent) {
+        if (!turn) {
+            infoText.setText("It's the opponents turn, please wait");
+            return;
+        }
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
 
@@ -786,7 +790,7 @@ public class ChessboardController implements Initializable, Serializable {
             player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
 
             player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-            if(ChessboardController.isLocalhostPlayer) {
+            if (ChessboardController.isLocalhostPlayer) {
                 infoText.setText("White begins, black wins      Wait for your opponent");
                 ChessboardController.isLocalhostPlayer = false;
                 turn = false;
