@@ -13,10 +13,7 @@ import javafx.scene.layout.Pane;
 
 import java.io.Serializable;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ChessboardController implements Initializable, Serializable {
     public GridPane chessBoardView = new GridPane();
@@ -134,7 +131,6 @@ public class ChessboardController implements Initializable, Serializable {
     private boolean turn;
 
     String farbe;
-    private boolean isMovePossible = false;
     public static boolean informationListAdded = false;
     public static List<Information> informationList = new ArrayList<>();
 
@@ -146,20 +142,20 @@ public class ChessboardController implements Initializable, Serializable {
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
 
-        if (clickedpic == (Node) mouseEvent.getSource()) {
+        if (clickedpic == mouseEvent.getSource()) {
             pressed = false;
             isChoosen = true;
             clickedpic = null;
             System.out.println("Feld deaktiviert");
-        } else if (clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true) {
+        } else if (clickedpic != mouseEvent.getSource() && isChoosen && pressed) {
             slectedPic = (Node) mouseEvent.getSource();
             String farbeChosen1 = clickedpic.getId();
             String farbeChosen2 = slectedPic.getId();
             Integer b = null;
-            Integer x = GridPane.getRowIndex((Node) slectedPic);
-            Integer y = GridPane.getColumnIndex((Node) slectedPic);
-            Integer oldX = GridPane.getRowIndex((Node) clickedpic);
-            Integer oldY = GridPane.getColumnIndex((Node) clickedpic);
+            Integer x = GridPane.getRowIndex(slectedPic);
+            Integer y = GridPane.getColumnIndex(slectedPic);
+            Integer oldX = GridPane.getRowIndex(clickedpic);
+            Integer oldY = GridPane.getColumnIndex(clickedpic);
             if (x == b) {
                 x = 0;
             }
@@ -177,7 +173,7 @@ public class ChessboardController implements Initializable, Serializable {
             } else {
                 if (farbeChosen1.contains("pawn")) {
 
-                    if (ispawnKill(x, y, oldX, oldY) == true) {
+                    if (ispawnKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -192,7 +188,7 @@ public class ChessboardController implements Initializable, Serializable {
                     }
 
                 } else if (farbeChosen1.contains("king")) {
-                    if (isKingKill(x, y, oldX, oldY) == true) {
+                    if (isKingKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -206,7 +202,7 @@ public class ChessboardController implements Initializable, Serializable {
                         slectedPic = null;
                     }
                 } else if (farbeChosen1.contains("knight")) {
-                    if (ishorseKill(x, y, oldX, oldY) == true) {
+                    if (ishorseKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -220,7 +216,7 @@ public class ChessboardController implements Initializable, Serializable {
                         slectedPic = null;
                     }
                 } else if (farbeChosen1.contains("bishop")) {
-                    if (isrunnerKill(x, y, oldX, oldY) == true) {
+                    if (isrunnerKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -234,7 +230,7 @@ public class ChessboardController implements Initializable, Serializable {
                         slectedPic = null;
                     }
                 } else if (farbeChosen1.contains("rook")) {
-                    if (rookKill(x, y, oldX, oldY) == true) {
+                    if (rookKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -248,7 +244,7 @@ public class ChessboardController implements Initializable, Serializable {
                         slectedPic = null;
                     }
                 } else if (farbeChosen1.contains("queen")) {
-                    if (rookKill(x, y, oldX, oldY) == true) {
+                    if (rookKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -257,7 +253,7 @@ public class ChessboardController implements Initializable, Serializable {
                         GridPane.setRowIndex(clickedpic, x);
                         GridPane.setColumnIndex(clickedpic, y);
                         System.out.println("Feld ersetzt");
-                    } else if (isrunnerKill(x, y, oldX, oldY) == true) {
+                    } else if (isrunnerKill(x, y, oldX, oldY)) {
                         for (Node n : chessBoardView.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -317,7 +313,7 @@ public class ChessboardController implements Initializable, Serializable {
     }
 
     private boolean rookKill(Integer x, Integer y, Integer oldX, Integer oldY) {
-        if (oldX != x && oldY != y) {
+        if (!Objects.equals(oldX, x) && !Objects.equals(oldY, y)) {
             //Did not move along one rank/file
             return false;
         }
@@ -325,7 +321,7 @@ public class ChessboardController implements Initializable, Serializable {
         //First I will assumed the Rook is moving along the rows.
         int offset;
 
-        if (oldX != x) {
+        if (!Objects.equals(oldX, x)) {
             if (oldX < x) {
                 offset = 1;
             } else {
@@ -352,7 +348,7 @@ public class ChessboardController implements Initializable, Serializable {
         }
 
         //Now do the same for columns
-        if (oldY != y) {
+        if (!Objects.equals(oldY, y)) {
             if (oldY < y) {
                 offset = 1;
             } else {
@@ -383,11 +379,8 @@ public class ChessboardController implements Initializable, Serializable {
 
     private int[] moveRock(Integer x, Integer y) {
         int temp;
-        Integer newX = x;
-        Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        String name = clickedpic.getId();
         Integer b = null;
         if (oldX == b) {
             oldX = 0;
@@ -395,16 +388,16 @@ public class ChessboardController implements Initializable, Serializable {
         if (oldY == b) {
             oldY = 0;
         }
-        if (oldX != newX && oldY != newY) {
+        if (!oldX.equals(x) && !oldY.equals(y)) {
             return new int[]{oldX, oldY};
-        } else if (oldX != newX) {
-            if (oldX < newX) {
+        } else if (!oldX.equals(x)) {
+            if (oldX < x) {
                 temp = 1;
             } else {
                 temp = -1;
             }
 
-            for (int x1 = oldX + temp; x1 != newX; x1 += temp) {
+            for (int x1 = oldX + temp; x1 != x; x1 += temp) {
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
@@ -422,14 +415,14 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
         }
-        if (oldY != newY) {
-            if (oldY < newY) {
+        if (!oldY.equals(y)) {
+            if (oldY < y) {
                 temp = 1;
             } else {
                 temp = -1;
             }
 
-            for (int x1 = oldY + temp; x1 != newY; x1 += temp) {
+            for (int x1 = oldY + temp; x1 != y; x1 += temp) {
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
@@ -448,7 +441,7 @@ public class ChessboardController implements Initializable, Serializable {
         }
 
 
-        return new int[]{newX, newY};
+        return new int[]{x, y};
     }
 
     private boolean isrunnerKill(Integer x, Integer y, Integer oldX, Integer oldY) {
@@ -496,11 +489,8 @@ public class ChessboardController implements Initializable, Serializable {
     }
 
     private int[] moveRunner(Integer x, Integer y) {
-        Integer newX = x;
-        Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        String name = clickedpic.getId();
         Integer b = null;
         if (oldX == b) {
             oldX = 0;
@@ -508,27 +498,25 @@ public class ChessboardController implements Initializable, Serializable {
         if (oldY == b) {
             oldY = 0;
         }
-        int row = oldX;
-        int column = oldY;
-        if (Math.abs(newX - oldX) != Math.abs(newY - oldY)) {
+        if (Math.abs(x - oldX) != Math.abs(y - oldY)) {
             return new int[]{oldX, oldY};
         } else {
             int rowOffset, colOffset;
 
-            if (oldX < newX) {
+            if (oldX < x) {
                 rowOffset = 1;
             } else {
                 rowOffset = -1;
             }
 
-            if (oldY < newY) {
+            if (oldY < y) {
                 colOffset = 1;
             } else {
                 colOffset = -1;
             }
 
             int y1 = oldY + colOffset;
-            for (int x1 = oldX + rowOffset; x1 != newX; x1 += rowOffset) {
+            for (int x1 = oldX + rowOffset; x1 != x; x1 += rowOffset) {
 
                 for (Node n : chessBoardView.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
@@ -548,17 +536,14 @@ public class ChessboardController implements Initializable, Serializable {
             }
         }
 
-        return new int[]{newX, newY};
+        return new int[]{x, y};
 
 
     }
 
     private int[] moveHorse(Integer x, Integer y) {
-        Integer newX = x;
-        Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        String name = clickedpic.getId();
         Integer b = null;
         if (oldX == b) {
             oldX = 0;
@@ -567,14 +552,14 @@ public class ChessboardController implements Initializable, Serializable {
             oldY = 0;
         }
 
-        if ((oldX - 2 == newX && oldY - 1 == newY) || (oldX - 2 == newX && oldY + 1 == newY)) {
-            return new int[]{newX, newY};
-        } else if ((oldX - 1 == newX && oldY + 2 == newY) || (oldX + 1 == newX && oldY + 2 == newY)) {
-            return new int[]{newX, newY};
-        } else if ((oldX + 2 == newX && oldY + 1 == newY) || (oldX + 2 == newX && oldY - 1 == newY)) {
-            return new int[]{newX, newY};
-        } else if ((oldX + 1 == newX && oldY - 2 == newY) || (oldX - 1 == newX && oldY - 2 == newY)) {
-            return new int[]{newX, newY};
+        if ((oldX - 2 == x && oldY - 1 == y) || (oldX - 2 == x && oldY + 1 == y)) {
+            return new int[]{x, y};
+        } else if ((oldX - 1 == x && oldY + 2 == y) || (oldX + 1 == x && oldY + 2 == y)) {
+            return new int[]{x, y};
+        } else if ((oldX + 2 == x && oldY + 1 == y) || (oldX + 2 == x && oldY - 1 == y)) {
+            return new int[]{x, y};
+        } else if ((oldX + 1 == x && oldY - 2 == y) || (oldX - 1 == x && oldY - 2 == y)) {
+            return new int[]{x, y};
         } else
             return new int[]{oldX, oldY};
     }
@@ -586,18 +571,12 @@ public class ChessboardController implements Initializable, Serializable {
             return true;
         } else if ((oldX + 2 == x && oldY + 1 == y) || (oldX + 2 == x && oldY - 1 == y)) {
             return true;
-        } else if ((oldX + 1 == x && oldY - 2 == y) || (oldX - 1 == x && oldY - 2 == y)) {
-            return true;
-        } else
-            return false;
+        } else return (oldX + 1 == x && oldY - 2 == y) || (oldX - 1 == x && oldY - 2 == y);
     }
 
     private int[] moveKing(Integer x, Integer y) {
-        Integer newX = x;
-        Integer newY = y;
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        String name = clickedpic.getId();
         Integer b = null;
         if (oldX == b) {
             oldX = 0;
@@ -605,25 +584,25 @@ public class ChessboardController implements Initializable, Serializable {
         if (oldY == b) {
             oldY = 0;
         }
-        if ((oldX == newX && newY == oldY + 1)) {
-            return new int[]{newX, newY};
-        } else if ((oldY == newY && newX == oldX + 1)) {
-            return new int[]{newX, newY};
-        } else if ((oldX == newX && newY == oldY - 1)) {
-            return new int[]{newX, newY};
-        } else if ((oldY == newY && newX == oldX - 1)) {
-            return new int[]{newX, newY};
-        } else if ((oldX - 1 == newX && oldY + 1 == newY) || (oldX + 1 == newX && oldY + 1 == newY) || (oldX - 1 == newX && oldY - 1 == newY) || (oldX + 1 == newX && oldY - 1 == newY)) {
-            return new int[]{newX, newY};
+        if ((oldX.equals(x) && y == oldY + 1)) {
+            return new int[]{x, y};
+        } else if ((oldY.equals(y) && x == oldX + 1)) {
+            return new int[]{x, y};
+        } else if ((oldX.equals(x) && y == oldY - 1)) {
+            return new int[]{x, y};
+        } else if ((oldY.equals(y) && x == oldX - 1)) {
+            return new int[]{x, y};
+        } else if ((oldX - 1 == x && oldY + 1 == y) || (oldX + 1 == x && oldY + 1 == y) || (oldX - 1 == x && oldY - 1 == y) || (oldX + 1 == x && oldY - 1 == y)) {
+            return new int[]{x, y};
         } else {
             return new int[]{oldX, oldY};
         }
     }
 
     private boolean isKingKill(Integer x, Integer y, Integer oldX, Integer oldY) {
-        if ((oldX == x && y == oldY + 1) || (oldX == x && y == oldY - 1)) {
+        if ((Objects.equals(oldX, x) && y == oldY + 1) || (Objects.equals(oldX, x) && y == oldY - 1)) {
             return true;
-        } else if ((oldY == y && x == oldX + 1) || (oldY == y && x == oldX - 1)) {
+        } else if ((Objects.equals(oldY, y) && x == oldX + 1) || (Objects.equals(oldY, y) && x == oldX - 1)) {
             return true;
         } else if (oldX - 1 == x && oldY - 1 == y) {
             return true;
@@ -631,10 +610,7 @@ public class ChessboardController implements Initializable, Serializable {
             return true;
         } else if (oldX + 1 == x && oldY + 1 == y) {
             return true;
-        } else if (oldX + 1 == x && oldY - 1 == y) {
-            return true;
-        } else
-            return false;
+        } else return oldX + 1 == x && oldY - 1 == y;
     }
 
     private int[] movePawn(Integer x, Integer y) {
@@ -658,36 +634,24 @@ public class ChessboardController implements Initializable, Serializable {
         }
 
         if (name.contains("black")) {
-            if (oldX == 1 && newX <= 3 && newY == oldY) {
-                isMovePossible = true;
+            if (oldX == 1 && newX <= 3 && newY.equals(oldY)) {
                 return new int[]{newX, newY};
-            } else if (oldX > 1 && newX == oldX + 1 && newY == oldY) {
-                isMovePossible = true;
+            } else if (oldX > 1 && newX == oldX + 1 && newY.equals(oldY)) {
                 return new int[]{newX, newY};
             } else {
-                isMovePossible = false;
                 newY = oldY;
                 newX = oldX;
             }
-            isMovePossible = false;
             return new int[]{newX, newY};
         } else if (name.contains("white")) {
-            if (oldX == 6 && newX >= 4 && newY == oldY && newX < oldX) {
-                isMovePossible = true;
+            if (oldX == 6 && newX >= 4 && newY.equals(oldY) && newX < oldX) {
                 return new int[]{newX, newY};
-            } else if (oldX < 6 && newX == oldX - 1 && newY == oldY && newX < oldX) {
-                isMovePossible = true;
+            } else if (oldX < 6 && newX == oldX - 1 && newY.equals(oldY) && newX < oldX) {
                 return new int[]{newX, newY};
-            } else {
-                isMovePossible = false;
-                newY = oldY;
-                newX = oldX;
             }
-            isMovePossible = false;
             return new int[]{oldX, oldY};
 
         }
-        isMovePossible = false;
         return new int[]{oldX, oldY};
     }
 
@@ -700,11 +664,7 @@ public class ChessboardController implements Initializable, Serializable {
             return true;
         } else if (oldX + 1 == newX && oldY + 1 == newY && colurPawn.contains("black")) {
             return true;
-        } else if (oldX + 1 == newX && oldY - 1 == newY && colurPawn.contains("black")) {
-            return true;
-        } else {
-            return false;
-        }
+        } else return oldX + 1 == newX && oldY - 1 == newY && colurPawn.contains("black");
     }
 
     public void addInformationList() {
@@ -858,9 +818,9 @@ public class ChessboardController implements Initializable, Serializable {
     private int[] moveQueen(Integer x, Integer y) {
         Integer oldX = GridPane.getRowIndex((Node) mouseEvent1.getSource());
         Integer oldY = GridPane.getColumnIndex((Node) mouseEvent1.getSource());
-        if ((rookKill(x, y, oldX, oldY)) == true) {
+        if ((rookKill(x, y, oldX, oldY))) {
             return new int[]{x, y};
-        } else if (isrunnerKill(x, y, oldX, oldY) == true) {
+        } else if (isrunnerKill(x, y, oldX, oldY)) {
             return new int[]{x, y};
         }
         return new int[]{oldX, oldY};
