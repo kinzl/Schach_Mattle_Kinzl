@@ -63,13 +63,8 @@ public class MyClientThread implements Runnable, Serializable {
                     }
                 }
 
-                Thread.sleep(200);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 

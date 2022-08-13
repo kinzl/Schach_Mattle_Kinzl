@@ -58,14 +58,11 @@ public class MyServerThread extends Thread {
                     writer.writeObject(informationList);
 //                    System.out.println("SERVER SENT");
                 }
-Thread.sleep(200);
 
             }
         } catch (IOException e) {
             e.printStackTrace();
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 
