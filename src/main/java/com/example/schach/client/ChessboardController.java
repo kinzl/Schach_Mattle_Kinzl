@@ -130,6 +130,7 @@ public class ChessboardController implements Initializable, Serializable {
     public Label TimerPlayer2;
     public Label TimeOverAll;
     public Label infoText;
+    public static boolean isLocalhostPlayer = true;
 
     String farbe;
     private boolean isMovePossible = false;
@@ -782,12 +783,19 @@ public class ChessboardController implements Initializable, Serializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
+
             player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-            infoText.setText("White begins, black wins      It's your turn");
+            if(ChessboardController.isLocalhostPlayer) {
+                infoText.setText("White begins, black wins      Wait for your opponent");
+                ChessboardController.isLocalhostPlayer = false;
+            } else {
+                infoText.setText("White begins, black wins      It's your turn");
+            }
+
         } catch (Exception e) {
             player1.setText(MyServerThread.getServerUsername());
             player2.setText(MyServerThread.getClientUsername());
-            infoText.setText("White begins, black wins      Wait for your opponent");
+            infoText.setText("White begins, black wins      It's your turn");
         }
 
 //ChessboardController.chessBoardView = new GridPane();

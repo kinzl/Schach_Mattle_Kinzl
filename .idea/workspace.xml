@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9774b38b-358e-4ae0-8e93-7419ed45501c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9774b38b-358e-4ae0-8e93-7419ed45501c" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/schach/client/Chessfield.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/Chessfield.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +64,45 @@
       <option name="presentableId" value="Default" />
       <updated>1660403088228</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1660404990431</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1660404990431</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java</url>
+          <line>783</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java</url>
+          <line>787</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
