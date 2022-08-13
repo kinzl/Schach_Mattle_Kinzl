@@ -32,6 +32,7 @@ public class MyServerThread extends Thread {
 
     @Override
     public void run() {
+        //ToDO: Methods of Server
         try {
             Socket socket = this.socket;
             writer = new ObjectOutputStream(socket.getOutputStream());

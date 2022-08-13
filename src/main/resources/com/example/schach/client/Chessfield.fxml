@@ -265,6 +265,11 @@
                   </ImageView>
                   </children>
               </GridPane>
+            <Label fx:id="infoText" alignment="CENTER" layoutX="35.0" layoutY="6.0" prefHeight="17.0" prefWidth="620.0" text="TestText" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
           </children>
       </AnchorPane>
       <ImageView fitHeight="156.0" fitWidth="346.0" layoutX="188.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="656.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="35.0">

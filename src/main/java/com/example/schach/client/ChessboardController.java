@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable, Serializable {
     public GridPane chessBoardView = new GridPane();
-//    public static GridPane chessBoardView;
+    //    public static GridPane chessBoardView;
     public Node slectedPic;
     public Node clickedpic;
     public boolean isChoosen = false;
@@ -129,10 +129,8 @@ public class ChessboardController implements Initializable, Serializable {
     public Label TimerPlayer1;
     public Label TimerPlayer2;
     public Label TimeOverAll;
+    public Label infoText;
 
-
-    private boolean isWhiteTurn = true;
-    private boolean isBlackTurn = false;
     String farbe;
     private boolean isMovePossible = false;
     public static boolean informationListAdded = false;
@@ -749,7 +747,8 @@ public class ChessboardController implements Initializable, Serializable {
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
 
-            System.out.println(name);System.out.println(name + " " + x + " " + y);
+            System.out.println(name);
+            System.out.println(name + " " + x + " " + y);
 
             /*for (Node n : this.chessBoardView.getChildren()) {
                 System.out.println("hallo");
@@ -784,10 +783,13 @@ public class ChessboardController implements Initializable, Serializable {
         try {
             player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
             player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-        }catch (Exception e) {
+            infoText.setText("White begins, black wins      It's your turn");
+        } catch (Exception e) {
             player1.setText(MyServerThread.getServerUsername());
             player2.setText(MyServerThread.getClientUsername());
+            infoText.setText("White begins, black wins      Wait for your opponent");
         }
+
 //ChessboardController.chessBoardView = new GridPane();
     }
 
@@ -847,4 +849,5 @@ public class ChessboardController implements Initializable, Serializable {
         }
         return new int[]{oldX, oldY};
     }
+
 }
