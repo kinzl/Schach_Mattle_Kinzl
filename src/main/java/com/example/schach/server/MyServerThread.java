@@ -49,9 +49,10 @@ public class MyServerThread extends Thread {
 
                 if (ChessboardController.informationListAdded) {
                     informationList = ChessboardController.informationList;
-//                    for (int i = 0; i < informationList.size(); i++) {
-//                        System.out.println(informationList);
-//                    }
+                    for (int i = 0; i < informationList.size(); i++) {
+                        System.out.println(informationList.get(i));
+                    }
+                    System.out.println("\n\n");
                     writer.writeObject("sendInformationList");
                     writer.writeObject(informationList);
 //                    System.out.println("SERVER SENT");

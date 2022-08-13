@@ -749,7 +749,7 @@ public class ChessboardController implements Initializable, Serializable {
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
 
-//            System.out.println(name);System.out.println(name + " " + x + " " + y);
+            System.out.println(name);System.out.println(name + " " + x + " " + y);
 
             /*for (Node n : this.chessBoardView.getChildren()) {
                 System.out.println("hallo");
@@ -778,7 +778,6 @@ public class ChessboardController implements Initializable, Serializable {
         }
 
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -848,6 +847,4 @@ public class ChessboardController implements Initializable, Serializable {
         }
         return new int[]{oldX, oldY};
     }
-
-
 }

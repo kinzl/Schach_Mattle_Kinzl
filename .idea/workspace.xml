@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8f60d1e-1774-4cec-95dc-02554b6ff623" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arbeitspakete_Stundenzuteilung" beforeDir="false" afterPath="$PROJECT_DIR$/Arbeitspakete_Stundenzuteilung" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/JoinAGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +18,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,6 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -94,7 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660312456116</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1660313436150</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660313436150</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <created>1660313672105</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660313672106</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,5 +120,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/schach/server/Server.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
