@@ -77,6 +77,7 @@ Thread.sleep(200);
         try {
             writer.writeObject(serverUsername);
             clientUsername = reader.readObject().toString();
+            System.out.println("Clientusername: " + clientUsername);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

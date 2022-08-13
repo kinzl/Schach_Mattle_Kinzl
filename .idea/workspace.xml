@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a8f60d1e-1774-4cec-95dc-02554b6ff623" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/ChessboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/client/MyClientThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/schach/server/MyServerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/ChessboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/client/MyClientThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/schach/server/MyServerThread.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660313672106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update">
+      <created>1660401285482</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1660401285482</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <created>1660401334898</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660401334898</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

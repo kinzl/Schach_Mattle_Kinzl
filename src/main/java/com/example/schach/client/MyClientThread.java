@@ -83,7 +83,7 @@ public class MyClientThread implements Runnable, Serializable {
         try {
             writer.writeObject(clientUsername);
             serverUsername = reader.readObject().toString();
-
+            System.out.println("Serverusername: " + serverUsername);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
