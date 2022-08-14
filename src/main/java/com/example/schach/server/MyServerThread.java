@@ -67,6 +67,7 @@ public class MyServerThread extends Thread {
     private void handleUsername() {
         try {
             writer.writeObject(serverUsername);
+            writer.flush();
             clientUsername = reader.readObject().toString();
             System.out.println("Clientusername: " + clientUsername);
         } catch (IOException e) {

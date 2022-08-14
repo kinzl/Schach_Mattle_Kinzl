@@ -40,26 +40,10 @@ public class MyClientThread implements Runnable, Serializable {
             isConnectedWithTheServer = true;
             handleUsername();
             System.out.println("CLIENT started");
-            while (running) {
 
-                Object o = reader.readObject();
+            receiveMessages();
 
-                if (o instanceof String) {
-                    String s = o.toString();
-                    if (s.equals("sendInformationList")) {
-                        informationList = (List<Information>) reader.readObject();
-                        System.out.println("INFOLIST:::CLIENT");
-                        for (int i = 0; i < informationList.size(); i++) {
-                            System.out.println(informationList.get(i));
-                        }
-                        System.out.println("\n\n");
-                        chessboardController.setInformationList(informationList);
-
-                    }
-                }
-
-            }
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -72,6 +56,7 @@ public class MyClientThread implements Runnable, Serializable {
     private void handleUsername() {
         try {
             writer.writeObject(clientUsername);
+            writer.flush();
             serverUsername = reader.readObject().toString();
             System.out.println("Serverusername: " + serverUsername);
         } catch (IOException e) {
@@ -95,5 +80,33 @@ public class MyClientThread implements Runnable, Serializable {
 
     public static ObjectOutputStream getWriter() {
         return writer;
+    }
+
+    private void receiveMessages() {
+        boolean running = true;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (running) {
+                    try {
+                        Object o = reader.readObject();
+                        if (o instanceof String) {
+                            String s = o.toString();
+                            if (s.equals("sendInformationList")) {
+                                informationList = (List<Information>) reader.readObject();
+                                System.out.println("INFOLIST:::CLIENT");
+                                for (int i = 0; i < informationList.size(); i++) {
+                                    System.out.println(informationList.get(i));
+                                }
+                                System.out.println("\n\n");
+                                chessboardController.setInformationList(informationList);
+                            }
+                        }
+                    } catch (ClassNotFoundException | IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 }
