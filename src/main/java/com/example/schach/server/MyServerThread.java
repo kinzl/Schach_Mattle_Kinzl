@@ -48,7 +48,9 @@ public class MyServerThread implements Runnable {
 //                    }
                     System.out.println("\n\n");
                     writer.writeObject("sendInformationList");
+                    writer.flush();
                     writer.writeObject(informationList);
+                    writer.flush();
 //                    System.out.println("SERVER SENT");
                 }
 

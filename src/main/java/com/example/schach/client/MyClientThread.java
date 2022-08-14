@@ -1,8 +1,5 @@
 package com.example.schach.client;
 
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -92,6 +89,7 @@ public class MyClientThread implements Serializable {
                     System.out.println("Receive messages AFTER");
                     if (o instanceof String) {
                         String s = o.toString();
+                        System.out.println("Information List received");
                         if (s.equals("sendInformationList")) {
                             informationList = (List<Information>) reader.readObject();
                             System.out.println("INFOLIST:::CLIENT");
@@ -106,7 +104,7 @@ public class MyClientThread implements Serializable {
                     e.printStackTrace();
                 }
             }
-        });
+        }).start();
     }
 
     private void sendMessages() {
@@ -117,6 +115,6 @@ public class MyClientThread implements Serializable {
             public void run() {
                 System.out.println("HURRA");
             }
-        });
+        }).start();
     }
 }
