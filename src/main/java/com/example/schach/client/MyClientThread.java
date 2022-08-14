@@ -82,13 +82,19 @@ public class MyClientThread implements Serializable {
             boolean running = true;
             while (running) {
                 try {
-                    System.out.println("Receive messages BEFORE");
+                    Thread.sleep(50);
                     String s = reader.readObject().toString();
                     System.out.println("SOMETHING RECEIVED: " + s);
-                    if(s.equals("sendInformationList")) {
-                        System.err.println("HURRA");
+                    if (s.equals("sendInformationList")) {
+                        informationList = (List<Information>) reader.readObject();
+//                        for (Information information : informationList) {
+//                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
+//                        }
+                        //Kommt richtig an
+                        chessboardController.updateChessfield();
                     }
-                } catch (ClassNotFoundException | IOException e) {
+
+                } catch (ClassNotFoundException | IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
 

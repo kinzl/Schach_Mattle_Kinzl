@@ -742,17 +742,19 @@ public class ChessboardController implements Initializable, Serializable {
         //chessBoardView.getChildren().clear();
         //System.out.println(chessBoardView.getChildren().size());
         //chessBoardView = new GridPane();
+        for (int j = 0; j < informationList.size(); j++) {
+            System.out.println("Update chessfield: " + informationList.get(j));
+        }
+
         for (int i = 0; i < informationList.size(); i++) {
-            String name = informationList.get(i).getFieldName();
+            String nameId = informationList.get(i).getFieldName();
+            String name = nameId.substring(0, nameId.length()-1);
             Integer x = informationList.get(i).getX();
             Integer y = informationList.get(i).getY();
 
-            System.out.println(name);
-            System.out.println(name + " " + x + " " + y);
-
             /*for (Node n : this.chessBoardView.getChildren()) {
                 System.out.println("hallo");
-                if(n.getId().contains(name)){
+                if(n.getId().contains(nameId)){
                     GridPane.setRowIndex(n, x);
                     GridPane.setColumnIndex(n, y);
                 }
@@ -761,18 +763,15 @@ public class ChessboardController implements Initializable, Serializable {
             ImageView imgV = new ImageView();
             Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
             imgV.setImage(image);
-            imgV.setId(name);
+            imgV.setId(nameId);
             //System.out.println("imgV: " + imgV);
             clickedpic = imgV;
-            clickedpic.setId(name);
-            //movement(name, x,y);
+            clickedpic.setId(nameId);
+            //movement(nameId, x,y);
             //chessBoardView.getChildren().add(imgV);
-            for (int j = 0; j < informationList.size(); j++) {
-                System.out.println("Update chessfield: " + informationList.get(i));
-            }
-            GridPane.setRowIndex(imgV, x);
-            GridPane.setColumnIndex(imgV, y);
 
+            GridPane.setRowIndex(clickedpic, x);
+            GridPane.setColumnIndex(clickedpic, y);
 
         }
 

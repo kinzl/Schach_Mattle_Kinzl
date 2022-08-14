@@ -27,23 +27,34 @@ public class Server {
     }
 
     private void runServer() {
-
         System.out.println("SERVER: Waiting for client");
+//        try {
+//            ServerSocket serverSocket = new ServerSocket(portNumber);
+//            stop = false;
+//
+//            while (!stop) {//do in loop to support multiple clients
+//                Socket clientSocket = serverSocket.accept();
+//                System.out.println("SERVER: client connected");
+//                hasClient = true;
+//                MyServerThread st1 = new MyServerThread(clientSocket);
+//                pool.execute(st1);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            //System.out.println("Unexpected Error");
+//        }
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
-            stop = false;
+            Socket clientSocket = serverSocket.accept();
+            hasClient = true;
+            System.out.println("SERVER: client connected");
+            MyServerThread myServerThread = new MyServerThread(clientSocket);
+            myServerThread.run();
 
-            while (!stop) {//do in loop to support multiple clients
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("SERVER: client connected");
-                hasClient = true;
-                MyServerThread st1 = new MyServerThread(clientSocket);
-                pool.execute(st1);
-            }
         } catch (IOException e) {
             e.printStackTrace();
-            //System.out.println("Unexpected Error");
         }
+
     }
 
     public void stop() {

@@ -10,7 +10,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyServerThread implements Runnable {
+public class MyServerThread implements Serializable {
 
     private Socket socket;
     private boolean running = true;
@@ -30,7 +30,6 @@ public class MyServerThread implements Runnable {
         this.socket = socket;
     }
 
-    @Override
     public void run() {
         //ToDO: Methods of Server
         try {
@@ -38,20 +37,8 @@ public class MyServerThread implements Runnable {
             writer = new ObjectOutputStream(socket.getOutputStream());
             reader = new ObjectInputStream(socket.getInputStream());
             handleUsername();
-
             System.out.println("SERVER started");
-            while (running) {
-                writer.writeObject("sendSomething");
-                writer.flush();
-                if (ChessboardController.informationListAdded) {
-                    informationList = ChessboardController.informationList;
-                    writer.writeObject("sendInformationList");
-                    writer.flush();
-//                    writer.writeObject(informationList);
-//                    writer.flush();
-//                    System.out.println("SERVER SENT");
-                }
-            }
+            sendMessages();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,9 +54,7 @@ public class MyServerThread implements Runnable {
             writer.flush();
             clientUsername = reader.readObject().toString();
             System.out.println("Clientusername: " + clientUsername);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
@@ -88,6 +73,51 @@ public class MyServerThread implements Runnable {
 
     public static String getClientUsername() {
         return clientUsername;
+    }
+
+    private void receiveMessages() {
+        new Thread(() -> {
+            boolean running = true;
+            while (running) {
+                try {
+                    System.out.println("Receive messages BEFORE");
+                    String s = reader.readObject().toString();
+                    System.out.println("SOMETHING RECEIVED: " + s);
+                    if (s.equals("sendInformationList")) {
+                        System.err.println("HURRA");
+                    }
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+    }
+
+    private void sendMessages() {
+        boolean running = true;
+        System.out.println("Send messages");
+        new Thread(() -> {
+            while (running) {
+                try {
+                    Thread.sleep(50);
+                    writer.writeObject("");
+                    writer.flush();
+                    if (ChessboardController.informationListAdded) {
+                        ChessboardController.informationListAdded = false;
+                        informationList = ChessboardController.informationList;
+//                        writer.reset();
+                        writer.writeObject("sendInformationList");
+                        writer.flush();
+                        writer.writeObject(informationList);
+                        writer.flush();
+//                    System.out.println("SERVER SENT");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
 
