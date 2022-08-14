@@ -84,12 +84,15 @@ public class MyClientThread implements Runnable, Serializable {
 
     private void receiveMessages() {
         boolean running = true;
+        System.out.println("Receive messages");
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (running) {
                     try {
+                        System.out.println("Receive messages BEFORE");
                         Object o = reader.readObject();
+                        System.out.println("Receive messages AFTER");
                         if (o instanceof String) {
                             String s = o.toString();
                             if (s.equals("sendInformationList")) {

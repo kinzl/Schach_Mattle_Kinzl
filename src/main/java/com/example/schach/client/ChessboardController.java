@@ -135,10 +135,10 @@ public class ChessboardController implements Initializable, Serializable {
     public static List<Information> informationList = new ArrayList<>();
 
     public void fieldslected00(MouseEvent mouseEvent) {
-        if (!turn) {
-            infoText.setText("It's the opponents turn, please wait");
-            return;
-        }
+//        if (!turn) {
+//            infoText.setText("It's the opponents turn, please wait");
+//            return;
+//        }
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
 
