@@ -31,8 +31,8 @@ public class MyClientThread implements Serializable {
         //ToDO: Methods of Client
         try {
             Socket socket = new Socket(IPADDRESS, PORT);
-            reader = new ObjectInputStream(socket.getInputStream());
             writer = new ObjectOutputStream(socket.getOutputStream());
+            reader = new ObjectInputStream(socket.getInputStream());
             isConnectedWithTheServer = true;
             handleUsername();
             System.out.println("CLIENT started");
@@ -42,7 +42,6 @@ public class MyClientThread implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public static void setUsername(String username) {
@@ -79,30 +78,20 @@ public class MyClientThread implements Serializable {
     }
 
     private void receiveMessages() {
-        boolean running = true;
-        System.out.println("Receive messages");
         new Thread(() -> {
+            boolean running = true;
             while (running) {
                 try {
                     System.out.println("Receive messages BEFORE");
-                    Object o = reader.readObject();
-                    System.out.println("Receive messages AFTER");
-                    if (o instanceof String) {
-                        String s = o.toString();
-                        System.out.println("Information List received");
-                        if (s.equals("sendInformationList")) {
-                            informationList = (List<Information>) reader.readObject();
-                            System.out.println("INFOLIST:::CLIENT");
-                            for (int i = 0; i < informationList.size(); i++) {
-                                System.out.println(informationList.get(i));
-                            }
-                            System.out.println("\n\n");
-                            chessboardController.setInformationList(informationList);
-                        }
+                    String s = reader.readObject().toString();
+                    System.out.println("SOMETHING RECEIVED: " + s);
+                    if(s.equals("sendInformationList")) {
+                        System.err.println("HURRA");
                     }
                 } catch (ClassNotFoundException | IOException e) {
                     e.printStackTrace();
                 }
+
             }
         }).start();
     }

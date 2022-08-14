@@ -9,18 +9,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Client {
-    private BufferedWriter writer;
-    private BufferedReader reader;
     private String IPADDRESS;
     private int PORT = 23;
-    private boolean running = true;
-
-    private Socket socket;
-
-
-    private static boolean isClientWhite = true;
-    private static boolean isServerBlack = false;
-
     private final ExecutorService pool;
     private final List<MyClientThread> clientThreads;
     private boolean stop;
@@ -46,16 +36,6 @@ public class Client {
 
     public void activate() {
         new Thread(() -> runClient()).start();
-    }
-
-
-
-    public static boolean isIsClientWhite() {
-        return isClientWhite;
-    }
-
-    public static boolean isIsServerBlack() {
-        return isServerBlack;
     }
 
 }

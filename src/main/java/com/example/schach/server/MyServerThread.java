@@ -38,33 +38,28 @@ public class MyServerThread implements Runnable {
             writer = new ObjectOutputStream(socket.getOutputStream());
             reader = new ObjectInputStream(socket.getInputStream());
             handleUsername();
+
             System.out.println("SERVER started");
             while (running) {
-
+                writer.writeObject("sendSomething");
+                writer.flush();
                 if (ChessboardController.informationListAdded) {
                     informationList = ChessboardController.informationList;
-//                    for (int i = 0; i < informationList.size(); i++) {
-//                        System.out.println(informationList.get(i));
-//                    }
-                    System.out.println("\n\n");
                     writer.writeObject("sendInformationList");
                     writer.flush();
-                    writer.writeObject(informationList);
-                    writer.flush();
+//                    writer.writeObject(informationList);
+//                    writer.flush();
 //                    System.out.println("SERVER SENT");
                 }
-
             }
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
     void stopServerTread() {
         running = true;
     }
-
 
     private void handleUsername() {
         try {
