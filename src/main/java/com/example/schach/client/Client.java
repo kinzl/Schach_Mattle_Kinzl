@@ -34,10 +34,13 @@ public class Client {
     private void runClient() {
         System.out.println("CLIENT: Waiting for Server");
 
-        stop = false;
+//        stop = false;
+//
+//        MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT);
+//        pool.execute(myClientThread);
 
         MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT);
-        pool.execute(myClientThread);
+        myClientThread.run();
 
     }
 

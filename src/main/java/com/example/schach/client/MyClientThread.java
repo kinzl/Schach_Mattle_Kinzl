@@ -11,7 +11,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyClientThread implements Runnable, Serializable {
+public class MyClientThread implements Serializable {
     private String IPADDRESS;
     private int PORT;
     private static ObjectInputStream reader;
@@ -30,7 +30,6 @@ public class MyClientThread implements Runnable, Serializable {
         this.PORT = PORT;
     }
 
-    @Override
     public void run() {
         //ToDO: Methods of Client
         try {
@@ -85,30 +84,38 @@ public class MyClientThread implements Runnable, Serializable {
     private void receiveMessages() {
         boolean running = true;
         System.out.println("Receive messages");
+        new Thread(() -> {
+            while (running) {
+                try {
+                    System.out.println("Receive messages BEFORE");
+                    Object o = reader.readObject();
+                    System.out.println("Receive messages AFTER");
+                    if (o instanceof String) {
+                        String s = o.toString();
+                        if (s.equals("sendInformationList")) {
+                            informationList = (List<Information>) reader.readObject();
+                            System.out.println("INFOLIST:::CLIENT");
+                            for (int i = 0; i < informationList.size(); i++) {
+                                System.out.println(informationList.get(i));
+                            }
+                            System.out.println("\n\n");
+                            chessboardController.setInformationList(informationList);
+                        }
+                    }
+                } catch (ClassNotFoundException | IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void sendMessages() {
+        boolean running = true;
+        System.out.println("Send messages");
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while (running) {
-                    try {
-                        System.out.println("Receive messages BEFORE");
-                        Object o = reader.readObject();
-                        System.out.println("Receive messages AFTER");
-                        if (o instanceof String) {
-                            String s = o.toString();
-                            if (s.equals("sendInformationList")) {
-                                informationList = (List<Information>) reader.readObject();
-                                System.out.println("INFOLIST:::CLIENT");
-                                for (int i = 0; i < informationList.size(); i++) {
-                                    System.out.println(informationList.get(i));
-                                }
-                                System.out.println("\n\n");
-                                chessboardController.setInformationList(informationList);
-                            }
-                        }
-                    } catch (ClassNotFoundException | IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+                System.out.println("HURRA");
             }
         });
     }

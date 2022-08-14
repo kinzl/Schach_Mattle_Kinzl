@@ -10,7 +10,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyServerThread extends Thread {
+public class MyServerThread implements Runnable {
 
     private Socket socket;
     private boolean running = true;
