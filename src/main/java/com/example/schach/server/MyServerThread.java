@@ -39,6 +39,7 @@ public class MyServerThread implements Serializable {
             handleUsername();
             System.out.println("SERVER started");
             sendMessages();
+            receiveMessages();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -80,13 +81,19 @@ public class MyServerThread implements Serializable {
             boolean running = true;
             while (running) {
                 try {
-                    System.out.println("Receive messages BEFORE");
+                    Thread.sleep(50);
                     String s = reader.readObject().toString();
-                    System.out.println("SOMETHING RECEIVED: " + s);
                     if (s.equals("sendInformationList")) {
-                        System.err.println("HURRA");
+                        informationList = (List<Information>) reader.readObject();
+//                        for (Information information : informationList) {
+//                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
+//                        }
+                        //Kommt richtig an
+                        ChessboardController.updateChessfield(informationList);
+                        informationList.clear();
                     }
-                } catch (ClassNotFoundException | IOException e) {
+
+                } catch (ClassNotFoundException | IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
 

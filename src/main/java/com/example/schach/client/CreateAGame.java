@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import com.example.schach.client.ChessboardController;
 import com.example.schach.server.MyServerThread;
 import com.example.schach.server.Server;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class CreateAGame implements Initializable {
@@ -52,8 +54,9 @@ public class CreateAGame implements Initializable {
     }
 
     public void playChess(ActionEvent actionEvent) throws IOException {
+        Locale locale = new Locale("getKey","Server");
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ChessboardController.class.getResource("Chessfield.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Server Chessfield");
         stage.setResizable(false);

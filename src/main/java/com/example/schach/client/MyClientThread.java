@@ -1,5 +1,6 @@
 package com.example.schach.client;
 
+import javax.security.auth.login.FailedLoginException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -38,6 +39,7 @@ public class MyClientThread implements Serializable {
             System.out.println("CLIENT started");
 
             receiveMessages();
+            sendMessages();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -84,14 +86,14 @@ public class MyClientThread implements Serializable {
                 try {
                     Thread.sleep(50);
                     String s = reader.readObject().toString();
-                    System.out.println("SOMETHING RECEIVED: " + s);
                     if (s.equals("sendInformationList")) {
                         informationList = (List<Information>) reader.readObject();
 //                        for (Information information : informationList) {
 //                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
 //                        }
                         //Kommt richtig an
-                        chessboardController.updateChessfield();
+                        ChessboardController.updateChessfield(informationList);
+                        informationList.clear();
                     }
 
                 } catch (ClassNotFoundException | IOException | InterruptedException e) {
@@ -105,10 +107,25 @@ public class MyClientThread implements Serializable {
     private void sendMessages() {
         boolean running = true;
         System.out.println("Send messages");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("HURRA");
+        new Thread(() -> {
+            while (running) {
+                try {
+                    Thread.sleep(50);
+                    writer.writeObject("");
+                    writer.flush();
+                    if (ChessboardController.informationListAdded) {
+                        ChessboardController.informationListAdded = false;
+                        informationList = ChessboardController.informationList;
+//                        writer.reset();
+                        writer.writeObject("sendInformationList");
+                        writer.flush();
+                        writer.writeObject(informationList);
+                        writer.flush();
+//                    System.out.println("SERVER SENT");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }).start();
     }

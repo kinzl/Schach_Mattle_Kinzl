@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class JoinAGame implements Initializable {
@@ -29,7 +30,7 @@ public class JoinAGame implements Initializable {
 
     public void connectToServer(ActionEvent actionEvent) {
 
-        if(isValidIpAddress(ipAddress.getText())){
+        if (isValidIpAddress(ipAddress.getText())) {
             client = new Client(ipAddress.getText());
             client.activate();
             try {
@@ -37,7 +38,7 @@ public class JoinAGame implements Initializable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (MyClientThread.isConnectedWithTheServer){
+            if (MyClientThread.isConnectedWithTheServer) {
                 status.setText("Connected");
                 connectButtonID.setDisable(true);
                 playButton.setDisable(false);
@@ -49,17 +50,17 @@ public class JoinAGame implements Initializable {
     }
 
 
-    private boolean isValidIpAddress(String ipAddress){
+    private boolean isValidIpAddress(String ipAddress) {
         //Checks if the entered ip address is valid
-        if(ipAddress.isEmpty()){
+        if (ipAddress.isEmpty()) {
             status.setText("Please enter a Ip Address");
             return false;
         }
         String[] temp = ipAddress.split("\\.");
-        if(temp.length == 4 || ipAddress.equals("localhost")) {
+        if (temp.length == 4 || ipAddress.equals("localhost")) {
             status.setText("Connecting...");
             return true;
-        }else {
+        } else {
             status.setText("Invalid IP Address");
         }
         return false;
@@ -68,9 +69,9 @@ public class JoinAGame implements Initializable {
 
 
     public void play(ActionEvent actionEvent) throws IOException {
-        //Opens new Window(Chessfield.fxml
+        Locale locale = new Locale("getKey", "Server");
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(ChessboardController.class.getResource("Chessfield.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Client Chessfield");
         stage.setResizable(false);

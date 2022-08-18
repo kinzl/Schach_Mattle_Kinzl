@@ -1,11 +1,12 @@
 package com.example.schach.client;
 
 import com.example.schach.server.MyServerThread;
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -13,19 +14,15 @@ import javafx.scene.layout.Pane;
 
 import java.io.Serializable;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class ChessboardController implements Initializable, Serializable {
-    public GridPane chessBoardView = new GridPane();
-    //    public static GridPane chessBoardView;
+    public GridPane gridPane = new GridPane();
     public Node slectedPic;
     public Node clickedpic;
     public boolean isChoosen = false;
     public boolean pressed = false;
-    public static MouseEvent mouseEvent1;
+    public MouseEvent mouseEvent1;
     public Label player1;
     public Label player2;
     public MenuItem openChat;
@@ -136,6 +133,8 @@ public class ChessboardController implements Initializable, Serializable {
     public static boolean informationListAdded = false;
     public static List<Information> informationList = new ArrayList<>();
 
+    public static boolean isServer;
+
     public void fieldslected00(MouseEvent mouseEvent) {
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
@@ -172,7 +171,7 @@ public class ChessboardController implements Initializable, Serializable {
                 if (farbeChosen1.contains("pawn")) {
 
                     if (ispawnKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -187,7 +186,7 @@ public class ChessboardController implements Initializable, Serializable {
 
                 } else if (farbeChosen1.contains("king")) {
                     if (isKingKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -201,7 +200,7 @@ public class ChessboardController implements Initializable, Serializable {
                     }
                 } else if (farbeChosen1.contains("knight")) {
                     if (ishorseKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -215,7 +214,7 @@ public class ChessboardController implements Initializable, Serializable {
                     }
                 } else if (farbeChosen1.contains("bishop")) {
                     if (isrunnerKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -229,7 +228,7 @@ public class ChessboardController implements Initializable, Serializable {
                     }
                 } else if (farbeChosen1.contains("rook")) {
                     if (rookKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -243,7 +242,7 @@ public class ChessboardController implements Initializable, Serializable {
                     }
                 } else if (farbeChosen1.contains("queen")) {
                     if (rookKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -252,7 +251,7 @@ public class ChessboardController implements Initializable, Serializable {
                         GridPane.setColumnIndex(clickedpic, y);
                         System.out.println("Feld ersetzt");
                     } else if (isrunnerKill(x, y, oldX, oldY) == true) {
-                        for (Node n : chessBoardView.getChildren()) {
+                        for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
                             }
@@ -327,7 +326,7 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
             for (int x1 = oldX + offset; x1 != x; x1 += offset) {
-                for (Node n : this.chessBoardView.getChildren()) {
+                for (Node n : this.gridPane.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -354,7 +353,7 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
             for (int x1 = oldY + offset; x1 != y; x1 += offset) {
-                for (Node n : chessBoardView.getChildren()) {
+                for (Node n : gridPane.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -399,7 +398,7 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
             for (int x1 = oldX + temp; x1 != newX; x1 += temp) {
-                for (Node n : chessBoardView.getChildren()) {
+                for (Node n : gridPane.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -424,7 +423,7 @@ public class ChessboardController implements Initializable, Serializable {
             }
 
             for (int x1 = oldY + temp; x1 != newY; x1 += temp) {
-                for (Node n : chessBoardView.getChildren()) {
+                for (Node n : gridPane.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -466,7 +465,7 @@ public class ChessboardController implements Initializable, Serializable {
             int y1 = oldY + colOffset;
             for (int x1 = oldX + rowOffset; x1 != x; x1 += rowOffset) {
 
-                for (Node n : chessBoardView.getChildren()) {
+                for (Node n : gridPane.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -524,7 +523,7 @@ public class ChessboardController implements Initializable, Serializable {
             int y1 = oldY + colOffset;
             for (int x1 = oldX + rowOffset; x1 != newX; x1 += rowOffset) {
 
-                for (Node n : chessBoardView.getChildren()) {
+                for (Node n : gridPane.getChildren()) {
                     Integer rowN = GridPane.getRowIndex(n);
                     Integer columnN = GridPane.getColumnIndex(n);
                     if (rowN == null) {
@@ -706,7 +705,7 @@ public class ChessboardController implements Initializable, Serializable {
         Integer rowN;
         Integer columnN;
 
-        for (Node n : chessBoardView.getChildren()) {
+        for (Node n : gridPane.getChildren()) {
             if (n.getTypeSelector().equals("ImageView")) {
 
                 rowN = GridPane.getRowIndex(n);
@@ -736,44 +735,41 @@ public class ChessboardController implements Initializable, Serializable {
         informationListAdded = false;
     }
 
-    public void updateChessfield() {
-
+    public static void updateChessfield(List<Information> informationList) {
+//chessboardcontroller weiß wer server und wer client ist
         System.out.println("UPDATE CHESSFIELD");
-        //chessBoardView.getChildren().clear();
-        //System.out.println(chessBoardView.getChildren().size());
-        //chessBoardView = new GridPane();
         for (int j = 0; j < informationList.size(); j++) {
             System.out.println("Update chessfield: " + informationList.get(j));
         }
 
-        for (int i = 0; i < informationList.size(); i++) {
-            String nameId = informationList.get(i).getFieldName();
-            String name = nameId.substring(0, nameId.length()-1);
-            Integer x = informationList.get(i).getX();
-            Integer y = informationList.get(i).getY();
-
-            /*for (Node n : this.chessBoardView.getChildren()) {
-                System.out.println("hallo");
-                if(n.getId().contains(nameId)){
-                    GridPane.setRowIndex(n, x);
-                    GridPane.setColumnIndex(n, y);
-                }
-            }*/
-
-            ImageView imgV = new ImageView();
-            Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
-            imgV.setImage(image);
-            imgV.setId(nameId);
-            //System.out.println("imgV: " + imgV);
-            clickedpic = imgV;
-            clickedpic.setId(nameId);
-            //movement(nameId, x,y);
-            //chessBoardView.getChildren().add(imgV);
-
-            GridPane.setRowIndex(clickedpic, x);
-            GridPane.setColumnIndex(clickedpic, y);
-
-        }
+//        for (int i = 0; i < informationList.size(); i++) {
+//            String nameId = informationList.get(i).getFieldName();
+//            String name = nameId.substring(0, nameId.length()-1);
+//            Integer x = informationList.get(i).getX();
+//            Integer y = informationList.get(i).getY();
+//
+//            /*for (Node n : this.chessBoardView.getChildren()) {
+//                System.out.println("hallo");
+//                if(n.getId().contains(nameId)){
+//                    GridPane.setRowIndex(n, x);
+//                    GridPane.setColumnIndex(n, y);
+//                }
+//            }*/
+//
+//            ImageView imgV = new ImageView();
+//            Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
+//            imgV.setImage(image);
+//            imgV.setId(nameId);
+//            //System.out.println("imgV: " + imgV);
+//            clickedpic = imgV;
+//            clickedpic.setId(nameId);
+//            //movement(nameId, x,y);
+//            //chessBoardView.getChildren().add(imgV);
+//
+//            GridPane.setRowIndex(clickedpic, x);
+//            GridPane.setColumnIndex(clickedpic, y);
+//
+//        }
 
     }
 
@@ -782,14 +778,23 @@ public class ChessboardController implements Initializable, Serializable {
         try {
             player1.setText(MyClientThread.getClientUsername().toUpperCase(Locale.ROOT));
             player2.setText(MyClientThread.getServerUsername().toUpperCase(Locale.ROOT));
-            infoText.setText("White begins, black wins      Wait for your opponent");
         } catch (Exception e) {
             player1.setText(MyServerThread.getServerUsername());
             player2.setText(MyServerThread.getClientUsername());
-            infoText.setText("White begins, black wins      It's your turn");
         }
 
-//ChessboardController.chessBoardView = new GridPane();
+        List<String> classes = new ArrayList<>();
+        StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
+                .forEach(frame -> classes.add(frame.getDeclaringClass().toString()));
+        for (String string : classes) {
+            if (string.contains("CreateAGame")) {
+                isServer = true;
+                infoText.setText("White begins, black wins       It's your turn");
+            } else if (string.contains("JoinAGame")) {
+                isServer = false;
+                infoText.setText("White begins, black wins       Wait for your opponent");
+            }
+        }
     }
 
     public List<Information> getInformationList() {
@@ -798,7 +803,6 @@ public class ChessboardController implements Initializable, Serializable {
 
     public void setInformationList(List<Information> informationList) {
         ChessboardController.informationList = informationList;
-        updateChessfield();
     }
 
     public boolean isInformationListAdded() {
