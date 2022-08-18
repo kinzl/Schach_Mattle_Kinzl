@@ -1,0 +1,16 @@
+com\example\schach\client\Login.class
+com\example\schach\server\Server.class
+com\example\schach\client\LoginController.class
+com\example\schach\client\MyClientThread$1.class
+com\example\schach\client\MessangerController.class
+com\example\schach\client\WinScreen.class
+com\example\schach\client\Fieldtester.class
+module-info.class
+com\example\schach\client\CreateAGame.class
+com\example\schach\client\MyClientThread.class
+com\example\schach\server\MyServerThread.class
+com\example\schach\client\Information.class
+com\example\schach\client\ChessboardController.class
+com\example\schach\client\Client.class
+com\example\schach\client\LoseScreen.class
+com\example\schach\client\JoinAGame.class
