@@ -1,10 +1,8 @@
 package com.example.schach.client;
 
 import com.example.schach.server.MyServerThread;
-import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
@@ -14,7 +12,10 @@ import javafx.scene.layout.Pane;
 
 import java.io.Serializable;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable, Serializable {
     public GridPane gridPane = new GridPane();
@@ -128,8 +129,10 @@ public class ChessboardController implements Initializable, Serializable {
     public Label TimeOverAll;
     public Label infoText;
 
+    private MyServerThread myServerThread;
+    private MyClientThread myClientThread;
+
     String farbe;
-    private boolean isMovePossible = false;
     public static boolean informationListAdded = false;
     public static List<Information> informationList = new ArrayList<>();
 
@@ -139,20 +142,20 @@ public class ChessboardController implements Initializable, Serializable {
         mouseEvent1 = mouseEvent;
         //System.out.println(chessBoardView.getChildren());
 
-        if (clickedpic == (Node) mouseEvent.getSource()) {
+        if (clickedpic == mouseEvent.getSource()) {
             pressed = false;
             isChoosen = true;
             clickedpic = null;
             System.out.println("Feld deaktiviert");
-        } else if (clickedpic != (Node) mouseEvent.getSource() && isChoosen == true && pressed == true) {
+        } else if (clickedpic != mouseEvent.getSource() && isChoosen && pressed) {
             slectedPic = (Node) mouseEvent.getSource();
             String farbeChosen1 = clickedpic.getId();
             String farbeChosen2 = slectedPic.getId();
             Integer b = null;
-            Integer x = GridPane.getRowIndex((Node) slectedPic);
-            Integer y = GridPane.getColumnIndex((Node) slectedPic);
-            Integer oldX = GridPane.getRowIndex((Node) clickedpic);
-            Integer oldY = GridPane.getColumnIndex((Node) clickedpic);
+            Integer x = GridPane.getRowIndex(slectedPic);
+            Integer y = GridPane.getColumnIndex(slectedPic);
+            Integer oldX = GridPane.getRowIndex(clickedpic);
+            Integer oldY = GridPane.getColumnIndex(clickedpic);
             if (x == b) {
                 x = 0;
             }
@@ -170,7 +173,7 @@ public class ChessboardController implements Initializable, Serializable {
             } else {
                 if (farbeChosen1.contains("pawn")) {
 
-                    if (ispawnKill(x, y, oldX, oldY) == true) {
+                    if (ispawnKill(x, y, oldX, oldY)) {
                         for (Node n : gridPane.getChildren()) {
                             if (n == slectedPic) {
                                 n.setVisible(false);
@@ -650,6 +653,7 @@ public class ChessboardController implements Initializable, Serializable {
             oldY = 0;
         }
 
+        boolean isMovePossible = false;
         if (name.contains("black")) {
             if (oldX == 1 && newX <= 3 && newY == oldY) {
                 isMovePossible = true;
