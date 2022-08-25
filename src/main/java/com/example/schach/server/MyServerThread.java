@@ -4,6 +4,7 @@ package com.example.schach.server;
 import com.example.schach.client.ChessboardController;
 import com.example.schach.client.Information;
 import com.example.schach.client.MessangerController;
+import javafx.scene.layout.GridPane;
 
 import java.io.*;
 import java.net.Socket;
@@ -30,6 +31,10 @@ public class MyServerThread implements Serializable {
         this.socket = socket;
     }
 
+    public MyServerThread() {
+
+    }
+
     public void run() {
         //ToDO: Methods of Server
         try {
@@ -38,8 +43,7 @@ public class MyServerThread implements Serializable {
             reader = new ObjectInputStream(socket.getInputStream());
             handleUsername();
             System.out.println("SERVER started");
-            sendMessages();
-            receiveMessages();
+//            sendMessages();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,18 +58,9 @@ public class MyServerThread implements Serializable {
             writer.writeObject(serverUsername);
             writer.flush();
             clientUsername = reader.readObject().toString();
-            System.out.println("Clientusername: " + clientUsername);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public static ObjectInputStream getReader() {
-        return reader;
-    }
-
-    public static ObjectOutputStream getWriter() {
-        return writer;
     }
 
     public static String getServerUsername() {
@@ -76,24 +71,19 @@ public class MyServerThread implements Serializable {
         return clientUsername;
     }
 
-    private void receiveMessages() {
+    public void receiveMessages(GridPane gridPane) {
         new Thread(() -> {
             boolean running = true;
             while (running) {
                 try {
-                    Thread.sleep(50);
                     String s = reader.readObject().toString();
-                    if (s.equals("sendInformationList")) {
+                    if (s.equals("sendInformationListToServer")) {
+                        System.out.println("SERVER RECEIVE");
                         informationList = (List<Information>) reader.readObject();
-//                        for (Information information : informationList) {
-//                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
-//                        }
-                        //Kommt richtig an
-                        ChessboardController.updateChessfield(informationList);
-                        informationList.clear();
+                        ChessboardController.updateChessfield(informationList, gridPane);
                     }
 
-                } catch (ClassNotFoundException | IOException | InterruptedException e) {
+                } catch (ClassNotFoundException | IOException e) {
                     e.printStackTrace();
                 }
 
@@ -101,26 +91,25 @@ public class MyServerThread implements Serializable {
         }).start();
     }
 
-    private void sendMessages() {
+    public void sendMessages() {
         boolean running = true;
-        System.out.println("Send messages");
         new Thread(() -> {
             while (running) {
                 try {
-                    Thread.sleep(50);
                     writer.writeObject("");
                     writer.flush();
                     if (ChessboardController.informationListAdded) {
+                        System.out.println("SERVER SENDS");
                         ChessboardController.informationListAdded = false;
                         informationList = ChessboardController.informationList;
-//                        writer.reset();
-                        writer.writeObject("sendInformationList");
-                        writer.flush();
+                        for (int i = 0; i < informationList.size(); i++) {
+                            System.out.println(informationList.get(i).getFieldName() + " | " + informationList.get(i).getX() + " | " + informationList.get(i).getY());
+                        }
+                        writer.writeObject("sendInformationListToClient");
                         writer.writeObject(informationList);
                         writer.flush();
-//                    System.out.println("SERVER SENT");
                     }
-                } catch (IOException | InterruptedException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

@@ -1,14 +1,19 @@
 package com.example.schach.client;
 
 import com.example.schach.server.MyServerThread;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 import java.io.Serializable;
 import java.net.URL;
@@ -126,12 +131,12 @@ public class ChessboardController implements Initializable, Serializable {
     public Label TimeOverAll;
     public Label infoText;
 
-    private MyServerThread myServerThread;
-    private MyClientThread myClientThread;
+    private static MyServerThread myServerThread;
+    private static MyClientThread myClientThread;
 
     String farbe;
     public static boolean informationListAdded = false;
-    public static List<Information> informationList = new ArrayList<>();
+    public static List<Information> informationList;
 
     public static boolean isServer;
 
@@ -665,7 +670,8 @@ public class ChessboardController implements Initializable, Serializable {
     }
 
     public void addInformationList() {
-
+        System.out.println("***ADD TO INFORMATRIONLIST***");
+        informationList.clear();
         Integer rowN;
         Integer columnN;
 
@@ -680,60 +686,29 @@ public class ChessboardController implements Initializable, Serializable {
                 if (columnN == null) {
                     columnN = 0;
                 }
-
-                informationList.add(new Information(n.getId(), rowN, columnN));
-                //System.out.println("n.getID: " + n.getId());
-                //System.out.println(rowN + " + " + columnN);
+                informationList.add(new Information(n.getId(), columnN, rowN));
+//                System.out.println(n.getId() + " | " + columnN + " | " + rowN);
             }
         }
-
-//        for (int i = 0; i < informationList.size(); i++) {
-//            System.out.println(informationList.get(i));
-//        }
+        System.out.println("***                 ***");
         informationListAdded = true;
-        try {
-            Thread.sleep(200);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        informationListAdded = false;
     }
 
-    public static void updateChessfield(List<Information> informationList) {
-//chessboardcontroller weiß wer server und wer client ist
-        System.out.println("UPDATE CHESSFIELD");
-        for (int j = 0; j < informationList.size(); j++) {
-            System.out.println("Update chessfield: " + informationList.get(j));
-        }
-
+    public static void updateChessfield(List<Information> informationList, GridPane gridPane) {
+//        System.out.println("UPDATE CHESSFIELD");
 //        for (int i = 0; i < informationList.size(); i++) {
-//            String nameId = informationList.get(i).getFieldName();
-//            String name = nameId.substring(0, nameId.length()-1);
-//            Integer x = informationList.get(i).getX();
-//            Integer y = informationList.get(i).getY();
-//
-//            /*for (Node n : this.chessBoardView.getChildren()) {
-//                System.out.println("hallo");
-//                if(n.getId().contains(nameId)){
-//                    GridPane.setRowIndex(n, x);
-//                    GridPane.setColumnIndex(n, y);
-//                }
-//            }*/
-//
-//            ImageView imgV = new ImageView();
-//            Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
-//            imgV.setImage(image);
-//            imgV.setId(nameId);
-//            //System.out.println("imgV: " + imgV);
-//            clickedpic = imgV;
-//            clickedpic.setId(nameId);
-//            //movement(nameId, x,y);
-//            //chessBoardView.getChildren().add(imgV);
-//
-//            GridPane.setRowIndex(clickedpic, x);
-//            GridPane.setColumnIndex(clickedpic, y);
-//
+//            System.out.println("Update chessfield: " + informationList.get(i));
 //        }
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < informationList.size(); i++) {
+                    Node node = gridPane.getChildren().get((64+i));
+                    GridPane.setColumnIndex(node, informationList.get(i).getX());
+                    GridPane.setRowIndex(node, informationList.get(i).getY());
+                }
+            }
+        });
 
     }
 
@@ -747,30 +722,25 @@ public class ChessboardController implements Initializable, Serializable {
             player2.setText(MyServerThread.getClientUsername());
         }
 
+        informationList  = new ArrayList<>();
+
         List<String> classes = new ArrayList<>();
-        StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE)
-                .forEach(frame -> classes.add(frame.getDeclaringClass().toString()));
+        StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE).forEach(frame -> classes.add(frame.getDeclaringClass().toString()));
         for (String string : classes) {
             if (string.contains("CreateAGame")) {
                 isServer = true;
                 infoText.setText("White begins, black wins       It's your turn");
+                myServerThread = new MyServerThread();
+                myServerThread.receiveMessages(gridPane);
+                myServerThread.sendMessages();
             } else if (string.contains("JoinAGame")) {
                 isServer = false;
                 infoText.setText("White begins, black wins       Wait for your opponent");
+                myClientThread = new MyClientThread();
+                myClientThread.receiveMessages(gridPane);
+                myClientThread.sendMessages();
             }
         }
-    }
-
-    public List<Information> getInformationList() {
-        return informationList;
-    }
-
-    public void setInformationList(List<Information> informationList) {
-        ChessboardController.informationList = informationList;
-    }
-
-    public boolean isInformationListAdded() {
-        return informationListAdded;
     }
 
     private void movement(String name, int x, int y) {
