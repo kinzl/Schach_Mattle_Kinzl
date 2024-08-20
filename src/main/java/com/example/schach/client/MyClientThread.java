@@ -52,9 +52,7 @@ public class MyClientThread implements Serializable {
             writer.flush();
             serverUsername = reader.readObject().toString();
             System.out.println("Serverusername: " + serverUsername);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

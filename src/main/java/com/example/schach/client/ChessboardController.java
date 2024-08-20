@@ -3,6 +3,8 @@ package com.example.schach.client;
 import com.example.schach.server.MyServerThread;
 import javafx.application.Platform;
 import javafx.fxml.Initializable;
+import javafx.geometry.HPos;
+import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
@@ -20,7 +22,6 @@ import java.util.ResourceBundle;
 
 public class ChessboardController implements Initializable, Serializable {
     public GridPane chessBoardView = new GridPane();
-    //    public static GridPane chessBoardView;
     public Node slectedPic;
     public Node clickedpic;
     public boolean isChoosen = false;
@@ -151,10 +152,10 @@ public class ChessboardController implements Initializable, Serializable {
             String farbeChosen1 = clickedpic.getId();
             String farbeChosen2 = slectedPic.getId();
             Integer b = null;
-            Integer x = GridPane.getRowIndex( slectedPic);
-            Integer y = GridPane.getColumnIndex( slectedPic);
-            Integer oldX = GridPane.getRowIndex( clickedpic);
-            Integer oldY = GridPane.getColumnIndex( clickedpic);
+            Integer x = GridPane.getRowIndex(slectedPic);
+            Integer y = GridPane.getColumnIndex(slectedPic);
+            Integer oldX = GridPane.getRowIndex(clickedpic);
+            Integer oldY = GridPane.getColumnIndex(clickedpic);
             if (x == b) {
                 x = 0;
             }
@@ -730,31 +731,39 @@ public class ChessboardController implements Initializable, Serializable {
 //        });
         Platform.runLater(() -> {
             System.out.println("UPDATE CHESSFIELD");
+            ArrayList<Node> temp = new ArrayList<>();
             List<Node> l = chessBoardView.getChildren();
             for (Node n : l) {
-                for (Information information : informationList) {
+                if (n.getId() == null) continue;
+                if (n.getId().contains("white") || n.getId().contains("black")) {
+                    temp.add(n);
 
-                    if (n.getId().contains("white") || n.getId().contains("black")) {
-
-                        String nameId = information.getFieldName();
-                        String name = nameId.substring(0, nameId.length() - 1);
-                        Integer x = information.getX();
-                        Integer y = information.getY();
-                        // Load the image for the chess piece
-                        if(n.getId().equals(name)){
-
-                        }
-                        Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
-                        ImageView imgV = new ImageView(image);
-                        imgV.setId(nameId);
-
-                        // Add the ImageView to the GridPane at the correct position
-                        chessBoardView.add(imgV, y, x);
-                    }
                 }
             }
+            chessBoardView.getChildren().removeAll(temp);
+
+            for (Information information : informationList) {
+                String nameId = information.getFieldName();
+                String name = nameId.substring(0, nameId.length() - 1);
+                Integer x = information.getX();
+                Integer y = information.getY();
+                // Load the image for the chess piece
+                Image image = new Image(String.valueOf(this.getClass().getResource("/images/" + name + ".png")));
+                ImageView imgV = new ImageView(image);
+                imgV.setId(nameId);
+                imgV.setOnMouseClicked(this::fieldslected00);
+                imgV.setFitHeight(65);
+                imgV.setFitWidth(65);
+                imgV.setPickOnBounds(true);
+                imgV.setPreserveRatio(true);
+                GridPane.setHalignment(imgV, HPos.CENTER);
+                GridPane.setValignment(imgV, VPos.CENTER);
+
+                // Add the ImageView to the GridPane at the correct position
+                chessBoardView.add(imgV, y, x);
+            }
+            informationList.clear();
         });
-//        informationList.clear();
     }
 
 
