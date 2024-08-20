@@ -20,46 +20,51 @@ public class JoinAGame implements Initializable {
     public Button playButton;
     public Button connectButtonID;
     private Client client;
+    private Scene scene;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         playButton.setDisable(true);
-
     }
 
-    public void connectToServer(ActionEvent actionEvent) {
-
-        if(isValidIpAddress(ipAddress.getText())){
+    public void connectToServer(ActionEvent actionEvent) throws IOException {
+        if (isValidIpAddress(ipAddress.getText())) {
             client = new Client(ipAddress.getText());
+
+            FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
+            scene = new Scene(fxmlLoader.load());
+
+            ChessboardController controller = fxmlLoader.getController();
+            client.setChessboardController(controller);
+
             client.activate();
             try {
                 Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (MyClientThread.isConnectedWithTheServer){
+            if (MyClientThread.isConnectedWithTheServer) {
                 status.setText("Connected");
                 connectButtonID.setDisable(true);
                 playButton.setDisable(false);
             } else {
                 status.setText("No Server found");
             }
-
         }
     }
 
 
-    private boolean isValidIpAddress(String ipAddress){
+    private boolean isValidIpAddress(String ipAddress) {
         //Checks if the entered ip address is valid
-        if(ipAddress.isEmpty()){
+        if (ipAddress.isEmpty()) {
             status.setText("Please enter a Ip Address");
             return false;
         }
         String[] temp = ipAddress.split("\\.");
-        if(temp.length == 4 || ipAddress.equals("localhost")) {
+        if (temp.length == 4 || ipAddress.equals("localhost")) {
             status.setText("Connecting...");
             return true;
-        }else {
+        } else {
             status.setText("Invalid IP Address");
         }
         return false;
@@ -70,8 +75,7 @@ public class JoinAGame implements Initializable {
     public void play(ActionEvent actionEvent) throws IOException {
         //Opens new Window(Chessfield.fxml
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+
         stage.setTitle("Client Chessfield");
         stage.setResizable(false);
         stage.setScene(scene);

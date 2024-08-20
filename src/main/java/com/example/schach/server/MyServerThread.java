@@ -19,15 +19,15 @@ public class MyServerThread implements Serializable {
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
     private List<Information> informationList = new ArrayList<>();
-    private MessangerController messangerController;
-    private ChessboardController chessboardController = new ChessboardController();
+    private ChessboardController chessboardController;
 
     public static void setServerUsername(String serverUsername) {
         MyServerThread.serverUsername = serverUsername;
     }
 
-    public MyServerThread(Socket socket) {
+    public MyServerThread(Socket socket, ChessboardController chessboardController) {
         this.socket = socket;
+        this.chessboardController = chessboardController;
     }
 
     public void run() {
@@ -59,14 +59,6 @@ public class MyServerThread implements Serializable {
         }
     }
 
-    public static ObjectInputStream getReader() {
-        return reader;
-    }
-
-    public static ObjectOutputStream getWriter() {
-        return writer;
-    }
-
     public static String getServerUsername() {
         return serverUsername;
     }
@@ -80,9 +72,7 @@ public class MyServerThread implements Serializable {
             boolean running = true;
             while (running) {
                 try {
-                    System.out.println("Receive messages BEFORE");
                     String s = reader.readObject().toString();
-                    System.out.println("SOMETHING RECEIVED: " + s);
                     if (s.equals("sendInformationList")) {
                         System.err.println("HURRA");
                     }

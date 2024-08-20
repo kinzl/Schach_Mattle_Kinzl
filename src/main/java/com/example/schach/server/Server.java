@@ -1,5 +1,6 @@
 package com.example.schach.server;
 
+import com.example.schach.client.ChessboardController;
 import com.example.schach.client.LoginController;
 
 import java.io.*;
@@ -18,6 +19,7 @@ public class Server {
     private final int portNumber;
     private boolean stop;
     private boolean hasClient;
+    private ChessboardController chessboard;
 
 
     public Server() {
@@ -28,27 +30,12 @@ public class Server {
 
     private void runServer() {
         System.out.println("SERVER: Waiting for client");
-//        try {
-//            ServerSocket serverSocket = new ServerSocket(portNumber);
-//            stop = false;
-//
-//            while (!stop) {//do in loop to support multiple clients
-//                Socket clientSocket = serverSocket.accept();
-//                System.out.println("SERVER: client connected");
-//                hasClient = true;
-//                MyServerThread st1 = new MyServerThread(clientSocket);
-//                pool.execute(st1);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            //System.out.println("Unexpected Error");
-//        }
         try {
             ServerSocket serverSocket = new ServerSocket(portNumber);
             Socket clientSocket = serverSocket.accept();
             hasClient = true;
             System.out.println("SERVER: client connected");
-            MyServerThread myServerThread = new MyServerThread(clientSocket);
+            MyServerThread myServerThread = new MyServerThread(clientSocket, chessboard);
             myServerThread.run();
 
         } catch (IOException e) {
@@ -79,6 +66,10 @@ public class Server {
     }
 
     public void activate() {
-        new Thread(() -> runServer()).start();
+        new Thread(this::runServer).start();
+    }
+
+    public void setChessboard(ChessboardController chessboard) {
+        this.chessboard = chessboard;
     }
 }

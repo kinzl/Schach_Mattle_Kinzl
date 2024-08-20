@@ -14,6 +14,7 @@ public class Client {
     private final ExecutorService pool;
     private final List<MyClientThread> clientThreads;
     private boolean stop;
+    private ChessboardController chessboardController;
 
     public Client(String IPADDRESS) {
         this.IPADDRESS = IPADDRESS;
@@ -23,19 +24,15 @@ public class Client {
 
     private void runClient() {
         System.out.println("CLIENT: Waiting for Server");
-
-//        stop = false;
-//
-//        MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT);
-//        pool.execute(myClientThread);
-
-        MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT);
+        MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT, chessboardController);
         myClientThread.run();
-
     }
 
     public void activate() {
-        new Thread(() -> runClient()).start();
+        new Thread(this::runClient).start();
     }
 
+    public void setChessboardController(ChessboardController chessboardController) {
+        this.chessboardController = chessboardController;
+    }
 }

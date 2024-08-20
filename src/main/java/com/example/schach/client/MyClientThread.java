@@ -9,22 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyClientThread implements Serializable {
-    private String IPADDRESS;
-    private int PORT;
+    private final String IPADDRESS;
+    private final int PORT;
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
     public static boolean isConnectedWithTheServer = false;
     private static String serverUsername;
     private static String clientUsername;
-    private boolean running = true;
-    private String s;
     private List<Information> informationList = new ArrayList<>();
-    private ChessboardController chessboardController = new ChessboardController();
+    private final ChessboardController chessboardController;
 
-
-    public MyClientThread(String IPADDRESS, int PORT) {
+    public MyClientThread(String IPADDRESS, int PORT, ChessboardController chessboardController) {
         this.IPADDRESS = IPADDRESS;
         this.PORT = PORT;
+        this.chessboardController = chessboardController;
     }
 
     public void run() {
@@ -69,14 +67,6 @@ public class MyClientThread implements Serializable {
         return clientUsername;
     }
 
-    public static ObjectInputStream getReader() {
-        return reader;
-    }
-
-    public static ObjectOutputStream getWriter() {
-        return writer;
-    }
-
     private void receiveMessages() {
         new Thread(() -> {
             boolean running = true;
@@ -84,12 +74,11 @@ public class MyClientThread implements Serializable {
                 try {
                     Thread.sleep(50);
                     String s = reader.readObject().toString();
-                    System.out.println("SOMETHING RECEIVED: " + s);
                     if (s.equals("sendInformationList")) {
                         informationList = (List<Information>) reader.readObject();
-//                        for (Information information : informationList) {
-//                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
-//                        }
+                        for (Information information : informationList) {
+                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
+                        }
                         //Kommt richtig an
                         chessboardController.updateChessfield();
                     }
