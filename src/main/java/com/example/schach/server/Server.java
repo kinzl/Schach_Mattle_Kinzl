@@ -1,7 +1,6 @@
 package com.example.schach.server;
 
 import com.example.schach.client.ChessboardController;
-import com.example.schach.client.LoginController;
 
 import java.io.*;
 import java.net.Inet4Address;
@@ -21,7 +20,6 @@ public class Server {
     private boolean hasClient;
     private ChessboardController chessboard;
 
-
     public Server() {
         this.portNumber = 23;
         pool = Executors.newFixedThreadPool(3);
@@ -35,7 +33,7 @@ public class Server {
             Socket clientSocket = serverSocket.accept();
             hasClient = true;
             System.out.println("SERVER: client connected");
-            MyServerThread myServerThread = new MyServerThread(clientSocket, chessboard);
+            MyServerThread myServerThread = new MyServerThread(clientSocket);
             myServerThread.run();
 
         } catch (IOException e) {

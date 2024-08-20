@@ -13,290 +13,357 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: linear-gradient(to left,#0196d1,#440174);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.schach.client.ChessboardController">
-   <children>
-      <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="227.0">
-          <children>
-              <GridPane fx:id="chessBoardView" gridLinesVisible="true" layoutX="1.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="520.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="35.0">
-                  <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                  </rowConstraints>
-                  <children>
-                      <Pane fx:id="pane00" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" />
-                      <Pane fx:id="pane01" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" />
-                      <Pane fx:id="pane02" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" />
-                      <Pane fx:id="pane03" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" />
-                      <Pane fx:id="pane04" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" />
-                      <Pane fx:id="pane05" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" />
-                      <Pane fx:id="pane06" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" />
-                      <Pane fx:id="pane07" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" />
-                      <Pane fx:id="pane10" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane11" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane12" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane13" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane14" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane15" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane16" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane17" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                      <Pane fx:id="pane20" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane21" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane22" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane23" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane24" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane25" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane26" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane27" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                      <Pane fx:id="pane30" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane31" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane32" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane33" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane34" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane35" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane36" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane37" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                      <Pane fx:id="pane40" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane41" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane42" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane43" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane44" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane45" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane46" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane47" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                      <Pane fx:id="pane50" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane51" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane52" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane53" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane54" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane55" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane56" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane57" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                      <Pane fx:id="pane60" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane61" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane62" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane63" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane64" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane65" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane66" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane67" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                      <Pane fx:id="pane70" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane71" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane72" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane73" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane74" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane75" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane76" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                      <Pane fx:id="pane77" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                        <ImageView fx:id="white_king1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_king.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_rook1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_rook.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_bishop1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_bishop.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_knight1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_knight.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_bishop1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_bishop.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_queen1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_queen.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_king1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_king.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn0" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_bishop2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_bishop.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_knight2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_knight.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_rook2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_rook.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn4" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                           <ImageView fx:id="black_pawn5" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn7" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="black_pawn8" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                                  <image>
-                                <Image url="@../../../../images/black_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_bishop2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_bishop.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_knight2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_knight.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_rook2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_rook.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_queen1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_queen.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_knight1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_knight.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn4" fitHeight="65.0" fitWidth="70.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn7" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn5" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_pawn3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_pawn.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fx:id="white_rook1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                            <image>
-                                <Image url="@../../../../images/white_rook.png" />
-                            </image>
-                        </ImageView>
-                  <ImageView fx:id="white_pawn6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldslected00" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../../../../images/white_pawn.png" />
-                     </image>
-                  </ImageView>
-                  </children>
-              </GridPane>
-            <Label fx:id="infoText" alignment="CENTER" layoutX="35.0" layoutY="6.0" prefHeight="17.0" prefWidth="620.0" text="TestText" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-          </children>
-      </AnchorPane>
-      <ImageView fitHeight="156.0" fitWidth="346.0" layoutX="188.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="656.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="35.0">
-         <image>
-            <Image url="@../../../../images/xVsY.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="player1" layoutX="219.0" layoutY="81.0" prefHeight="65.0" prefWidth="98.0" textFill="WHITE" AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="81.0">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font></Label>
-      <Label fx:id="player2" layoutX="406.0" layoutY="79.0" prefHeight="69.0" prefWidth="86.0" textFill="WHITE" AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="79.0">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font></Label>
-      <Label fx:id="TimerPlayer1" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="99.0" />
-      <Label fx:id="TimerPlayer2" layoutX="568.0" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" />
-      <Label fx:id="TimeOverAll" layoutX="317.0" layoutY="198.0" />
-      <MenuBar prefHeight="25.0" prefWidth="690.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="openChat" mnemonicParsing="false" text="Open Chat" />
-                  <MenuItem fx:id="exitSystem" mnemonicParsing="false" text="Exit" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </children>
+<AnchorPane prefHeight="844.0" prefWidth="690.0" style="-fx-background-color: linear-gradient(to left,#0196d1,#440174);"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.schach.client.ChessboardController">
+    <AnchorPane layoutX="-2.0" layoutY="227.0" prefHeight="618.0" prefWidth="697.0" style="-fx-background-color: black;"
+                AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="227.0">
+        <GridPane fx:id="chessBoardView" gridLinesVisible="true" layoutX="1.0" layoutY="1.0" maxHeight="-Infinity"
+                  maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0"
+                  prefWidth="520.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="35.0"
+                  AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="35.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <Pane fx:id="pane00" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;"/>
+            <Pane fx:id="pane01" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="1"/>
+            <Pane fx:id="pane02" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="2"/>
+            <Pane fx:id="pane03" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="3"/>
+            <Pane fx:id="pane04" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="4"/>
+            <Pane fx:id="pane05" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="5"/>
+            <Pane fx:id="pane06" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="6"/>
+            <Pane fx:id="pane07" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="7"/>
+            <Pane fx:id="pane10" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane11" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane12" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane13" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane14" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane15" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane16" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane17" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="1"/>
+            <Pane fx:id="pane20" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane21" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane22" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane23" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane24" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane25" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane26" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane27" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="2"/>
+            <Pane fx:id="pane30" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane31" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane32" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane33" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane34" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane35" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane36" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane37" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="3"/>
+            <Pane fx:id="pane40" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane41" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane42" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane43" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane44" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane45" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane46" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane47" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="4"/>
+            <Pane fx:id="pane50" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane51" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane52" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane53" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane54" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane55" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane56" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane57" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="5"/>
+            <Pane fx:id="pane60" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane61" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane62" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane63" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane64" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="4" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane65" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="5" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane66" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="6" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane67" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="6"/>
+            <Pane fx:id="pane70" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane71" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane72" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane73" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane74" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="4" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane75" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="5" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane76" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: white;" GridPane.columnIndex="6" GridPane.rowIndex="7"/>
+            <Pane fx:id="pane77" onMouseClicked="#mouseDragExited" prefHeight="200.0" prefWidth="200.0"
+                  style="-fx-background-color: grey;" GridPane.columnIndex="7" GridPane.rowIndex="7"/>
+            <ImageView fx:id="white_king1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_king.png"/>
+            </ImageView>
+            <ImageView fx:id="black_rook1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER"
+                       GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_rook.png"/>
+            </ImageView>
+            <ImageView fx:id="white_bishop1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_bishop.png"/>
+            </ImageView>
+            <ImageView fx:id="black_knight1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_knight.png"/>
+            </ImageView>
+            <ImageView fx:id="black_bishop1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_bishop.png"/>
+            </ImageView>
+            <ImageView fx:id="black_queen1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_queen.png"/>
+            </ImageView>
+            <ImageView fx:id="black_king1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_king.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn0" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER"
+                       GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_bishop2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_bishop.png"/>
+            </ImageView>
+            <ImageView fx:id="black_knight2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_knight.png"/>
+            </ImageView>
+            <ImageView fx:id="black_rook2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
+                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_rook.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER"
+                       GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn4" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn5" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn7" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="black_pawn8" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/black_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_bishop2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_bishop.png"/>
+            </ImageView>
+            <ImageView fx:id="white_knight2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_knight.png"/>
+            </ImageView>
+            <ImageView fx:id="white_rook2" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_rook.png"/>
+            </ImageView>
+            <ImageView fx:id="white_queen1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_queen.png"/>
+            </ImageView>
+            <ImageView fx:id="white_knight1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_knight.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn4" fitHeight="65.0" fitWidth="70.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn7" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn5" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn3" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+            <ImageView fx:id="white_rook1" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER"
+                       GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_rook.png"/>
+            </ImageView>
+            <ImageView fx:id="white_pawn6" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#fieldselected"
+                       pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6"
+                       GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                <Image url="@../../../../images/white_pawn.png"/>
+            </ImageView>
+        </GridPane>
+        <Label fx:id="infoText" alignment="CENTER" layoutX="35.0" layoutY="6.0" prefHeight="17.0" prefWidth="620.0"
+               text="TestText" textFill="WHITE">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
+    <ImageView fitHeight="156.0" fitWidth="346.0" layoutX="188.0" layoutY="35.0" pickOnBounds="true"
+               preserveRatio="true" AnchorPane.bottomAnchor="656.0" AnchorPane.leftAnchor="188.0"
+               AnchorPane.rightAnchor="169.0" AnchorPane.topAnchor="35.0">
+        <Image url="@../../../../images/xVsY.png"/>
+    </ImageView>
+    <Label fx:id="player1" layoutX="219.0" layoutY="81.0" prefHeight="65.0" prefWidth="98.0" textFill="WHITE"
+           AnchorPane.leftAnchor="219.0" AnchorPane.rightAnchor="373.0" AnchorPane.topAnchor="81.0">
+        <font>
+          <Font name="System Bold" size="25.0"/>
+        </font>
+    </Label>
+    <Label fx:id="player2" layoutX="406.0" layoutY="79.0" prefHeight="69.0" prefWidth="86.0" textFill="WHITE"
+           AnchorPane.leftAnchor="406.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="79.0">
+        <font>
+          <Font name="System Bold" size="25.0"/>
+        </font>
+    </Label>
+    <Label fx:id="TimerPlayer1" layoutY="99.0" prefHeight="50.0" prefWidth="117.0" AnchorPane.leftAnchor="0.0"
+           AnchorPane.topAnchor="99.0"/>
+    <Label fx:id="TimerPlayer2" layoutX="568.0" layoutY="99.0" prefHeight="50.0" prefWidth="117.0"/>
+    <Label fx:id="TimeOverAll" layoutX="317.0" layoutY="198.0"/>
+    <MenuBar prefHeight="25.0" prefWidth="690.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="openChat" mnemonicParsing="false" text="Open Chat"/>
+            <MenuItem fx:id="exitSystem" mnemonicParsing="false" text="Exit"/>
+        </Menu>
+    </MenuBar>
 </AnchorPane>

@@ -67,8 +67,7 @@ public class MyClientThread implements Serializable {
 
     private void receiveMessages() {
         new Thread(() -> {
-            boolean running = true;
-            while (running) {
+            while (true) {
                 try {
                     Thread.sleep(50);
                     String s = reader.readObject().toString();
@@ -77,7 +76,6 @@ public class MyClientThread implements Serializable {
                         for (Information information : informationList) {
                             System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
                         }
-                        //Kommt richtig an
                         chessboardController.updateChessfield();
                     }
 

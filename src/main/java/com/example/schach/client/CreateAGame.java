@@ -1,16 +1,10 @@
 package com.example.schach.client;
 
-import com.example.schach.server.MyServerThread;
 import com.example.schach.server.Server;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -27,7 +21,7 @@ public class CreateAGame implements Initializable {
     private Server server;
     private Scene scene;
 
-    public void startServer(ActionEvent actionEvent) throws IOException {
+    public void startServer() throws IOException {
         startServerID.setDisable(true);
         server = new Server();
 
@@ -54,7 +48,7 @@ public class CreateAGame implements Initializable {
         play.setDisable(true);
     }
 
-    public void playChess(ActionEvent actionEvent) throws IOException {
+    public void playChess() {
         Stage stage = new Stage();
         stage.setTitle("Server Chessfield");
         stage.setResizable(false);
@@ -62,8 +56,7 @@ public class CreateAGame implements Initializable {
         stage.show();
     }
 
-
-    public void Refreh(ActionEvent actionEvent) {
+    public void Refresh() {
         if (server.hasClient()) {
             text.setText("Client connected");
             play.setDisable(false);

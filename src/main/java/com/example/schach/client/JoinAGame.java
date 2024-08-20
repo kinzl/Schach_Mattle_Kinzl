@@ -1,6 +1,5 @@
 package com.example.schach.client;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -19,7 +18,6 @@ public class JoinAGame implements Initializable {
     public Text status;
     public Button playButton;
     public Button connectButtonID;
-    private Client client;
     private Scene scene;
 
     @Override
@@ -27,9 +25,9 @@ public class JoinAGame implements Initializable {
         playButton.setDisable(true);
     }
 
-    public void connectToServer(ActionEvent actionEvent) throws IOException {
+    public void connectToServer() throws IOException {
         if (isValidIpAddress(ipAddress.getText())) {
-            client = new Client(ipAddress.getText());
+            Client client = new Client(ipAddress.getText());
 
             FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Chessfield.fxml"));
             scene = new Scene(fxmlLoader.load());
@@ -72,7 +70,7 @@ public class JoinAGame implements Initializable {
     }
 
 
-    public void play(ActionEvent actionEvent) throws IOException {
+    public void play() {
         //Opens new Window(Chessfield.fxml
         Stage stage = new Stage();
 

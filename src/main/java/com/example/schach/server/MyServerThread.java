@@ -3,7 +3,6 @@ package com.example.schach.server;
 
 import com.example.schach.client.ChessboardController;
 import com.example.schach.client.Information;
-import com.example.schach.client.MessangerController;
 
 import java.io.*;
 import java.net.Socket;
@@ -19,15 +18,13 @@ public class MyServerThread implements Serializable {
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
     private List<Information> informationList = new ArrayList<>();
-    private ChessboardController chessboardController;
 
     public static void setServerUsername(String serverUsername) {
         MyServerThread.serverUsername = serverUsername;
     }
 
-    public MyServerThread(Socket socket, ChessboardController chessboardController) {
+    public MyServerThread(Socket socket) {
         this.socket = socket;
-        this.chessboardController = chessboardController;
     }
 
     public void run() {
