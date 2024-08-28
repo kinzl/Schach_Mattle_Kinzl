@@ -41,7 +41,7 @@ public class JoinAGame implements Initializable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (MyClientThread.isConnectedWithTheServer) {
+            if (ClientThread.isConnectedWithTheServer) {
                 status.setText("Connected");
                 connectButtonID.setDisable(true);
                 playButton.setDisable(false);

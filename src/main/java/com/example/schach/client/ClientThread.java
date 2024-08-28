@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyClientThread implements Serializable {
+public class ClientThread implements Serializable {
     private final String IPADDRESS;
     private final int PORT;
     private static ObjectInputStream reader;
@@ -19,7 +19,7 @@ public class MyClientThread implements Serializable {
     private List<Information> informationList = new ArrayList<>();
     private final ChessboardController chessboardController;
 
-    public MyClientThread(String IPADDRESS, int PORT, ChessboardController chessboardController) {
+    public ClientThread(String IPADDRESS, int PORT, ChessboardController chessboardController) {
         this.IPADDRESS = IPADDRESS;
         this.PORT = PORT;
         this.chessboardController = chessboardController;
@@ -36,6 +36,7 @@ public class MyClientThread implements Serializable {
             System.out.println("CLIENT started");
 
             receiveMessages();
+            sendMessages();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,7 +44,7 @@ public class MyClientThread implements Serializable {
     }
 
     public static void setUsername(String username) {
-        MyClientThread.clientUsername = username;
+        ClientThread.clientUsername = username;
     }
 
     private void handleUsername() {
@@ -90,10 +91,25 @@ public class MyClientThread implements Serializable {
     private void sendMessages() {
         boolean running = true;
         System.out.println("Send messages");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("HURRA");
+        new Thread(() -> {
+            while (running) {
+                try {
+                    Thread.sleep(50);
+                    writer.writeObject("");
+                    writer.flush();
+                    if (ChessboardController.informationListAdded) {
+                        ChessboardController.informationListAdded = false;
+                        informationList = ChessboardController.informationList;
+//                        writer.reset();
+                        writer.writeObject("sendInformationList");
+                        writer.flush();
+                        writer.writeObject(informationList);
+                        writer.flush();
+//                    System.out.println("SERVER SENT");
+                    }
+                } catch (IOException | InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }).start();
     }

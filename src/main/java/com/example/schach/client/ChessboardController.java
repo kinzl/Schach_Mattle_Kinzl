@@ -602,14 +602,9 @@ public class ChessboardController implements Initializable, Serializable {
                 }
 
                 informationList.add(new Information(n.getId(), rowN, columnN));
-                //System.out.println("n.getID: " + n.getId());
-                //System.out.println(rowN + " + " + columnN);
             }
         }
 
-//        for (int i = 0; i < informationList.size(); i++) {
-//            System.out.println(informationList.get(i));
-//        }
         informationListAdded = true;
     }
 
@@ -659,8 +654,8 @@ public class ChessboardController implements Initializable, Serializable {
         StackTraceElement[] stackTraceElements = t.getStackTrace();
         for (StackTraceElement element : stackTraceElements) {
             if (element.getFileName().contains("JoinAGame")) {
-                player1.setText(MyClientThread.getClientUsername());
-                player2.setText(MyClientThread.getServerUsername());
+                player1.setText(ClientThread.getClientUsername());
+                player2.setText(ClientThread.getServerUsername());
                 infoText.setText("White begins, black wins      Wait for your opponent");
                 //temp
 //                Platform.runLater(() -> {

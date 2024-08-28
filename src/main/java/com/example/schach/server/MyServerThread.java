@@ -18,13 +18,15 @@ public class MyServerThread implements Serializable {
     private static ObjectInputStream reader;
     private static ObjectOutputStream writer;
     private List<Information> informationList = new ArrayList<>();
+    ChessboardController chessboardController;
 
     public static void setServerUsername(String serverUsername) {
         MyServerThread.serverUsername = serverUsername;
     }
 
-    public MyServerThread(Socket socket) {
+    public MyServerThread(Socket socket, ChessboardController chessboardController) {
         this.socket = socket;
+        this.chessboardController = chessboardController;
     }
 
     public void run() {
@@ -36,6 +38,7 @@ public class MyServerThread implements Serializable {
             handleUsername();
             System.out.println("SERVER started");
             sendMessages();
+            receiveMessages();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,14 +69,19 @@ public class MyServerThread implements Serializable {
 
     private void receiveMessages() {
         new Thread(() -> {
-            boolean running = true;
-            while (running) {
+            while (true) {
                 try {
+                    Thread.sleep(50);
                     String s = reader.readObject().toString();
                     if (s.equals("sendInformationList")) {
-                        System.err.println("HURRA");
+                        informationList = (List<Information>) reader.readObject();
+                        for (Information information : informationList) {
+                            System.out.println(information.getFieldName() + " " + information.getX() + " " + information.getY());
+                        }
+                        chessboardController.updateChessfield();
                     }
-                } catch (ClassNotFoundException | IOException e) {
+
+                } catch (ClassNotFoundException | IOException | InterruptedException e) {
                     e.printStackTrace();
                 }
 

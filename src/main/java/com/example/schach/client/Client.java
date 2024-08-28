@@ -11,7 +11,7 @@ public class Client {
     private void runClient() {
         System.out.println("CLIENT: Waiting for Server");
         int PORT = 23;
-        MyClientThread myClientThread = new MyClientThread(IPADDRESS, PORT, chessboardController);
+        ClientThread myClientThread = new ClientThread(IPADDRESS, PORT, chessboardController);
         myClientThread.run();
     }
 

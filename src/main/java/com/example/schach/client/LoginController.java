@@ -28,7 +28,7 @@ public class LoginController implements Initializable {
             System.out.println("join a game : Not valid");
             status.setText("Please, enter your username");
         } else {
-            MyClientThread.setUsername(username.getText());
+            ClientThread.setUsername(username.getText());
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("joinAGame.fxml"));
             Scene scene = new Scene(fxmlLoader.load());

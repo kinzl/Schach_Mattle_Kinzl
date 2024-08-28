@@ -33,13 +33,12 @@ public class Server {
             Socket clientSocket = serverSocket.accept();
             hasClient = true;
             System.out.println("SERVER: client connected");
-            MyServerThread myServerThread = new MyServerThread(clientSocket);
+            MyServerThread myServerThread = new MyServerThread(clientSocket, chessboard);
             myServerThread.run();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public void stop() {

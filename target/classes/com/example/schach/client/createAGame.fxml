@@ -40,7 +40,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="363.0" layoutY="367.0" mnemonicParsing="false" onAction="#Refreh" text="Refresh" textAlignment="CENTER" AnchorPane.bottomAnchor="114.0">
+                  <Button layoutX="363.0" layoutY="367.0" mnemonicParsing="false" onAction="#Refresh" text="Refresh" textAlignment="CENTER" AnchorPane.bottomAnchor="114.0">
                      <font>
                         <Font size="14.0" />
                      </font>
